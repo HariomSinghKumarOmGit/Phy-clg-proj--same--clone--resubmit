@@ -1,0 +1,54 @@
+.experiment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.experiment-card {
+  background: rgb(255, 255, 255);
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.experiment-card:hover {
+  border-color: #667eea;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+}
+
+.experiment-card h3 {
+  color: #667eea;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.experiment-objective {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.experiment-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.no-experiments {
+  text-align: center;
+  color: #999;
+  font-size: 1.1rem;
+  margin-top: 3rem;
+}
+
+

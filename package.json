@@ -1,0 +1,26 @@
+{
+  "name": "chemai-lab-root",
+  "version": "1.0.0",
+  "description": "ChemAI Lab - AI-powered chemistry lab simulator",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "start:local": "node start-all.js"
+  },
+  "keywords": [
+    "chemistry",
+    "education",
+    "ai",
+    "simulator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}

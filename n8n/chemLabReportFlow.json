@@ -1,0 +1,88 @@
+{
+  "name": "ChemLab Report Generation",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "position": [250, 300],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "position": [450, 300],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "name": "Process Report Data",
+      "type": "n8n-nodes-base.code",
+      "position": [650, 300],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "name": "Generate Report",
+      "type": "n8n-nodes-base.code",
+      "position": [850, 300],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "name": "Return Report",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [1050, 300],
+      "typeVersion": 1
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Process Report Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Report Data": {
+      "main": [
+        [
+          {
+            "node": "Generate Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Report": {
+      "main": [
+        [
+          {
+            "node": "Return Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
+
+

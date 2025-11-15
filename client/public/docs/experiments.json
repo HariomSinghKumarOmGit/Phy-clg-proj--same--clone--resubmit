@@ -1,0 +1,345 @@
+[
+  {
+    "id": 1,
+    "title": "Acid-Base Titration",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the concentration of a given acid using a standard alkali.",
+    "hypothesis": "",
+    "materials": [
+      "Burette",
+      "Pipette",
+      "Conical flask",
+      "Phenolphthalein",
+      "HCl",
+      "NaOH"
+    ],
+    "procedure": [
+      { "stepNo": 1, "instruction": "Rinse the burette with NaOH solution to ensure accuracy." },
+      { "stepNo": 2, "instruction": "Fill the burette with NaOH solution and record the initial reading." },
+      { "stepNo": 3, "instruction": "Measure exactly 25ml of HCl solution using a pipette into a clean conical flask." },
+      { "stepNo": 4, "instruction": "Add 2-3 drops of phenolphthalein indicator to the HCl solution." },
+      { "stepNo": 5, "instruction": "Slowly add NaOH from the burette while swirling the flask. Watch for the color change from colorless to pale pink." },
+      { "stepNo": 6, "instruction": "Record the final burette reading and calculate the volume of NaOH used." },
+      { "stepNo": 7, "instruction": "Repeat the titration at least two more times to ensure accuracy." }
+    ],
+    "results": {
+      "dataTable": [
+        { "trial": 1, "initialBuretteReading": "", "finalBuretteReading": "", "volumeNaOHUsed": "", "volumeAcidTaken": "25", "observations": "" },
+        { "trial": 2, "initialBuretteReading": "", "finalBuretteReading": "", "volumeNaOHUsed": "", "volumeAcidTaken": "25", "observations": "" },
+        { "trial": 3, "initialBuretteReading": "", "finalBuretteReading": "", "volumeNaOHUsed": "", "volumeAcidTaken": "25", "observations": "" }
+      ],
+      "observationTable": [
+        { "trial": 1, "initialColor": "", "endPointColor": "", "notedChange": "", "remarks": "" },
+        { "trial": 2, "initialColor": "", "endPointColor": "", "notedChange": "", "remarks": "" },
+        { "trial": 3, "initialColor": "", "endPointColor": "", "notedChange": "", "remarks": "" }
+      ],
+      "calculations": "",
+      "reactionEquation": "NaOH + HCl → NaCl + H₂O"
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Wear gloves and goggles at all times. Handle acids and bases with care. Work in a well-ventilated area."
+  },
+
+  {
+    "id": 2,
+    "title": "Standard Enthalpy of Combustion",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the enthalpy change of combustion of ethanol using calorimetry.",
+    "hypothesis": "",
+    "materials": [
+      "Calorimeter",
+      "Thermometer",
+      "Ethanol",
+      "Copper can",
+      "Balance",
+      "Spirit burner"
+    ],
+    "procedure": [
+      { "stepNo": 1, "instruction": "Set up the calorimeter and measure 100ml of water into the copper can." },
+      { "stepNo": 2, "instruction": "Record the initial temperature of the water." },
+      { "stepNo": 3, "instruction": "Place the spirit burner with ethanol under the copper can and light it." },
+      { "stepNo": 4, "instruction": "Allow the ethanol to burn until the temperature rises by approximately 20°C." },
+      { "stepNo": 5, "instruction": "Record the final temperature and the mass of ethanol burned." },
+      { "stepNo": 6, "instruction": "Calculate the enthalpy change using q = mcΔT." }
+    ],
+    "results": {
+      "dataTable": [
+        { "trial": 1, "massEthanolBefore": "", "massEthanolAfter": "", "massEthanolBurned": "", "initialTemp": "", "finalTemp": "", "deltaT": "", "observations": "" }
+      ],
+      "observationTable": [
+        { "trial": 1, "flameColor": "", "sootFormation": "", "heatingRate": "", "notes": "" }
+      ],
+      "calculations": "",
+      "reactionEquation": "C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O"
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Keep flammable materials away from open flame. Use proper ventilation. Handle hot equipment with tongs."
+  },
+
+  {
+    "id": 3,
+    "title": "Redox Titration: Potassium Permanganate with Oxalic Acid",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the concentration of oxalic acid solution using potassium permanganate as a self-indicator in redox titration.",
+    "hypothesis": "",
+    "materials": [
+      "Burette",
+      "Pipette",
+      "Conical flask",
+      "Potassium permanganate (KMnO₄)",
+      "Oxalic acid (H₂C₂O₄)",
+      "Dilute sulfuric acid (H₂SO₄)",
+      "Water bath",
+      "White tile"
+    ],
+    "procedure": [
+      { "stepNo": 1, "instruction": "Prepare a standard solution of potassium permanganate (0.1M) in a clean beaker." },
+      { "stepNo": 2, "instruction": "Rinse the burette with KMnO₄ solution and fill it up to the zero mark." },
+      { "stepNo": 3, "instruction": "Pipette 25ml of oxalic acid solution into a clean conical flask." },
+      { "stepNo": 4, "instruction": "Add 20ml of dilute sulfuric acid to the oxalic acid solution." },
+      { "stepNo": 5, "instruction": "Heat the mixture to about 60-70°C using a water bath." },
+      { "stepNo": 6, "instruction": "Titrate the hot solution with KMnO₄ solution, swirling continuously until a permanent pale pink color appears." },
+      { "stepNo": 7, "instruction": "Record the burette reading and repeat the titration at least two more times for accuracy." }
+    ],
+    "results": {
+      "dataTable": [
+        { "trial": 1, "volumeOxalicAcid": "25", "initialBuretteReading": "", "finalBuretteReading": "", "volumeKMnO4Used": "", "observations": "" },
+        { "trial": 2, "volumeOxalicAcid": "25", "initialBuretteReading": "", "finalBuretteReading": "", "volumeKMnO4Used": "", "observations": "" },
+        { "trial": 3, "volumeOxalicAcid": "25", "initialBuretteReading": "", "finalBuretteReading": "", "volumeKMnO4Used": "", "observations": "" }
+      ],
+      "observationTable": [
+        { "trial": 1, "initialColor": "", "duringTitration": "", "endPointColor": "", "remarks": "" },
+        { "trial": 2, "initialColor": "", "duringTitration": "", "endPointColor": "", "remarks": "" },
+        { "trial": 3, "initialColor": "", "duringTitration": "", "endPointColor": "", "remarks": "" }
+      ],
+      "calculations": "",
+      "reactionEquation": "2KMnO₄ + 5H₂C₂O₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 10CO₂ + 8H₂O"
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Wear protective gloves and goggles. Handle KMnO₄ carefully as it can stain. Sulfuric acid is corrosive - handle with care. Work in a well-ventilated area."
+  },
+
+  {
+    "id": 4,
+    "title": "Rate of Reaction: Sodium Thiosulfate and Hydrochloric Acid",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To investigate how the concentration of reactants affects the rate of reaction between sodium thiosulfate and hydrochloric acid.",
+    "hypothesis": "",
+    "materials": [
+      "Sodium thiosulfate (Na₂S₂O₃)",
+      "Hydrochloric acid (HCl)",
+      "Conical flasks",
+      "Stopwatch",
+      "Measuring cylinders",
+      "Cross-marked paper",
+      "Water bath",
+      "Thermometer"
+    ],
+    "procedure": [
+      { "stepNo": 1, "instruction": "Place a cross-marked paper under a clean conical flask." },
+      { "stepNo": 2, "instruction": "Measure 50ml of sodium thiosulfate solution (0.1M) and pour it into the flask." },
+      { "stepNo": 3, "instruction": "Measure 5ml of hydrochloric acid (2M) in a separate measuring cylinder." },
+      { "stepNo": 4, "instruction": "Add the HCl to the flask and immediately start the stopwatch." },
+      { "stepNo": 5, "instruction": "Observe the cross through the solution and stop the timer when the cross is no longer visible." },
+      { "stepNo": 6, "instruction": "Record the time taken for the reaction to complete." },
+      { "stepNo": 7, "instruction": "Repeat the experiment with different concentrations of sodium thiosulfate (0.08M, 0.06M, 0.04M, 0.02M) while keeping HCl concentration constant." },
+      { "stepNo": 8, "instruction": "Calculate the rate of reaction (1/time) for each concentration and plot a graph." }
+    ],
+    "results": {
+      "dataTable": [
+        { "trial": 1, "concentrationNa2S2O3": "0.1", "volumeNa2S2O3": "50", "volumeHCl": "5", "timeTaken": "", "rate": "", "observations": "" },
+        { "trial": 2, "concentrationNa2S2O3": "0.08", "volumeNa2S2O3": "50", "volumeHCl": "5", "timeTaken": "", "rate": "", "observations": "" },
+        { "trial": 3, "concentrationNa2S2O3": "0.06", "volumeNa2S2O3": "50", "volumeHCl": "5", "timeTaken": "", "rate": "", "observations": "" },
+        { "trial": 4, "concentrationNa2S2O3": "0.04", "volumeNa2S2O3": "50", "volumeHCl": "5", "timeTaken": "", "rate": "", "observations": "" },
+        { "trial": 5, "concentrationNa2S2O3": "0.02", "volumeNa2S2O3": "50", "volumeHCl": "5", "timeTaken": "", "rate": "", "observations": "" }
+      ],
+      "observationTable": [
+        { "trial": 1, "initialAppearance": "", "colorChange": "", "precipitation": "", "notes": "" }
+      ],
+      "calculations": "",
+      "reactionEquation": "Na₂S₂O₃ + 2HCl → 2NaCl + SO₂ + S + H₂O"
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Wear safety goggles and lab coat. Handle hydrochloric acid with care. Sulfur dioxide gas is produced - ensure good ventilation. Do not inhale the fumes."
+  },
+
+  {
+    "id": 5,
+    "title": "Electrolysis of Water",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To demonstrate the decomposition of water into hydrogen and oxygen gases using electrolysis and verify the 2:1 ratio of gases produced.",
+    "hypothesis": "",
+    "materials": [
+      "Hoffman voltameter",
+      "DC power supply (6-12V)",
+      "Dilute sulfuric acid (H₂SO₄)",
+      "Graphite electrodes",
+      "Test tubes",
+      "Splints",
+      "Matches",
+      "Measuring cylinder"
+    ],
+    "procedure": [
+      { "stepNo": 1, "instruction": "Set up the Hoffman voltameter apparatus with graphite electrodes." },
+      { "stepNo": 2, "instruction": "Fill the voltameter with dilute sulfuric acid solution (about 10% by volume) to act as an electrolyte." },
+      { "stepNo": 3, "instruction": "Connect the electrodes to a DC power supply (6-12V) with the positive terminal to the anode and negative to the cathode." },
+      { "stepNo": 4, "instruction": "Switch on the power supply and observe gas bubbles forming at both electrodes." },
+      { "stepNo": 5, "instruction": "Allow the electrolysis to proceed for 5-10 minutes and observe the volume of gas collected in each arm." },
+      { "stepNo": 6, "instruction": "Measure the volume of gas in each tube and record the ratio." },
+      { "stepNo": 7, "instruction": "Test the gas in the cathode tube (hydrogen) with a burning splint - it should produce a 'pop' sound." },
+      { "stepNo": 8, "instruction": "Test the gas in the anode tube (oxygen) with a glowing splint - it should relight." }
+    ],
+    "results": {
+      "dataTable": [
+        { "trial": 1, "volumeHydrogen": "", "volumeOxygen": "", "ratio": "", "voltage": "", "current": "", "time": "", "observations": "" }
+      ],
+      "observationTable": [
+        { "trial": 1, "gasAtCathode": "", "gasAtAnode": "", "hydrogenTest": "", "oxygenTest": "", "notes": "" }
+      ],
+      "calculations": "",
+      "reactionEquation": "2H₂O(l) → 2H₂(g) + O₂(g)"
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Wear safety goggles. Hydrogen gas is highly flammable - keep away from open flames. Ensure proper ventilation. Handle sulfuric acid with care. Disconnect power supply when not in use."
+  },
+
+  {
+    "id": 6,
+    "title": "Preparation of Soap (Saponification)",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To prepare soap from vegetable oil using the saponification reaction with sodium hydroxide and understand the chemistry of soap formation.",
+    "hypothesis": "",
+    "materials": [
+      "Vegetable oil (100ml)",
+      "Sodium hydroxide (NaOH)",
+      "Ethanol",
+      "Distilled water",
+      "Beaker",
+      "Hot plate",
+      "Stirring rod",
+      "Thermometer",
+      "Filter paper",
+      "Funnel",
+      "Saturated sodium chloride solution"
+    ],
+    "procedure": [
+      { "stepNo": 1, "instruction": "Measure 100ml of vegetable oil and pour it into a clean beaker." },
+      { "stepNo": 2, "instruction": "Prepare a solution of 10g NaOH in 30ml of distilled water (handle with care - exothermic reaction)." },
+      { "stepNo": 3, "instruction": "Add 50ml of ethanol to the oil to help dissolve it." },
+      { "stepNo": 4, "instruction": "Heat the oil-ethanol mixture to about 50-60°C on a hot plate." },
+      { "stepNo": 5, "instruction": "Slowly add the NaOH solution to the warm oil mixture while stirring continuously." },
+      { "stepNo": 6, "instruction": "Continue heating and stirring for 20-30 minutes until the mixture becomes thick and homogeneous (soap formation)." },
+      { "stepNo": 7, "instruction": "Add saturated sodium chloride solution to precipitate the soap (salting out)." },
+      { "stepNo": 8, "instruction": "Filter the soap using filter paper and wash it with cold water." },
+      { "stepNo": 9, "instruction": "Allow the soap to dry and observe its properties." }
+    ],
+    "results": {
+      "dataTable": [
+        { "trial": 1, "volumeOil": "100", "massNaOH": "10", "volumeEthanol": "50", "reactionTime": "", "massSoapObtained": "", "observations": "" }
+      ],
+      "observationTable": [
+        { "trial": 1, "initialState": "", "duringReaction": "", "finalProduct": "", "texture": "", "color": "", "notes": "" }
+      ],
+      "calculations": "",
+      "reactionEquation": "C₃H₅(C₁₇H₃₅COO)₃ + 3NaOH → 3C₁₇H₃₅COONa + C₃H₅(OH)₃"
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Wear safety goggles, gloves, and lab coat. Sodium hydroxide is highly corrosive - handle with extreme care. Work in a well-ventilated area. Ethanol is flammable - keep away from open flames. Avoid contact with skin."
+  },
+
+  {
+    "id": 7,
+    "title": "Determination of pH using Universal Indicator",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the pH values of various household and laboratory solutions using universal indicator and create a pH scale reference.",
+    "hypothesis": "",
+    "materials": [
+      "Universal indicator solution",
+      "pH color chart",
+      "Test tubes",
+      "Test tube rack",
+      "Dropper",
+      "Distilled water",
+      "Various test solutions (lemon juice, vinegar, tap water, baking soda, soap solution, NaOH, HCl, etc.)",
+      "White tile"
+    ],
+    "procedure": [
+      { "stepNo": 1, "instruction": "Label test tubes for each solution to be tested." },
+      { "stepNo": 2, "instruction": "Pour approximately 5ml of each test solution into its labeled test tube." },
+      { "stepNo": 3, "instruction": "Add 2-3 drops of universal indicator to each test tube." },
+      { "stepNo": 4, "instruction": "Gently swirl each test tube to mix the indicator with the solution." },
+      { "stepNo": 5, "instruction": "Observe the color change in each test tube." },
+      { "stepNo": 6, "instruction": "Compare the colors with the pH color chart provided." },
+      { "stepNo": 7, "instruction": "Record the pH value for each solution based on the color match." },
+      { "stepNo": 8, "instruction": "Arrange the solutions in order from most acidic (lowest pH) to most basic (highest pH)." },
+      { "stepNo": 9, "instruction": "Create a pH scale diagram showing the position of each tested solution." }
+    ],
+    "results": {
+      "dataTable": [
+        { "solution": "Lemon juice", "colorObserved": "", "pHValue": "", "nature": "", "observations": "" },
+        { "solution": "Vinegar", "colorObserved": "", "pHValue": "", "nature": "", "observations": "" },
+        { "solution": "Tap water", "colorObserved": "", "pHValue": "", "nature": "", "observations": "" },
+        { "solution": "Baking soda solution", "colorObserved": "", "pHValue": "", "nature": "", "observations": "" },
+        { "solution": "Soap solution", "colorObserved": "", "pHValue": "", "nature": "", "observations": "" },
+        { "solution": "NaOH (0.1M)", "colorObserved": "", "pHValue": "", "nature": "", "observations": "" },
+        { "solution": "HCl (0.1M)", "colorObserved": "", "pHValue": "", "nature": "", "observations": "" }
+      ],
+      "observationTable": [
+        { "solution": "", "indicatorColor": "", "pHRange": "", "acidityLevel": "", "notes": "" }
+      ],
+      "calculations": "",
+      "reactionEquation": "Universal indicator changes color based on H⁺ ion concentration"
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Wear safety goggles and gloves. Handle acids and bases with care. Do not taste any solutions. Work in a well-ventilated area. Wash hands after handling chemicals."
+  }
+]
