@@ -3,8 +3,22 @@ import { useParams } from 'react-router-dom';
 import { loadExperimentById } from '../utils/loadExperiments';
 import ChatBot from '../components/ChatBot';
 import '../styles/ExperimentDetail.css';
+import ObservationTable from './ObservatinTable';
+
+
+const defaultObservationTable = {
+  columns: [
+    { name: "Sno",  },
+    { name: "Initial Observation", type: "number" },
+    { name: "Final Observation", type: "number" },
+    { name: "Net Volume", type: "text" },
+  ],
+  rows: [],
+};
 
 export default function ExperimentDetail() {
+  const [observationTable, setObservationTable] = useState(defaultObservationTable);
+
   const { id } = useParams();
   const [exp, setExp] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -88,13 +102,21 @@ export default function ExperimentDetail() {
             </section>
           ) */}
 
+            <div style={{ marginTop: "2rem" }}>
+            <ObservationTable
+              observationTable={observationTable}
+              onChange={setObservationTable}
+            />
+          </div>
+          
+
           {/* Observation Table */}
-          {exp.results?.observationTable && (
+          {/* {exp.results?.observationTable && (
             <section className="experiment-section">
               <h2>Observation Table</h2>
               <pre>{JSON.stringify(exp.results.observationTable, null, 2)}</pre>
             </section>
-          )}
+          )} */}
 
           {/* Calculations */}
           {/* {exp.results?.calculations && ( */}
