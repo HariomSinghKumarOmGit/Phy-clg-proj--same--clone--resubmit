@@ -8,8 +8,30 @@ export default function ObservationTable({ observationTable, onChange }) {
   
 
   useEffect(() => {
-    setTable(observationTable || { columns: [], rows: [] });
-  }, [observationTable]);
+  const baseTable = observationTable || { columns: [], rows: [] };
+
+  // if no rows but we have columns, create first default row with Sno = 1
+  if ((!baseTable.rows || baseTable.rows.length === 0) && baseTable.columns.length > 0) {
+    const rowIndex = 1;
+
+    const emptyRow = baseTable.columns.map((col, colIndex) => {
+      if (colIndex === 0) {
+        return rowIndex; // Sno column
+      }
+      return "";
+    });
+
+    const newTable = {
+      ...baseTable,
+      rows: [emptyRow],
+    };
+
+    setTable(newTable);
+    onChange?.(newTable);
+  } else {
+    setTable(baseTable);
+  }
+}, [observationTable, onChange]);
 
   if (!table || !table.columns || table.columns.length === 0) {
     return <p>No observation table defined.</p>;
