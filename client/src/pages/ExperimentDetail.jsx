@@ -4,19 +4,12 @@ import { loadExperimentById } from '../utils/loadExperiments';
 import ChatBot from '../components/ChatBot';
 import '../styles/ExperimentDetail.css';
 import ObservationTable from './ObservatinTable';
-
-const defaultObservationTable = {
-  columns: [
-    { name: "Sno" },
-    { name: "Initial Observation", type: "number" },
-    { name: "Final Observation", type: "number" },
-    { name: "Net Volume", type: "text" },
-  ],
-  rows: [],
-};
+import { calculateRow, calculateSummary } from '../utils/experimentCalculations';
+import TypewriterText from '../components/TypewriterText';
 
 export default function ExperimentDetail() {
-  const [observationTable, setObservationTable] = useState(defaultObservationTable);
+  const [observationTable, setObservationTable] = useState({ columns: [], rows: [] });
+  const [calculationResult, setCalculationResult] = useState("");
 
   const { id } = useParams();
   const [exp, setExp] = useState(null);
@@ -25,9 +18,29 @@ export default function ExperimentDetail() {
   useEffect(() => {
     loadExperimentById(id).then(data => {
       setExp(data);
+      if (data && data.observationTable) {
+        setObservationTable(data.observationTable);
+        // Initial calculation if any default rows exist
+        const summary = calculateSummary(data.id, data.observationTable.rows || []);
+        setCalculationResult(summary);
+      }
       setLoading(false);
     });
   }, [id]);
+
+  const handleTableChange = (newTable) => {
+    if (!exp) return;
+
+    // Auto-calculate rows
+    const updatedRows = (newTable.rows || []).map(row => calculateRow(exp.id, row));
+
+    const updatedTable = { ...newTable, rows: updatedRows };
+    setObservationTable(updatedTable);
+
+    // Auto-calculate summary
+    const summary = calculateSummary(exp.id, updatedRows);
+    setCalculationResult(summary);
+  };
 
   if (loading) {
     return <p>Loading experiment...</p>;
@@ -99,14 +112,16 @@ export default function ExperimentDetail() {
           <div style={{ marginTop: '2rem' }}>
             <ObservationTable
               observationTable={observationTable}
-              onChange={setObservationTable}
+              onChange={handleTableChange}
             />
           </div>
 
           {/* Calculations */}
           <section className="experiment-section">
             <h2>Calculations</h2>
-            <p>{exp.defaultResult?.calculation}</p>
+            <div className="p-4 bg-white rounded-lg shadow-inner min-h-[60px]">
+              <TypewriterText text={calculationResult || exp.defaultResult?.calculation || "Enter data to see calculations..."} />
+            </div>
           </section>
 
           {/* Precautions */}
@@ -115,7 +130,7 @@ export default function ExperimentDetail() {
             <ol className="steps-list">
               {(exp.precautions || []).map(step => (
                 <li key={step.stepNo}>
-                   {step.instruction}
+                  {step.instruction}
                 </li>
               ))}
             </ol>

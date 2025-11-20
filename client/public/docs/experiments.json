@@ -57,6 +57,52 @@
         "instruction": "The range of ammeter and voltmeter should be chosen appropriately."
       }
     ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "S.No",
+          "type": "number"
+        },
+        {
+          "name": "Voltmeter Reading V (Volts)",
+          "type": "number"
+        },
+        {
+          "name": "Ammeter Reading I (Amperes)",
+          "type": "number"
+        },
+        {
+          "name": "Resistance R = V/I (Ohms)",
+          "type": "number"
+        }
+      ],
+      "rows": [
+        [
+          1,
+          2.0,
+          0.1,
+          20.0
+        ],
+        [
+          2,
+          4.0,
+          0.2,
+          20.0
+        ],
+        [
+          3,
+          6.0,
+          0.3,
+          20.0
+        ],
+        [
+          4,
+          8.0,
+          0.4,
+          20.0
+        ]
+      ]
+    },
     "defaultResult": {
       "summary": "The graph of V versus I is a straight line passing through the origin, verifying Ohm's Law.",
       "calculation": "Slope of V-I graph = (V2 - V1) / (I2 - I1) = R (Resistance in Ohms)."
@@ -123,6 +169,46 @@
         "instruction": "Account for zero error properly."
       }
     ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "S.No",
+          "type": "number"
+        },
+        {
+          "name": "MSR (cm)",
+          "type": "number"
+        },
+        {
+          "name": "VSR (div)",
+          "type": "number"
+        },
+        {
+          "name": "Total Reading = MSR + (VSR × LC) (cm)",
+          "type": "number"
+        }
+      ],
+      "rows": [
+        [
+          1,
+          2.1,
+          5,
+          2.15
+        ],
+        [
+          2,
+          2.1,
+          6,
+          2.16
+        ],
+        [
+          3,
+          2.1,
+          4,
+          2.14
+        ]
+      ]
+    },
     "defaultResult": {
       "summary": "The dimensions of the cylinder are measured accurately.",
       "calculation": "Volume V = πr²h, where r = diameter/2 and h = length."
@@ -133,26 +219,7 @@
       "improvements": ""
     },
     "conclusion": "",
-    "safetyNotes": "Handle the instrument with care to avoid damaging the jaws.",
-    "observationConfig": {
-      "columns": [
-        {
-          "name": "Sno"
-        },
-        {
-          "name": "Main Scale Reading (MSR) [cm]",
-          "type": "number"
-        },
-        {
-          "name": "Vernier Scale Reading (VSR)",
-          "type": "number"
-        },
-        {
-          "name": "Total Reading (TR) = MSR + (VSR x LC) [cm]",
-          "type": "number"
-        }
-      ]
-    }
+    "safetyNotes": "Handle the instrument with care to avoid damaging the jaws."
   },
   {
     "id": 3,
@@ -204,6 +271,46 @@
         "instruction": "Take measurements in mutually perpendicular directions at each point to check for circularity."
       }
     ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "S.No",
+          "type": "number"
+        },
+        {
+          "name": "PSR (mm)",
+          "type": "number"
+        },
+        {
+          "name": "CSR (div)",
+          "type": "number"
+        },
+        {
+          "name": "Total Reading = PSR + (CSR × LC) (mm)",
+          "type": "number"
+        }
+      ],
+      "rows": [
+        [
+          1,
+          1.0,
+          45,
+          1.45
+        ],
+        [
+          2,
+          1.0,
+          48,
+          1.48
+        ],
+        [
+          3,
+          1.0,
+          42,
+          1.42
+        ]
+      ]
+    },
     "defaultResult": {
       "summary": "The diameter of the wire is determined with high precision.",
       "calculation": "Average Diameter D = Mean of corrected readings."
@@ -214,26 +321,7 @@
       "improvements": ""
     },
     "conclusion": "",
-    "safetyNotes": "None specific.",
-    "observationConfig": {
-      "columns": [
-        {
-          "name": "Sno"
-        },
-        {
-          "name": "Pitch Scale Reading (PSR) [mm]",
-          "type": "number"
-        },
-        {
-          "name": "Circular Scale Reading (CSR)",
-          "type": "number"
-        },
-        {
-          "name": "Total Reading (TR) = PSR + (CSR x LC) [mm]",
-          "type": "number"
-        }
-      ]
-    }
+    "safetyNotes": "None specific."
   },
   {
     "id": 4,
@@ -296,6 +384,53 @@
         "instruction": "Fan should be switched off to minimize air resistance."
       }
     ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "S.No",
+          "type": "number"
+        },
+        {
+          "name": "Length L (cm)",
+          "type": "number"
+        },
+        {
+          "name": "Time for 20 osc. t (s)",
+          "type": "number"
+        },
+        {
+          "name": "Time Period T = t/20 (s)",
+          "type": "number"
+        },
+        {
+          "name": "T² (s²)",
+          "type": "number"
+        }
+      ],
+      "rows": [
+        [
+          1,
+          80,
+          35.8,
+          1.79,
+          3.20
+        ],
+        [
+          2,
+          90,
+          38.0,
+          1.90,
+          3.61
+        ],
+        [
+          3,
+          100,
+          40.0,
+          2.00,
+          4.00
+        ]
+      ]
+    },
     "defaultResult": {
       "summary": "The value of g is calculated from the slope of the L-T² graph.",
       "calculation": "g = 4π² * Slope, where Slope = ΔL / ΔT²."
@@ -306,38 +441,7 @@
       "improvements": ""
     },
     "conclusion": "",
-    "safetyNotes": "Ensure the stand is stable.",
-    "observationConfig": {
-      "columns": [
-        {
-          "name": "Sno"
-        },
-        {
-          "name": "Length (L) [cm]",
-          "type": "number"
-        },
-        {
-          "name": "Time for 20 osc (t) [s]",
-          "type": "number"
-        },
-        {
-          "name": "Time Period (T = t/20) [s]",
-          "type": "number"
-        },
-        {
-          "name": "T² [s²]",
-          "type": "number"
-        }
-      ]
-    },
-    "graphConfig": {
-      "type": "line",
-      "xAxisKey": "T² [s²]",
-      "yAxisKey": "Length (L) [cm]",
-      "title": "L vs T² Graph",
-      "xLabel": "Square of Time Period (T²) [s²]",
-      "yLabel": "Effective Length (L) [cm]"
-    }
+    "safetyNotes": "Ensure the stand is stable."
   },
   {
     "id": 5,
@@ -395,6 +499,46 @@
         "instruction": "The lens should be clean."
       }
     ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "S.No",
+          "type": "number"
+        },
+        {
+          "name": "Object Distance u (cm)",
+          "type": "number"
+        },
+        {
+          "name": "Image Distance v (cm)",
+          "type": "number"
+        },
+        {
+          "name": "Focal Length f = uv/(u-v) (cm)",
+          "type": "number"
+        }
+      ],
+      "rows": [
+        [
+          1,
+          30,
+          60,
+          20.0
+        ],
+        [
+          2,
+          40,
+          40,
+          20.0
+        ],
+        [
+          3,
+          60,
+          30,
+          20.0
+        ]
+      ]
+    },
     "defaultResult": {
       "summary": "The focal length is determined from the observations.",
       "calculation": "f = uv / (u+v) (using sign convention, usually u is -ve, v is +ve for real image)."
@@ -405,34 +549,7 @@
       "improvements": ""
     },
     "conclusion": "",
-    "safetyNotes": "Handle the lens carefully.",
-    "observationConfig": {
-      "columns": [
-        {
-          "name": "Sno"
-        },
-        {
-          "name": "Object Distance (u) [cm]",
-          "type": "number"
-        },
-        {
-          "name": "Image Distance (v) [cm]",
-          "type": "number"
-        },
-        {
-          "name": "Focal Length f = uv/(u+v) [cm]",
-          "type": "number"
-        }
-      ]
-    },
-    "graphConfig": {
-      "type": "line",
-      "xAxisKey": "Object Distance (u) [cm]",
-      "yAxisKey": "Image Distance (v) [cm]",
-      "title": "u vs v Graph",
-      "xLabel": "Object Distance (u) [cm]",
-      "yLabel": "Image Distance (v) [cm]"
-    }
+    "safetyNotes": "Handle the lens carefully."
   },
   {
     "id": 6,
@@ -486,6 +603,46 @@
         "instruction": "Wait for the spring to stop oscillating before taking readings."
       }
     ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "S.No",
+          "type": "number"
+        },
+        {
+          "name": "Load Applied (g)",
+          "type": "number"
+        },
+        {
+          "name": "Pointer Reading (cm)",
+          "type": "number"
+        },
+        {
+          "name": "Extension x (cm)",
+          "type": "number"
+        }
+      ],
+      "rows": [
+        [
+          1,
+          50,
+          12.0,
+          2.0
+        ],
+        [
+          2,
+          100,
+          14.0,
+          4.0
+        ],
+        [
+          3,
+          150,
+          16.0,
+          6.0
+        ]
+      ]
+    },
     "defaultResult": {
       "summary": "The graph is a straight line, verifying Hooke's Law.",
       "calculation": "Spring constant k = Slope of F-x graph = ΔF / Δx (N/m)."
@@ -496,41 +653,6 @@
       "improvements": ""
     },
     "conclusion": "",
-    "safetyNotes": "Keep feet away from below the weights in case they fall.",
-    "observationConfig": {
-      "columns": [
-        {
-          "name": "Sno"
-        },
-        {
-          "name": "Load (M) [g]",
-          "type": "number"
-        },
-        {
-          "name": "Reading Loading [cm]",
-          "type": "number"
-        },
-        {
-          "name": "Reading Unloading [cm]",
-          "type": "number"
-        },
-        {
-          "name": "Mean Reading [cm]",
-          "type": "number"
-        },
-        {
-          "name": "Extension (x) [cm]",
-          "type": "number"
-        }
-      ]
-    },
-    "graphConfig": {
-      "type": "line",
-      "xAxisKey": "Extension (x) [cm]",
-      "yAxisKey": "Load (M) [g]",
-      "title": "Load vs Extension Graph",
-      "xLabel": "Extension (x) [cm]",
-      "yLabel": "Load (M) [g]"
-    }
+    "safetyNotes": "Keep feet away from below the weights in case they fall."
   }
 ]

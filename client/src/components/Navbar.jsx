@@ -31,13 +31,13 @@ export default function Navbar() {
           GitHub
         </a>
         <a href="https://pbs.twimg.com/media/EWdmghFWoAA09ew.jpg" target='_balnk'>We</a>
-             {/* <button
+        {/* <button
                 onClick={onClick}
                 className="px-4 py-2 rounded bg-green-600 text-white"
               >
                 Continue
             </button>  */}
-       
+
 
       </div>
     </nav>
