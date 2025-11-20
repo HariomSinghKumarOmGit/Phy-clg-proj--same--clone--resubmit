@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useChemAI } from '../hooks/useChemAI'
 import '../styles/ChatBot.css'
 
+// After tht i will be putting pdf of my clg phy and lode exp form there 
+
 export default function ChatBot({ experimentContext }) {
   const [input, setInput] = useState('')
   const [chat, setChat] = useState([])
@@ -9,18 +11,18 @@ export default function ChatBot({ experimentContext }) {
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return
-    
+
     const userMsg = { from: 'user', text: input }
     setChat(prev => [...prev, userMsg])
     const query = input
     setInput('')
 
     const result = await askChemAI(query, 'explain', experimentContext)
-    
+
     if (result && result.answer) {
-      setChat(prev => [...prev, { 
-        from: 'ai', 
-        text: result.answer 
+      setChat(prev => [...prev, {
+        from: 'ai',
+        text: result.answer
       }])
     } else {
       setChat(prev => [...prev, {
