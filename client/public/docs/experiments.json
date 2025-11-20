@@ -16,6 +16,16 @@
       "Connecting wires",
       "Key"
     ],
+    "asciiDiagrams": [
+      {
+        "label": "Circuit Diagram",
+        "art": "      +----------------( A )-----------------+\n      |          Ammeter (+) (-)             |\n      |                                      |\n  +---( )---[ Rheostat ]---( )---+           |\n  |   Key                        |           |\n  |                              |           |\n( + )                          [ R ]       ( V )\nBattery                        Wire      Voltmeter\n( - )                            |           |\n  |                              |           |\n  +------------------------------+-----------+"
+      },
+      {
+        "label": "V-I Graph (Expected)",
+        "art": "      V (Volts)\n      ^\n      |\n      |         /\n      |       /   Slope = R\n      |     /\n      |   /\n      | /\n      +-------------------> I (Amperes)\n     0"
+      }
+    ],
     "theory": "Ohm's Law states that the current (I) flowing through a conductor is directly proportional to the potential difference (V) across its ends, provided the physical conditions (temperature, etc.) remain constant.\n\nV ∝ I  =>  V = IR\n\nWhere R is the constant of proportionality called resistance. A graph of V (y-axis) versus I (x-axis) is a straight line passing through the origin, and its slope gives the resistance R.",
     "procedure": [
       {
@@ -128,6 +138,16 @@
       "Small solid cylinder (or sphere/block)",
       "Magnifying glass"
     ],
+    "asciiDiagrams": [
+      {
+        "label": "Vernier Caliper Parts",
+        "art": "      Main Scale\n   0   1   2   3   4   cm\n   |---|---|---|---|---|\n   |   |   |   |   |   |\n+--+---+---+---+---+---+--+\n|  |   |   |   |   |   |  |  <-- Fixed Jaw\n|  +---+---+---+---+---+  |\n|  | 0 1 2 3 4 5 6 7 8 |  |  <-- Vernier Scale (Sliding)\n|  +-------------------+  |\n|      (   Object   )     |\n+-------------------------+"
+      },
+      {
+        "label": "Zero Error Concept",
+        "art": "   No Zero Error          Positive Error          Negative Error\n\n   MS: |   |              MS: |   |               MS: |   |\n       0   1                  0   1                   0   1\n   VS: 0   5              VS:   0 5               VS: 0   5\n       ^ Matches              ^ Right of 0            ^ Left of 0"
+      }
+    ],
     "theory": "The Vernier Caliper is a precision instrument used to measure internal and external dimensions. The total reading is given by:\n\nTotal Reading (TR) = Main Scale Reading (MSR) + (Vernier Scale Reading (VSR) × Least Count (LC))\n\nLeast Count (LC) = 1 MSD - 1 VSD (typically 0.01 cm).",
     "procedure": [
       {
@@ -234,6 +254,16 @@
       "Wire",
       "Magnifying glass"
     ],
+    "asciiDiagrams": [
+      {
+        "label": "Screw Gauge Parts",
+        "art": "      Stud      Screw          Main Scale      Ratchet\n      |--|      |---|      |-------------|      |---|\n    --+  +------+   +------+ 0 1 2 3 4 5 +------+   +--\n      |  | Object   |      |-------------|      |---|\n    --+  +------+   +------+             +------+   +--\n      |--|      |---|      | Circular    |      |---|\n                           | Scale       | "
+      },
+      {
+        "label": "Reading Interpretation",
+        "art": "      Main Scale Reading (MSR): Visible lines on sleeve\n      Circular Scale Reading (CSR): Division matching reference line\n      \n      Total = MSR + (CSR x LC)"
+      }
+    ],
     "theory": "A Screw Gauge is used for measuring small dimensions with high precision. The linear distance moved by the screw in one complete rotation is the pitch.\n\nLeast Count (LC) = Pitch / Total number of divisions on circular scale (typically 0.001 cm or 0.01 mm).\n\nTotal Reading = PSR + (CSR × LC).",
     "procedure": [
       {
@@ -338,6 +368,16 @@
       "Stopwatch",
       "Meter scale",
       "Split cork"
+    ],
+    "asciiDiagrams": [
+      {
+        "label": "Pendulum Setup",
+        "art": "       //|\\\\\n      ///|\\\\\\  <-- Rigid Support\n         |\n         |\n         |  <-- Thread (Length L)\n         |\n         |\n         |\n        ( )  <-- Bob (Mass m)\n       /   \\\n      /     \\\n     A       B  <-- Oscillation Path"
+      },
+      {
+        "label": "L vs T² Graph",
+        "art": "      L (Length)\n      ^\n      |\n      |         /\n      |       /   Slope used to find g\n      |     /\n      |   /\n      | /\n      +-------------------> T² (Time Period Squared)\n     0"
+      }
     ],
     "theory": "For small amplitudes, the time period (T) of a simple pendulum of length (L) is given by:\n\nT = 2π √(L/g)\n\nSquaring both sides: T² = (4π²/g) * L\n\nTherefore, g = 4π² * (L/T²). A graph of L vs T² is a straight line.",
     "procedure": [
@@ -458,6 +498,16 @@
       "Two optical needles",
       "Knitting needle (for index correction)"
     ],
+    "asciiDiagrams": [
+      {
+        "label": "Ray Diagram Setup",
+        "art": "        Object (u)          Lens (f)          Image (v)\n           ^                   ()                   ^\n           |                   ()                   |\n           |                   ()                   |\n    -------+-------------------()-------------------+-------\n           |         <---- u ----><---- v ---->     |\n           |                   ()\n           |                   ()\n        Optical              Convex               Screen\n        Bench                 Lens"
+      },
+      {
+        "label": "u vs v Graph",
+        "art": "      v (Image Dist)\n      ^\n      |\n      |      _---\n      |   _--\n      | --\n      | \\\n      |  \\\n      +-------------------> u (Object Dist)\n     0"
+      }
+    ],
     "theory": "The lens formula is given by:\n\n1/f = 1/v - 1/u\n\nWhere f is the focal length, u is the object distance, and v is the image distance. By measuring v for different values of u, f can be determined.",
     "procedure": [
       {
@@ -557,7 +607,7 @@
     "date": "",
     "studentName": "",
     "class": "",
-    "objective": "To determine the spring constant of a helical spring by plotting a graph between load and extension.",
+    "objective": "To determine the spring constant of a given spring from the graph of load vs extension.",
     "hypothesis": "",
     "materials": [
       "Helical spring",
@@ -565,6 +615,16 @@
       "Weight hanger and slotted weights",
       "Meter scale",
       "Pointer"
+    ],
+    "asciiDiagrams": [
+      {
+        "label": "Spring Setup",
+        "art": "       //|\\\\\n      ///|\\\\\\  <-- Rigid Support\n         |\n         |\n         $  <-- Spring\n         $\n         $\n         $ \n      ___|___\n      |     |  <-- Weight Hanger\n      |_____|\n         |\n      [WEIGHT]"
+      },
+      {
+        "label": "Load vs Extension Graph",
+        "art": "      Load (F)\n      ^\n      |\n      |         /\n      |       /   Slope = k (Spring Constant)\n      |     /\n      |   /\n      | /\n      +-------------------> Extension (x)\n     0"
+      }
     ],
     "theory": "Hooke's Law states that within the elastic limit, the extension (x) produced in a spring is directly proportional to the applied load (F).\n\nF = kx\n\nWhere k is the spring constant (force constant). The slope of the Load (F) vs Extension (x) graph gives k.",
     "procedure": [

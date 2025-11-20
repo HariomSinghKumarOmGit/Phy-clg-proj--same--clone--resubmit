@@ -95,6 +95,37 @@ export default function ExperimentDetail() {
             <StepViewer steps={exp.procedure} title="Procedure" experimentId={exp.id} />
           </section>
 
+          {/* Experimental Setup (ASCII Diagrams) */}
+          {exp.asciiDiagrams && exp.asciiDiagrams.length > 0 && (
+            <section className="experiment-section">
+              <h2>Experimental Setup & Graphs</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {exp.asciiDiagrams.map((diagram, index) => (
+                  <div key={index} className="flex flex-col">
+                    <h3 className="text-sm font-semibold text-gray-600 mb-2 ml-1">{diagram.label}</h3>
+                    <div className="bg-gray-900 p-6 rounded-xl shadow-inner overflow-x-auto border border-gray-700 flex-grow">
+                      <pre className="font-mono text-green-400 text-xs md:text-sm leading-relaxed whitespace-pre">
+                        {diagram.art}
+                      </pre>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Fallback for old single diagram format if exists */}
+          {!exp.asciiDiagrams && exp.asciiDiagram && (
+            <section className="experiment-section">
+              <h2>Experimental Setup</h2>
+              <div className="bg-gray-900 p-6 rounded-xl shadow-inner overflow-x-auto border border-gray-700">
+                <pre className="font-mono text-green-400 text-sm leading-relaxed whitespace-pre">
+                  {exp.asciiDiagram}
+                </pre>
+              </div>
+            </section>
+          )}
+
           {/* Reaction Equation */}
           {exp.results?.reactionEquation && (
             <section className="experiment-section">
