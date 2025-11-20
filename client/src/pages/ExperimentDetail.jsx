@@ -7,6 +7,8 @@ import ObservationTable from './ObservatinTable';
 import { calculateRow, calculateSummary } from '../utils/experimentCalculations';
 import TypewriterText from '../components/TypewriterText';
 
+import StepViewer from '../components/StepViewer';
+
 export default function ExperimentDetail() {
   const [observationTable, setObservationTable] = useState({ columns: [], rows: [] });
   const [calculationResult, setCalculationResult] = useState("");
@@ -90,14 +92,7 @@ export default function ExperimentDetail() {
 
           {/* Procedure */}
           <section className="experiment-section">
-            <h2>Procedure</h2>
-            <ol className="steps-list">
-              {(exp.procedure || []).map(step => (
-                <li key={step.stepNo}>
-                  <strong>Step {step.stepNo}:</strong> {step.instruction}
-                </li>
-              ))}
-            </ol>
+            <StepViewer steps={exp.procedure} title="Procedure" experimentId={exp.id} />
           </section>
 
           {/* Reaction Equation */}
@@ -126,14 +121,7 @@ export default function ExperimentDetail() {
 
           {/* Precautions */}
           <section className="experiment-section">
-            <h2>Precautions</h2>
-            <ol className="steps-list">
-              {(exp.precautions || []).map(step => (
-                <li key={step.stepNo}>
-                  {step.instruction}
-                </li>
-              ))}
-            </ol>
+            <StepViewer steps={exp.precautions} title="Precautions" experimentId={exp.id} />
           </section>
 
           {/* Safety Notes */}
