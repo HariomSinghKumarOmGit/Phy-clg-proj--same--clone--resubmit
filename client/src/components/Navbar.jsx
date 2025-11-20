@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-brand">
-        🧪 ChemAI Lab
+        ⚛️ Physics Lab Assistant
       </Link>
       <div className="navbar-links">
         <Link to="/">Home</Link>

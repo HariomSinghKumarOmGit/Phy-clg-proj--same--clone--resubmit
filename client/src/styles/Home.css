@@ -3,7 +3,7 @@
 }
 
 .hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
   color: white;
   padding: 4rem 2rem;
   text-align: center;
@@ -29,7 +29,7 @@
 }
 
 .welcome-section {
-  background: rgba(229, 196, 237, 0.416);
+  background: rgba(220, 230, 245, 0.6);
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -37,7 +37,7 @@
 }
 
 .welcome-section h2 {
-  color: #667eea;
+  color: #1e3c72;
   margin-bottom: 1.5rem;
   font-size: 2rem;
   text-decoration: underline;

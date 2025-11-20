@@ -1,42 +1,65 @@
 [
   {
     "id": 1,
-    "title": "Acid-Base Titration",
+    "title": "Verification of Ohm's Law",
     "date": "",
     "studentName": "",
     "class": "",
-    "objective": "To determine the concentration of a given acid using a standard alkali.",
+    "objective": "To verify Ohm's Law and determine the resistance of a given wire.",
     "hypothesis": "",
     "materials": [
-      "Burette",
-      "Pipette",
-      "Conical flask",
-      "Phenolphthalein",
-      "HCl",
-      "NaOH"
+      "Battery eliminator",
+      "Ammeter",
+      "Voltmeter",
+      "Rheostat",
+      "Resistance wire",
+      "Connecting wires",
+      "Key"
     ],
-    "theory": "Titration is a quantitative analytical technique used to determine the concentration of an unknown solution by reacting it with a solution of known concentration (called the standard solution). In an acid-base titration, a known volume of an acid reacts with a base, or vice versa, according to a neutralization reaction. Neutralization is the reaction between an acid and a base to form salt and water.\n\nIn this experiment, hydrochloric acid (HCl), a strong acid, is titrated against sodium hydroxide (NaOH), a strong base, of known concentration. The reaction taking place is:\n\nHCl(aq) + NaOH(aq) → NaCl(aq) + H₂O(l)\n\nAs NaOH is added from the burette to the fixed volume of HCl in the conical flask, the acid is gradually neutralized. To detect the end point of the titration (the point at which the acid has been exactly neutralized by the base), an indicator is used. Phenolphthalein is chosen as the indicator because it is colorless in acidic solution and turns pink in slightly basic solution.\n\nAt the start, the HCl solution with phenolphthalein is colorless, indicating an acidic medium. As NaOH is added and the solution approaches neutrality, the color begins to change. The end point is reached when a faint permanent pale pink color appears and persists for about 30 seconds, showing that a slight excess of NaOH is present and the acid has been completely neutralized.\n\nBy accurately measuring the volume of NaOH used to reach this end point and knowing its concentration, the concentration of the HCl solution can be calculated using the titration formula:\n\nC₁V₁ = C₂V₂,\n\nwhere C₁ and V₁ are the concentration and volume of the acid, and C₂ and V₂ are the concentration and volume of the base. This allows us to determine the unknown concentration of the given acid solution.",
+    "theory": "Ohm's Law states that the current (I) flowing through a conductor is directly proportional to the potential difference (V) across its ends, provided the physical conditions (temperature, etc.) remain constant.\n\nV ∝ I  =>  V = IR\n\nWhere R is the constant of proportionality called resistance. A graph of V (y-axis) versus I (x-axis) is a straight line passing through the origin, and its slope gives the resistance R.",
     "procedure": [
-      { "stepNo": 1, "instruction": "Rinse the burette with NaOH solution to ensure accuracy." },
-      { "stepNo": 2, "instruction": "Fill the burette with NaOH solution and record the initial reading." },
-      { "stepNo": 3, "instruction": "Measure exactly 25ml of HCl solution using a pipette into a clean conical flask." },
-      { "stepNo": 4, "instruction": "Add 2-3 drops of phenolphthalein indicator to the HCl solution." },
-      { "stepNo": 5, "instruction": "Slowly add NaOH from the burette while swirling the flask. Watch for the color change from colorless to pale pink." },
-      { "stepNo": 6, "instruction": "Record the final burette reading and calculate the volume of NaOH used." },
-      { "stepNo": 7, "instruction": "Repeat the titration at least two more times to ensure accuracy." }
+      {
+        "stepNo": 1,
+        "instruction": "Draw the circuit diagram showing the battery, ammeter, voltmeter, rheostat, and resistance wire connected properly."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Connect the components according to the circuit diagram. Ensure the ammeter is in series and the voltmeter is in parallel with the resistance wire."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Insert the key and adjust the rheostat to obtain a small reading in the ammeter and voltmeter."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Record the ammeter reading (I) and the corresponding voltmeter reading (V)."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Adjust the rheostat to get different values of current and voltage, recording at least 5-6 sets of readings."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Plot a graph of V versus I."
+      }
     ],
-   "precautions": [
-    { "stepNo": 1, "instruction": "Wear safety goggles and gloves; avoid contact of acids and bases with skin or eyes." },
-    { "stepNo": 2, "instruction": "Rinse the burette and pipette with the respective solutions before filling to avoid dilution errors." },
-    { "stepNo": 3, "instruction": "Ensure no air bubbles are present in the burette tip before starting the titration." },
-    { "stepNo": 4, "instruction": "Read the meniscus at eye level and record burette readings to two decimal places." },
-    { "stepNo": 5, "instruction": "Add NaOH slowly near the end point and swirl the conical flask continuously." },
-    { "stepNo": 6, "instruction": "Use a faint, permanent pale pink color as the end point and avoid overshooting." },
-    { "stepNo": 7, "instruction": "Dispose of acid and base solutions in the proper waste container and wash all glassware after the experiment." }
-  ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Connections should be tight and clean."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "The key should be inserted only while taking readings to avoid heating of the wire."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "The range of ammeter and voltmeter should be chosen appropriately."
+      }
+    ],
     "defaultResult": {
-      "summary": "A faint permanent pale pink color is obtained at the end point. The volumes of NaOH used in concordant titrations are close (spread < 0.2 mL). For example, when 25.00 mL of HCl is titrated with 0.100 M NaOH, the average NaOH volume is about 23.50 mL, giving an HCl concentration slightly below 0.10 M.",
-      "calculation": "Using C₁V₁ = C₂V₂. If C(NaOH) = 0.100 M and average V(NaOH) = 23.50 mL for 25.00 mL HCl: C(HCl) = (0.100 × 23.50) / 25.00 = 0.094 M."
+      "summary": "The graph of V versus I is a straight line passing through the origin, verifying Ohm's Law.",
+      "calculation": "Slope of V-I graph = (V2 - V1) / (I2 - I1) = R (Resistance in Ohms)."
     },
     "discussion": {
       "analysis": "",
@@ -44,589 +67,470 @@
       "improvements": ""
     },
     "conclusion": "",
-    "safetyNotes": "Wear gloves and goggles at all times. Handle acids and bases with care. Work in a well-ventilated area."
+    "safetyNotes": "Do not touch the resistance wire while current is flowing as it may get hot."
   },
-{
-  "id": 2,
-  "title": "Determination of pH of Solutions Using pH Paper and pH Meter",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To determine the approximate pH of various solutions using pH paper and to measure the accurate pH using a pH meter.",
-  "hypothesis": "",
-  "materials": [
-    "pH paper (universal indicator paper)",
-    "pH meter",
-    "Beakers",
-    "Distilled water",
-    "Buffer solutions (pH 4, 7, 9.2)",
-    "Test solutions (e.g., HCl, NaOH, NaCl, acetic acid)",
-    "Glass rod",
-    "Dropper"
-  ],
-  "theory": "pH is a measure of the hydrogen ion concentration [H⁺] in a solution and is defined as pH = −log[H⁺]. It indicates how acidic or basic a solution is on a scale of 0 to 14, where pH 7 is neutral, values less than 7 indicate acidity, and values greater than 7 indicate basicity.\n\npH paper (universal indicator paper) contains a mixture of indicators that show different colors at different pH values. When dipped into a solution, the paper changes color, which is then compared with a standard pH color chart to estimate the pH.\n\nA pH meter provides a more accurate measurement of pH. It consists of a glass electrode and a reference electrode connected to an electronic meter. The electrodes develop a potential difference depending on the hydrogen ion activity in the solution. The meter converts this potential difference into a pH value.\n\nBefore measuring unknown solutions, the pH meter is calibrated using buffer solutions of known pH (commonly pH 4.0, 7.0, and 9.2). Once calibrated, the pH of test solutions can be measured accurately by immersing the electrode in the solution and recording the reading displayed by the meter.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Arrange all the test solutions, buffer solutions, pH paper, and pH meter on the workbench." },
-    { "stepNo": 2, "instruction": "Take a small amount of the first test solution in a clean beaker." },
-    { "stepNo": 3, "instruction": "Dip a fresh strip of pH paper into the solution and remove it immediately." },
-    { "stepNo": 4, "instruction": "Compare the color of the wetted pH paper with the standard pH color chart and note the approximate pH." },
-    { "stepNo": 5, "instruction": "Repeat the above steps for all the given test solutions using fresh pH paper each time." },
-    { "stepNo": 6, "instruction": "Switch on the pH meter and allow it to warm up if required as per the manufacturer's instructions." },
-    { "stepNo": 7, "instruction": "Rinse the electrode with distilled water and gently blot dry with tissue paper." },
-    { "stepNo": 8, "instruction": "Immerse the electrode in the pH 7.0 buffer solution, wait for the reading to stabilize, and calibrate the meter if needed." },
-    { "stepNo": 9, "instruction": "Similarly, calibrate the pH meter using pH 4.0 and pH 9.2 buffer solutions, following the instrument instructions." },
-    { "stepNo": 10, "instruction": "Rinse the electrode with distilled water, blot dry, and immerse it in the first test solution." },
-    { "stepNo": 11, "instruction": "Wait for the pH reading to stabilize and record the value." },
-    { "stepNo": 12, "instruction": "Repeat the measurement for all the test solutions, rinsing the electrode between each measurement." },
-    { "stepNo": 13, "instruction": "Switch off the pH meter after completing all measurements and store the electrode in the recommended storage solution." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Do not touch the pH paper with wet or contaminated hands to avoid false readings." },
-    { "stepNo": 2, "instruction": "Use a fresh strip of pH paper for each solution; do not reuse strips." },
-    { "stepNo": 3, "instruction": "Rinse the pH meter electrode with distilled water before and after each measurement." },
-    { "stepNo": 4, "instruction": "Do not wipe the electrode harshly; gently blot dry with soft tissue to avoid damaging the glass membrane." },
-    { "stepNo": 5, "instruction": "Ensure the pH meter is properly calibrated with standard buffer solutions before measuring unknown solutions." },
-    { "stepNo": 6, "instruction": "Avoid immersing the electrode above the specified level to prevent damage to the internal components." },
-    { "stepNo": 7, "instruction": "Handle all glassware carefully and dispose of solutions as instructed by the teacher or lab manual." }
-  ],
-  "defaultResult": {
-    "summary": "Acidic solutions such as HCl show low pH values (around 1–2), neutral solutions like NaCl have pH close to 7, and basic solutions such as NaOH show high pH values (around 12–13). The pH meter readings are more precise and often slightly different from the approximate values obtained using pH paper.",
-    "calculation": "No complex numerical calculation is required. Comparison is mainly qualitative and based on pH values. For example, if the pH meter shows pH = 2.0 for HCl and pH = 12.5 for NaOH, we conclude that HCl is strongly acidic and NaOH is strongly basic."
+  {
+    "id": 2,
+    "title": "Measurement with Vernier Caliper",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To measure the diameter and length of a small cylinder using a Vernier Caliper and calculate its volume.",
+    "hypothesis": "",
+    "materials": [
+      "Vernier Caliper",
+      "Small solid cylinder (or sphere/block)",
+      "Magnifying glass"
+    ],
+    "theory": "The Vernier Caliper is a precision instrument used to measure internal and external dimensions. The total reading is given by:\n\nTotal Reading (TR) = Main Scale Reading (MSR) + (Vernier Scale Reading (VSR) × Least Count (LC))\n\nLeast Count (LC) = 1 MSD - 1 VSD (typically 0.01 cm).",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Determine the least count of the Vernier Caliper."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Check for zero error. If present, note it down to correct the final reading."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Place the cylinder between the lower jaws to measure the diameter. Tighten the screw gently."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Note the MSR and VSR. Calculate the total reading."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Repeat the measurement at different positions to get an average diameter."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Similarly, measure the length of the cylinder using the lower jaws."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Do not apply excessive pressure on the jaws."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Take readings at different positions to account for irregularities."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Account for zero error properly."
+      }
+    ],
+    "defaultResult": {
+      "summary": "The dimensions of the cylinder are measured accurately.",
+      "calculation": "Volume V = πr²h, where r = diameter/2 and h = length."
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Handle the instrument with care to avoid damaging the jaws.",
+    "observationConfig": {
+      "columns": [
+        {
+          "name": "Sno"
+        },
+        {
+          "name": "Main Scale Reading (MSR) [cm]",
+          "type": "number"
+        },
+        {
+          "name": "Vernier Scale Reading (VSR)",
+          "type": "number"
+        },
+        {
+          "name": "Total Reading (TR) = MSR + (VSR x LC) [cm]",
+          "type": "number"
+        }
+      ]
+    }
   },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
+  {
+    "id": 3,
+    "title": "Measurement with Screw Gauge",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To measure the diameter of a given wire using a Screw Gauge.",
+    "hypothesis": "",
+    "materials": [
+      "Screw Gauge",
+      "Wire",
+      "Magnifying glass"
+    ],
+    "theory": "A Screw Gauge is used for measuring small dimensions with high precision. The linear distance moved by the screw in one complete rotation is the pitch.\n\nLeast Count (LC) = Pitch / Total number of divisions on circular scale (typically 0.001 cm or 0.01 mm).\n\nTotal Reading = PSR + (CSR × LC).",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Determine the pitch and least count of the screw gauge."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Check for zero error by bringing the stud and spindle in contact."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Place the wire between the stud and spindle."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Rotate the ratchet until it clicks to ensure uniform pressure."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Note the Pitch Scale Reading (PSR) and Circular Scale Reading (CSR)."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Repeat at different points along the wire."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Rotate the screw only by the ratchet to avoid overtightening."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Take measurements in mutually perpendicular directions at each point to check for circularity."
+      }
+    ],
+    "defaultResult": {
+      "summary": "The diameter of the wire is determined with high precision.",
+      "calculation": "Average Diameter D = Mean of corrected readings."
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "None specific.",
+    "observationConfig": {
+      "columns": [
+        {
+          "name": "Sno"
+        },
+        {
+          "name": "Pitch Scale Reading (PSR) [mm]",
+          "type": "number"
+        },
+        {
+          "name": "Circular Scale Reading (CSR)",
+          "type": "number"
+        },
+        {
+          "name": "Total Reading (TR) = PSR + (CSR x LC) [mm]",
+          "type": "number"
+        }
+      ]
+    }
   },
-  "conclusion": "",
-  "safetyNotes": "Wear safety goggles and gloves while handling acidic and basic solutions. Do not taste any solution. Handle the pH meter carefully to avoid damaging the electrode."
-},
-
-{
-  "id": 3,
-  "title": "Preparation of a Standard Sodium Carbonate Solution",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To prepare 250 mL of approximately 0.1 M standard sodium carbonate (Na2CO3) solution.",
-  "hypothesis": "",
-  "materials": [
-    "Analytical balance",
-    "Weighing bottle",
-    "Watch glass",
-    "Solid anhydrous sodium carbonate (Na2CO3)",
-    "250 mL volumetric flask",
-    "Funnel",
-    "Beaker",
-    "Glass rod",
-    "Distilled water",
-    "Dropper"
-  ],
-  "theory": "A standard solution is a solution of accurately known concentration. Primary standard substances are pure, stable, non-hygroscopic, and have a high molar mass. Anhydrous sodium carbonate (Na2CO3) is commonly used as a primary standard for acid-base titrations.\n\nTo prepare a standard solution of a given molarity, a calculated mass of the primary standard is accurately weighed and dissolved in a suitable solvent (usually distilled water), and the solution is made up to a specific volume in a volumetric flask.\n\nFor Na2CO3, the molar mass is approximately 106 g/mol. To prepare 0.1 M Na2CO3 solution in 250 mL (0.250 L), the required mass m can be calculated using:\n\nm = M × V × molar mass,\n\nwhere M is molarity (mol/L) and V is volume in liters.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Clean and dry a 250 mL volumetric flask, beaker, and glass rod." },
-    { "stepNo": 2, "instruction": "Calculate the required mass of anhydrous Na2CO3 to prepare 0.1 M solution in 250 mL." },
-    { "stepNo": 3, "instruction": "Place a clean, dry watch glass or weighing bottle on the analytical balance and tare it to zero." },
-    { "stepNo": 4, "instruction": "Weigh the calculated mass of Na2CO3 accurately and transfer it to a clean beaker." },
-    { "stepNo": 5, "instruction": "Add about 50–75 mL of distilled water to the beaker and stir with a glass rod until the Na2CO3 dissolves completely." },
-    { "stepNo": 6, "instruction": "Using a funnel, carefully transfer the Na2CO3 solution into the 250 mL volumetric flask." },
-    { "stepNo": 7, "instruction": "Rinse the beaker and glass rod with small portions of distilled water and transfer the washings into the volumetric flask to ensure complete transfer." },
-    { "stepNo": 8, "instruction": "Add distilled water to the volumetric flask up to about 1–2 cm below the calibration mark and swirl gently to mix." },
-    { "stepNo": 9, "instruction": "Using a dropper, add distilled water dropwise until the bottom of the meniscus just touches the calibration mark at eye level." },
-    { "stepNo": 10, "instruction": "Stopper the flask and invert it several times to ensure thorough mixing of the solution." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Ensure the volumetric flask and glassware are clean and dry before preparing the solution." },
-    { "stepNo": 2, "instruction": "Handle Na2CO3 with a spatula; do not touch it directly with hands." },
-    { "stepNo": 3, "instruction": "Weigh the solid quickly to minimize exposure to atmospheric moisture." },
-    { "stepNo": 4, "instruction": "Make sure all the solid Na2CO3 and its washings are transferred into the volumetric flask." },
-    { "stepNo": 5, "instruction": "Read the lower meniscus at eye level while making up the volume to the mark." },
-    { "stepNo": 6, "instruction": "Mix the solution thoroughly by inverting the flask several times after making up the volume." },
-    { "stepNo": 7, "instruction": "Do not use cracked or chipped glassware; it may lead to volume errors or breakage." }
-  ],
-  "defaultResult": {
-    "summary": "A clear, colorless standard Na2CO3 solution of approximately 0.1 M concentration is obtained in the 250 mL volumetric flask, ready for use in acid-base titrations.",
-    "calculation": "For 0.1 M Na2CO3 in 250 mL: M = 0.1 mol/L, V = 0.250 L, molar mass = 106 g/mol. Required mass m = M × V × molar mass = 0.1 × 0.250 × 106 = 2.65 g of anhydrous Na2CO3."
+  {
+    "id": 4,
+    "title": "Simple Pendulum",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the acceleration due to gravity (g) using a simple pendulum.",
+    "hypothesis": "",
+    "materials": [
+      "Metallic bob",
+      "Thread",
+      "Clamp stand",
+      "Stopwatch",
+      "Meter scale",
+      "Split cork"
+    ],
+    "theory": "For small amplitudes, the time period (T) of a simple pendulum of length (L) is given by:\n\nT = 2π √(L/g)\n\nSquaring both sides: T² = (4π²/g) * L\n\nTherefore, g = 4π² * (L/T²). A graph of L vs T² is a straight line.",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Tie the metallic bob to one end of the thread and pass the other end through the split cork clamped to the stand."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Measure the effective length L (distance from the point of suspension to the center of the bob)."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Displace the bob slightly to one side and release it to oscillate in a vertical plane."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Measure the time for 20 oscillations using a stopwatch."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Calculate the time period T = Time for 20 oscillations / 20."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Repeat for different lengths (e.g., 80cm, 90cm, 100cm)."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Plot a graph of L versus T²."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "The amplitude of oscillation should be small."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "The pendulum should oscillate in a vertical plane without spinning."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Fan should be switched off to minimize air resistance."
+      }
+    ],
+    "defaultResult": {
+      "summary": "The value of g is calculated from the slope of the L-T² graph.",
+      "calculation": "g = 4π² * Slope, where Slope = ΔL / ΔT²."
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Ensure the stand is stable.",
+    "observationConfig": {
+      "columns": [
+        {
+          "name": "Sno"
+        },
+        {
+          "name": "Length (L) [cm]",
+          "type": "number"
+        },
+        {
+          "name": "Time for 20 osc (t) [s]",
+          "type": "number"
+        },
+        {
+          "name": "Time Period (T = t/20) [s]",
+          "type": "number"
+        },
+        {
+          "name": "T² [s²]",
+          "type": "number"
+        }
+      ]
+    },
+    "graphConfig": {
+      "type": "line",
+      "xAxisKey": "T² [s²]",
+      "yAxisKey": "Length (L) [cm]",
+      "title": "L vs T² Graph",
+      "xLabel": "Square of Time Period (T²) [s²]",
+      "yLabel": "Effective Length (L) [cm]"
+    }
   },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
+  {
+    "id": 5,
+    "title": "Focal Length of Convex Lens",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To find the focal length of a convex lens by plotting graphs between u and v.",
+    "hypothesis": "",
+    "materials": [
+      "Optical bench",
+      "Convex lens",
+      "Lens holder",
+      "Two optical needles",
+      "Knitting needle (for index correction)"
+    ],
+    "theory": "The lens formula is given by:\n\n1/f = 1/v - 1/u\n\nWhere f is the focal length, u is the object distance, and v is the image distance. By measuring v for different values of u, f can be determined.",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Determine the approximate focal length by focusing a distant object on a screen."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Mount the lens and needles on the optical bench uprights."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Place the object needle at a distance greater than f (between f and 2f or beyond 2f)."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Adjust the image needle to remove parallax between the tip of the object needle's image and the tip of the image needle."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Measure the object distance (u) and image distance (v)."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Repeat for different object positions."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Tips of the needles and the optical center of the lens should be at the same height."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Parallax should be removed completely."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "The lens should be clean."
+      }
+    ],
+    "defaultResult": {
+      "summary": "The focal length is determined from the observations.",
+      "calculation": "f = uv / (u+v) (using sign convention, usually u is -ve, v is +ve for real image)."
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Handle the lens carefully.",
+    "observationConfig": {
+      "columns": [
+        {
+          "name": "Sno"
+        },
+        {
+          "name": "Object Distance (u) [cm]",
+          "type": "number"
+        },
+        {
+          "name": "Image Distance (v) [cm]",
+          "type": "number"
+        },
+        {
+          "name": "Focal Length f = uv/(u+v) [cm]",
+          "type": "number"
+        }
+      ]
+    },
+    "graphConfig": {
+      "type": "line",
+      "xAxisKey": "Object Distance (u) [cm]",
+      "yAxisKey": "Image Distance (v) [cm]",
+      "title": "u vs v Graph",
+      "xLabel": "Object Distance (u) [cm]",
+      "yLabel": "Image Distance (v) [cm]"
+    }
   },
-  "conclusion": "",
-  "safetyNotes": "Wear goggles while weighing chemicals and preparing solutions. Avoid inhaling dust from solid Na2CO3 and wash hands after handling chemicals."
-},
-
-{
-  "id": 4,
-  "title": "Determination of Hardness of Water by EDTA Titration",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To determine the total hardness of a given water sample using EDTA titration.",
-  "hypothesis": "",
-  "materials": [
-    "Burette",
-    "Pipette",
-    "Conical flask",
-    "Standard EDTA solution",
-    "Buffer solution (pH 10)",
-    "Eriochrome Black T indicator",
-    "Ammonia-ammonium chloride buffer",
-    "Distilled water",
-    "Water sample",
-    "Measuring cylinder"
-  ],
-  "theory": "Hardness of water is mainly due to the presence of dissolved calcium (Ca²⁺) and magnesium (Mg²⁺) ions. In complexometric titrations, ethylenediaminetetraacetic acid (EDTA) is used as a chelating agent to form stable complexes with metal ions.\n\nAt pH 10, Ca²⁺ and Mg²⁺ ions in the water sample react with EDTA to form colorless, stable metal-EDTA complexes. Eriochrome Black T (EBT) is used as an indicator; it forms a wine-red complex with Ca²⁺ and Mg²⁺ ions. During titration, EDTA displaces EBT from the metal complex, and at the end point, the color changes from wine-red to pure blue.\n\nBy titrating a known volume of the water sample with standard EDTA solution and using the known molarity of EDTA, the total hardness of water can be calculated in terms of mg/L of CaCO3 equivalent.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Rinse and fill the burette with standard EDTA solution and record the initial reading." },
-    { "stepNo": 2, "instruction": "Pipette 25 mL of the given water sample into a clean conical flask." },
-    { "stepNo": 3, "instruction": "Add about 1–2 mL of ammonia-ammonium chloride buffer solution to maintain the pH at around 10." },
-    { "stepNo": 4, "instruction": "Add 1–2 drops of Eriochrome Black T indicator; the solution should turn wine-red if Ca²⁺ and Mg²⁺ ions are present." },
-    { "stepNo": 5, "instruction": "Titrate the solution with EDTA from the burette, swirling the flask continuously." },
-    { "stepNo": 6, "instruction": "Near the end point, add EDTA slowly dropwise until the color changes from wine-red to pure blue." },
-    { "stepNo": 7, "instruction": "Note the final burette reading and calculate the volume of EDTA used." },
-    { "stepNo": 8, "instruction": "Repeat the titration to obtain at least two concordant readings (within 0.1 mL)." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Rinse the burette with EDTA solution before filling to avoid dilution error." },
-    { "stepNo": 2, "instruction": "Maintain the pH around 10 using the buffer solution; incorrect pH may affect the end point." },
-    { "stepNo": 3, "instruction": "Do not add excessive indicator; 1–2 drops are sufficient." },
-    { "stepNo": 4, "instruction": "Swirl the conical flask continuously during titration to ensure proper mixing." },
-    { "stepNo": 5, "instruction": "Add EDTA slowly near the end point to avoid overshooting the color change." },
-    { "stepNo": 6, "instruction": "Record burette readings carefully at eye level to avoid parallax error." },
-    { "stepNo": 7, "instruction": "Use freshly prepared buffer and indicator solutions for accurate results." }
-  ],
-  "defaultResult": {
-    "summary": "The color of the solution changes from wine-red to pure blue at the end point. The volume of EDTA used is used to compute the total hardness of the water sample. Typical moderately hard water may show hardness in the range of 100–300 mg/L as CaCO3.",
-    "calculation": "If M(EDTA) = 0.010 M and V(EDTA) used for 25.0 mL water sample is 12.50 mL, then moles of CaCO3 equivalent = M × V = 0.010 × 0.0125 = 1.25 × 10⁻⁴ mol. Mass of CaCO3 equivalent = 1.25 × 10⁻⁴ × 100 g/mol = 0.0125 g = 12.5 mg in 25.0 mL. Hardness = (12.5 mg / 25.0 mL) × 1000 = 500 mg/L as CaCO3."
-  },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
-  },
-  "conclusion": "",
-  "safetyNotes": "Wear gloves and goggles during titration. Handle buffer and indicator solutions carefully and avoid contact with skin and eyes."
-},
-
-{
-  "id": 5,
-  "title": "Verification of Beer-Lambert Law Using a Colorimeter",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To verify Beer-Lambert law by measuring the absorbance of a colored solution at different concentrations using a colorimeter.",
-  "hypothesis": "",
-  "materials": [
-    "Colorimeter",
-    "Cuvettes",
-    "Standard stock solution of KMnO4 or CuSO4",
-    "Volumetric flasks",
-    "Pipettes",
-    "Beakers",
-    "Distilled water",
-    "Filter paper"
-  ],
-  "theory": "Beer-Lambert law relates the absorbance of light by a solution to its concentration and path length. According to the law, A = εlc, where A is absorbance, ε is molar absorptivity, l is the path length of the cell (usually 1 cm), and c is the concentration of the solution.\n\nAs the concentration of a colored solution increases, the amount of light absorbed also increases, and the transmitted intensity decreases. A colorimeter measures the absorbance of light passing through a solution at a specific wavelength using filters.\n\nBy preparing a series of standard solutions of known concentrations and measuring their absorbance, a plot of absorbance (A) versus concentration (c) should give a straight line passing through the origin if Beer-Lambert law holds.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Prepare a stock solution of the colored compound (e.g., KMnO4 or CuSO4) of known concentration." },
-    { "stepNo": 2, "instruction": "Using the stock solution, prepare a series of standard solutions of lower concentrations by dilution (e.g., 20%, 40%, 60%, 80%, 100% of stock concentration)." },
-    { "stepNo": 3, "instruction": "Switch on the colorimeter and allow it to warm up as per the instructions." },
-    { "stepNo": 4, "instruction": "Select the appropriate filter corresponding to the complementary color (or wavelength) of the solution being studied." },
-    { "stepNo": 5, "instruction": "Fill a cuvette with distilled water and place it in the colorimeter to set zero absorbance (or 100% transmittance)." },
-    { "stepNo": 6, "instruction": "Rinse another cuvette with the first standard solution, fill it up to the mark, wipe the outside with tissue, and place it in the colorimeter." },
-    { "stepNo": 7, "instruction": "Record the absorbance value displayed by the colorimeter for the first standard solution." },
-    { "stepNo": 8, "instruction": "Repeat the same procedure for all other standard solutions, recording the absorbance for each concentration." },
-    { "stepNo": 9, "instruction": "Tabulate the concentration and corresponding absorbance values for all solutions." },
-    { "stepNo": 10, "instruction": "Plot a graph of absorbance (A) on the y-axis versus concentration (c) on the x-axis and analyze the linearity." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Ensure cuvettes are clean, dry on the outside, and free from fingerprints or scratches." },
-    { "stepNo": 2, "instruction": "Always hold cuvettes at the frosted or non-optical sides to avoid staining the optical faces." },
-    { "stepNo": 3, "instruction": "Use the same cuvette for all measurements if possible to minimize path length variations." },
-    { "stepNo": 4, "instruction": "Set the colorimeter to zero absorbance using distilled water before measuring standard solutions." },
-    { "stepNo": 5, "instruction": "Prepare all solutions accurately using calibrated volumetric flasks and pipettes." },
-    { "stepNo": 6, "instruction": "Avoid bubbles in the cuvette; they can interfere with the light path and affect absorbance readings." },
-    { "stepNo": 7, "instruction": "Record readings only after the display stabilizes for each solution." }
-  ],
-  "defaultResult": {
-    "summary": "The absorbance of the solution increases approximately linearly with concentration. The plot of absorbance versus concentration yields a straight line passing close to the origin, confirming Beer-Lambert law within the experimental error.",
-    "calculation": "For each solution, absorbance A is directly noted from the colorimeter. If a best-fit line is drawn with equation A = k·c, then the slope k approximates εl. For example, if A = 0.80 at c = 0.02 mol/L, then k = 0.80 / 0.02 = 40 L·mol⁻¹, assuming l = 1 cm."
-  },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
-  },
-  "conclusion": "",
-  "safetyNotes": "Wear safety goggles when handling chemicals like KMnO4 or CuSO4. Clean spills immediately and wash hands after the experiment."
-},
-{
-  "id": 6,
-  "title": "Separation of a Mixture by Paper Chromatography",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To separate and identify components of a mixture using paper chromatography.",
-  "hypothesis": "",
-  "materials": [
-    "Chromatography paper",
-    "Capillary tubes",
-    "Beaker or chromatography chamber",
-    "Solvent or mobile phase (e.g., water-ethanol mixture)",
-    "Pencil",
-    "Ruler",
-    "Sample mixture (e.g., ink or plant pigment extract)",
-    "Watch glass",
-    "Filter paper"
-  ],
-  "theory": "Paper chromatography is a separation technique based on the differential partitioning of components between a stationary phase and a mobile phase. In this method, chromatography paper acts as the stationary phase, while a suitable solvent or mixture of solvents acts as the mobile phase.\n\nA small spot of the sample mixture is applied near one end of the paper. When the bottom of the paper is dipped into the mobile phase and the solvent rises by capillary action, the components of the mixture move at different rates depending on their solubility in the solvent and their affinity for the paper.\n\nThe distance traveled by each component relative to the solvent front is expressed as the Rf value (retention factor), defined as:\n\nRf = distance traveled by the substance / distance traveled by the solvent front.\n\nComponents with different Rf values can thus be separated and tentatively identified.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Cut a strip of chromatography paper of appropriate size (e.g., 2–3 cm wide and long enough to fit in the beaker without touching the sides)." },
-    { "stepNo": 2, "instruction": "Draw a light pencil line about 2 cm from one end of the paper; this will be the origin line." },
-    { "stepNo": 3, "instruction": "Using a capillary tube, place a small spot of the sample mixture at the center of the origin line and allow it to dry. Repeat to concentrate the spot if needed." },
-    { "stepNo": 4, "instruction": "Pour a small amount of solvent (mobile phase) into the beaker to a depth of about 1 cm and cover it with a watch glass to saturate the atmosphere." },
-    { "stepNo": 5, "instruction": "Suspend the chromatography paper in the beaker so that the bottom edge just touches the solvent, ensuring the sample spot remains above the solvent level." },
-    { "stepNo": 6, "instruction": "Cover the beaker and allow the solvent to rise up the paper by capillary action until it is about 1–2 cm from the top edge." },
-    { "stepNo": 7, "instruction": "Remove the paper from the beaker and immediately mark the solvent front with a pencil." },
-    { "stepNo": 8, "instruction": "Allow the paper to dry. If the spots are colorless, develop them by suitable reagents or under UV light as required." },
-    { "stepNo": 9, "instruction": "Measure the distance traveled by each separated spot from the origin and the distance traveled by the solvent front." },
-    { "stepNo": 10, "instruction": "Calculate the Rf values for each component of the mixture." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Use only a pencil, not ink, to mark the origin and solvent front to avoid interference." },
-    { "stepNo": 2, "instruction": "Ensure the sample spot is small and concentrated to obtain clear, distinct spots after separation." },
-    { "stepNo": 3, "instruction": "The sample spot must be above the level of the solvent in the chamber." },
-    { "stepNo": 4, "instruction": "Do not disturb or tilt the chamber while the solvent is rising." },
-    { "stepNo": 5, "instruction": "Use a closed chamber with a watch glass or lid to maintain solvent vapor saturation." },
-    { "stepNo": 6, "instruction": "Handle the chromatography paper carefully and avoid touching the area where the solvent will travel." },
-    { "stepNo": 7, "instruction": "Mark the solvent front immediately after removing the paper to avoid errors in Rf measurements." }
-  ],
-  "defaultResult": {
-    "summary": "The components of the mixture separate into distinct spots at different heights on the chromatography paper. Each component shows a characteristic Rf value under the given conditions.",
-    "calculation": "If a substance spot travels 4.0 cm from the origin and the solvent front travels 8.0 cm, then Rf = 4.0 / 8.0 = 0.50. Rf values for different spots are calculated similarly."
-  },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
-  },
-  "conclusion": "",
-  "safetyNotes": "Use organic solvents only in a well-ventilated area or fume hood. Keep solvents away from open flames and wear goggles and gloves while handling them."
-},
-{
-  "id": 7,
-  "title": "Determination of Melting Point of an Organic Compound",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To determine the melting point of a given organic solid compound.",
-  "hypothesis": "",
-  "materials": [
-    "Melting point apparatus or Thiele tube",
-    "Capillary tubes",
-    "Thermometer",
-    "Fine powdered organic solid",
-    "Rubber band or thermometer clamp",
-    "Beaker or oil bath (if using simple setup)",
-    "Spatula"
-  ],
-  "theory": "The melting point of a crystalline solid is the temperature at which it changes from the solid to the liquid state at atmospheric pressure. A pure organic compound generally has a sharp melting point, meaning it melts over a narrow temperature range (1–2 °C). Impurities usually lower and broaden the melting point range.\n\nMelting point determination is an important criterion for assessing the purity and identifying an organic solid. In the capillary method, a small amount of the finely powdered compound is filled into one end of a capillary tube, which is then placed in a melting point apparatus or attached to a thermometer and heated at a controlled rate.\n\nThe temperature at which the first sign of liquid is observed and the temperature at which the compound becomes completely liquid give the melting point range.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Dry and finely powder the organic solid using a spatula on a clean watch glass." },
-    { "stepNo": 2, "instruction": "Seal one end of a thin capillary tube by heating it in a flame and allowing it to melt and close." },
-    { "stepNo": 3, "instruction": "Introduce a small amount of the powdered compound into the open end of the capillary tube and tap gently so that the solid settles at the sealed end." },
-    { "stepNo": 4, "instruction": "Fix the capillary tube alongside a thermometer using a rubber band or place it in the melting point apparatus as instructed." },
-    { "stepNo": 5, "instruction": "Place the thermometer and capillary assembly in the melting point apparatus or oil bath." },
-    { "stepNo": 6, "instruction": "Heat the bath slowly and observe the sample through the magnifying lens or observation window." },
-    { "stepNo": 7, "instruction": "Note the temperature at which the first sign of melting (softening or liquid formation) is observed." },
-    { "stepNo": 8, "instruction": "Continue heating gently and note the temperature at which the compound becomes completely liquefied." },
-    { "stepNo": 9, "instruction": "Record the melting point range between these two temperatures." },
-    { "stepNo": 10, "instruction": "Allow the apparatus to cool before removing the capillary and thermometer." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "The compound must be dry and finely powdered for accurate melting point determination." },
-    { "stepNo": 2, "instruction": "Fill only a small length of the capillary tube with the sample to ensure clear observation of melting." },
-    { "stepNo": 3, "instruction": "Heat the bath slowly, especially near the expected melting point, to avoid overshooting." },
-    { "stepNo": 4, "instruction": "Ensure the thermometer bulb and the sample are at the same level for accurate temperature reading." },
-    { "stepNo": 5, "instruction": "Do not touch hot apparatus immediately after heating; allow it to cool before handling." },
-    { "stepNo": 6, "instruction": "Avoid using cracked capillary tubes or thermometers to prevent breakage." },
-    { "stepNo": 7, "instruction": "Repeat the measurement if necessary to confirm the observed melting point range." }
-  ],
-  "defaultResult": {
-    "summary": "The organic compound begins to melt at a specific temperature and becomes completely liquid within a narrow range, giving its melting point range. A sharp melting point suggests a relatively pure sample.",
-    "calculation": "If the first sign of melting is observed at 120 °C and the compound becomes completely liquid at 122 °C, then the melting point range is 120–122 °C."
-  },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
-  },
-  "conclusion": "",
-  "safetyNotes": "Handle hot oil baths and heating equipment carefully. Wear goggles and avoid overheating the oil or apparatus to prevent accidents."
-},
-{
-  "id": 8,
-  "title": "Determination of Boiling Point of an Organic Liquid",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To determine the boiling point of a given organic liquid using the capillary method.",
-  "hypothesis": "",
-  "materials": [
-    "Boiling point apparatus or small beaker",
-    "Organic liquid sample",
-    "Capillary tube",
-    "Thermometer",
-    "Small test tube",
-    "Oil bath",
-    "Rubber band or clamp",
-    "Spatula"
-  ],
-  "theory": "The boiling point of a liquid is the temperature at which its vapor pressure becomes equal to the external atmospheric pressure and it changes from liquid to vapor throughout the bulk. Boiling point is a characteristic physical property used for the identification and assessment of purity of liquids.\n\nIn the capillary method, a small quantity of the organic liquid is placed in a test tube along with an inverted capillary tube. As the temperature of the surrounding bath is increased, air trapped in the capillary expands and escapes as bubbles through the liquid. At the boiling point, a rapid stream of bubbles emerges. When the heating is stopped and the temperature falls, bubbling ceases, and the temperature at which the last bubble enters the capillary indicates the boiling point.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Take a small, dry test tube and add 2–3 mL of the organic liquid sample." },
-    { "stepNo": 2, "instruction": "Seal one end of a small capillary tube by heating it in a flame and allow it to cool." },
-    { "stepNo": 3, "instruction": "Place the capillary tube in the test tube with the sealed end pointing downwards and immersed in the liquid." },
-    { "stepNo": 4, "instruction": "Attach the test tube to a thermometer using a rubber band so that the bulb of the thermometer is near the level of the liquid." },
-    { "stepNo": 5, "instruction": "Place the thermometer and test tube assembly in an oil bath contained in a beaker or boiling point apparatus." },
-    { "stepNo": 6, "instruction": "Heat the oil bath slowly and observe the capillary for the appearance of bubbles." },
-    { "stepNo": 7, "instruction": "Continue heating until a rapid stream of bubbles emerges from the capillary tube." },
-    { "stepNo": 8, "instruction": "Stop heating and allow the bath to cool while closely watching the capillary." },
-    { "stepNo": 9, "instruction": "Note the temperature at which the last bubble enters the capillary tube; this is taken as the boiling point of the liquid." },
-    { "stepNo": 10, "instruction": "Repeat the determination if necessary to confirm the boiling point." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Ensure that the test tube and capillary are clean and dry before use." },
-    { "stepNo": 2, "instruction": "The organic liquid should be free from solid impurities for accurate results." },
-    { "stepNo": 3, "instruction": "Heat the oil bath slowly, especially near the expected boiling point, to avoid overshooting." },
-    { "stepNo": 4, "instruction": "Ensure the thermometer bulb is at the same level as the organic liquid." },
-    { "stepNo": 5, "instruction": "Do not overheat the oil bath; it may decompose or pose a fire hazard." },
-    { "stepNo": 6, "instruction": "Handle hot apparatus with tongs or appropriate holders to avoid burns." },
-    { "stepNo": 7, "instruction": "Work in a well-ventilated area if the organic liquid is volatile or has strong odor." }
-  ],
-  "defaultResult": {
-    "summary": "A continuous stream of bubbles appears from the capillary on heating and ceases at a specific temperature during cooling. This temperature is taken as the boiling point of the organic liquid under the given atmospheric conditions.",
-    "calculation": "If the last bubble is observed to enter the capillary at 80 °C during cooling, then the boiling point of the liquid is recorded as 80 °C (uncorrected)."
-  },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
-  },
-  "conclusion": "",
-  "safetyNotes": "Avoid open flames near volatile organic liquids. Use goggles and gloves, and handle the hot oil bath and glassware carefully."
-},
-{
-  "id": 9,
-  "title": "Identification of Functional Groups by Preliminary Organic Analysis",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To perform preliminary tests to identify common functional groups such as aldehydes, ketones, alcohols, and carboxylic acids in an organic compound.",
-  "hypothesis": "",
-  "materials": [
-    "Unknown organic compound",
-    "Test tubes",
-    "Droppers",
-    "2,4-Dinitrophenylhydrazine (2,4-DNP) reagent",
-    "Tollens' reagent",
-    "Fehling's solution A and B",
-    "Sodium bicarbonate solution",
-    "Litmus paper",
-    "Distilled water",
-    "Water bath"
-  ],
-  "theory": "Functional groups in organic compounds determine their characteristic reactions. Preliminary tests can give useful indications about the presence of certain functional groups.\n\nCarboxylic acids react with sodium bicarbonate solution to produce effervescence due to CO2 gas. Aldehydes generally give positive results with Tollens' reagent (silver mirror) and Fehling's solution (red precipitate of Cu2O), whereas ketones usually do not. Both aldehydes and ketones typically give yellow to orange precipitates with 2,4-DNP (2,4-dinitrophenylhydrazone formation).\n\nAlcohols can be further characterized by specific tests (such as ester formation or chromic acid test), but preliminary solubility and litmus tests can distinguish acidic, basic, and neutral compounds.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Place a small amount of the unknown organic compound in a clean test tube and observe its physical state, color, and odor." },
-    { "stepNo": 2, "instruction": "Test the compound with blue and red litmus papers to check if it is acidic, basic, or neutral." },
-    { "stepNo": 3, "instruction": "For carboxylic acid test, add a few drops of the compound or its solution to a test tube containing sodium bicarbonate solution and observe for effervescence due to CO2 gas." },
-    { "stepNo": 4, "instruction": "For 2,4-DNP test, add a few drops of the compound to 2,4-DNP reagent and shake; observe whether a yellow or orange precipitate forms, indicating presence of a carbonyl group (aldehyde or ketone)." },
-    { "stepNo": 5, "instruction": "For Tollens' test, add the compound to freshly prepared Tollens' reagent and warm gently in a water bath; observe if a silver mirror is formed on the inner walls of the test tube (indicative of an aldehyde)." },
-    { "stepNo": 6, "instruction": "For Fehling's test, mix equal volumes of Fehling's solution A and B, add the compound, and heat in a water bath; observe if a brick-red precipitate of Cu2O forms (indicative of certain aldehydes)." },
-    { "stepNo": 7, "instruction": "Record observations for each test and infer the likely functional group(s) present in the compound." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Use small quantities of the organic compound and reagents to minimize waste and exposure." },
-    { "stepNo": 2, "instruction": "Handle Tollens' reagent carefully and do not store it; discard it immediately after use as it may form explosive deposits on standing." },
-    { "stepNo": 3, "instruction": "Avoid inhaling vapors of volatile organic compounds; work in a well-ventilated area." },
-    { "stepNo": 4, "instruction": "Do not directly touch reagents with bare hands; use droppers and spatulas." },
-    { "stepNo": 5, "instruction": "Heat test tubes gently in a water bath rather than directly over a flame to avoid splashing and decomposition." },
-    { "stepNo": 6, "instruction": "Wear appropriate personal protective equipment including lab coat, gloves, and goggles." },
-    { "stepNo": 7, "instruction": "Dispose of organic waste and heavy metal-containing solutions according to teacher or lab instructions." }
-  ],
-  "defaultResult": {
-    "summary": "Based on the preliminary tests, characteristic observations such as effervescence with sodium bicarbonate, formation of a silver mirror with Tollens' reagent, or a yellow/orange 2,4-DNP precipitate help in identifying whether the compound contains carboxylic acid, aldehyde, or ketone functional groups.",
-    "calculation": "No numerical calculation is required. Interpretation is based on qualitative observations from each test and correlating them with known reactions of functional groups."
-  },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
-  },
-  "conclusion": "",
-  "safetyNotes": "Use extreme care with Tollens' and Fehling's reagents. Work in a ventilated area and avoid skin contact with reagents and unknown organic compounds."
-},
-{
-  "id": 10,
-  "title": "Rate of Reaction Between Sodium Thiosulfate and Hydrochloric Acid",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To study the effect of concentration on the rate of reaction between sodium thiosulfate and hydrochloric acid.",
-  "hypothesis": "",
-  "materials": [
-    "Sodium thiosulfate solution",
-    "Hydrochloric acid (dilute)",
-    "Conical flasks",
-    "Measuring cylinders",
-    "Stopwatch",
-    "White paper with a marked cross (X)",
-    "Distilled water",
-    "Beakers"
-  ],
-  "theory": "The rate of a chemical reaction depends on various factors, including concentration, temperature, surface area, and presence of catalysts. According to collision theory, increasing the concentration of reactants increases the frequency of effective collisions, thereby increasing the reaction rate.\n\nThe reaction between sodium thiosulfate (Na2S2O3) and hydrochloric acid (HCl) produces sulfur, which forms a colloidal suspension, making the solution cloudy:\n\nNa2S2O3(aq) + 2HCl(aq) → 2NaCl(aq) + SO2(g) + S(s) + H2O(l).\n\nThe time taken for a marked cross under the reaction flask to become obscured by the precipitated sulfur can be used as a measure of the reaction rate. For a given set of conditions, rate is often taken as 1 / time.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Place a sheet of white paper with a clearly marked cross (X) on the bench." },
-    { "stepNo": 2, "instruction": "Pour a measured volume (e.g., 25 mL) of sodium thiosulfate solution into a conical flask and place it on the paper over the cross." },
-    { "stepNo": 3, "instruction": "Measure a fixed volume (e.g., 5 mL) of dilute hydrochloric acid using a measuring cylinder." },
-    { "stepNo": 4, "instruction": "Add the hydrochloric acid quickly to the sodium thiosulfate solution, swirl the flask once, and start the stopwatch immediately." },
-    { "stepNo": 5, "instruction": "Observe the cross from above the flask and stop the stopwatch when the cross just disappears from view due to cloudiness." },
-    { "stepNo": 6, "instruction": "Record the time taken for the cross to disappear." },
-    { "stepNo": 7, "instruction": "Repeat the experiment with different concentrations of sodium thiosulfate by diluting it with distilled water, keeping the volume of acid constant." },
-    { "stepNo": 8, "instruction": "For each concentration, record the time for the cross to disappear." },
-    { "stepNo": 9, "instruction": "Calculate the relative rate of reaction as 1 / time for each concentration and compare the values." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Use the same marked cross and viewing position for all trials to maintain consistency." },
-    { "stepNo": 2, "instruction": "Start the stopwatch immediately after mixing the reactants." },
-    { "stepNo": 3, "instruction": "Swirl the flask only once to avoid introducing extra variability in mixing." },
-    { "stepNo": 4, "instruction": "Carry out the experiment at approximately constant room temperature." },
-    { "stepNo": 5, "instruction": "Use clean glassware for each trial to avoid contamination of solutions." },
-    { "stepNo": 6, "instruction": "Dispose of sulfur-containing solutions properly; do not pour large quantities down the sink without dilution." },
-    { "stepNo": 7, "instruction": "Wear goggles and gloves when handling acids and chemical solutions." }
-  ],
-  "defaultResult": {
-    "summary": "As the concentration of sodium thiosulfate increases, the time taken for the cross to disappear decreases, indicating that the reaction proceeds faster. This demonstrates that reaction rate increases with increasing reactant concentration.",
-    "calculation": "If at concentration C1 the time t1 = 60 s, then relative rate R1 = 1 / t1 = 1 / 60 s⁻¹ ≈ 0.0167 s⁻¹. At a higher concentration C2 where t2 = 30 s, R2 = 1 / 30 s⁻¹ ≈ 0.0333 s⁻¹, showing that the rate approximately doubles when the time halves."
-  },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
-  },
-  "conclusion": "",
-  "safetyNotes": "Perform the experiment in a well-ventilated area because sulfur dioxide gas is produced. Avoid inhaling fumes and wear appropriate eye and hand protection."
-},
-{
-  "id": 11,
-  "title": "Preparation of Oxygen Gas and Study of Its Properties",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To prepare oxygen gas in the laboratory and study its combustion-supporting properties.",
-  "hypothesis": "",
-  "materials": [
-    "Test tubes",
-    "Delivery tube",
-    "Beaker",
-    "Water trough",
-    "Hydrogen peroxide (H2O2) solution",
-    "Manganese dioxide (MnO2) catalyst",
-    "Glowing splint",
-    "Wooden splints",
-    "Gas jar",
-    "Cork with hole"
-  ],
-  "theory": "Oxygen is a colorless, odorless gas that supports combustion but does not burn itself. In the laboratory, oxygen can be prepared by the catalytic decomposition of hydrogen peroxide using manganese dioxide as a catalyst:\n\n2H2O2(aq) → 2H2O(l) + O2(g).\n\nThe oxygen gas evolved can be collected over water in gas jars. A glowing wooden splint introduced into a jar of oxygen relights more brightly, demonstrating that oxygen supports combustion.\n\nThis experiment illustrates catalytic decomposition and the role of oxygen in combustion processes.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Arrange the apparatus for gas collection over water using a trough filled with water and an inverted gas jar." },
-    { "stepNo": 2, "instruction": "Take a clean test tube or flask fitted with a cork and delivery tube for generating gas." },
-    { "stepNo": 3, "instruction": "Add a small amount of manganese dioxide (MnO2) catalyst into the test tube or flask." },
-    { "stepNo": 4, "instruction": "Carefully pour hydrogen peroxide solution into the test tube so that it covers the MnO2, and quickly close it with the cork fitted with the delivery tube." },
-    { "stepNo": 5, "instruction": "Place the open end of the delivery tube under the inverted gas jar filled with water in the trough so that the evolving oxygen displaces the water." },
-    { "stepNo": 6, "instruction": "Allow oxygen gas to collect in the gas jar until most of the water is displaced." },
-    { "stepNo": 7, "instruction": "When the gas jar is filled with oxygen, remove it from the trough by covering its mouth with a glass plate." },
-    { "stepNo": 8, "instruction": "Light a wooden splint, blow it out to obtain a glowing splint, and quickly insert it into the gas jar containing oxygen." },
-    { "stepNo": 9, "instruction": "Observe the rekindling and brightening of the glowing splint inside the gas jar." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Handle hydrogen peroxide carefully; it can cause irritation and bleaching of skin and fabrics." },
-    { "stepNo": 2, "instruction": "Use only a small, appropriate amount of MnO2 catalyst to control the rate of oxygen evolution." },
-    { "stepNo": 3, "instruction": "Ensure all connections in the apparatus are airtight to prevent gas leakage." },
-    { "stepNo": 4, "instruction": "Do not bring open flames near hydrogen peroxide bottles or concentrated reagents." },
-    { "stepNo": 5, "instruction": "Use a glowing splint, not a strongly burning flame, when testing oxygen in the gas jar." },
-    { "stepNo": 6, "instruction": "Wear goggles and gloves while handling chemicals and hot splints." },
-    { "stepNo": 7, "instruction": "Dispose of leftover hydrogen peroxide according to lab guidelines and wash the apparatus thoroughly after use." }
-  ],
-  "defaultResult": {
-    "summary": "Oxygen gas is successfully collected in the gas jar by downward displacement of water. When a glowing splint is introduced into the jar, it rekindles and burns more brightly, confirming that oxygen supports combustion.",
-    "calculation": "No detailed numerical calculation is required. The reaction stoichiometry shows that 2 moles of H2O2 produce 1 mole of O2. For example, 0.10 mol of H2O2 would theoretically yield 0.05 mol of O2 under ideal conditions."
-  },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
-  },
-  "conclusion": "",
-  "safetyNotes": "Avoid contact with hydrogen peroxide and manganese dioxide. Use protective eyewear and keep combustible materials away from oxygen-rich zones."
-},
-{
-  "id": 12,
-  "title": "Preparation of Hydrogen Gas and Study of Its Properties",
-  "date": "",
-  "studentName": "",
-  "class": "",
-  "objective": "To prepare hydrogen gas in the laboratory and study its burning characteristics.",
-  "hypothesis": "",
-  "materials": [
-    "Granulated zinc",
-    "Dilute hydrochloric acid",
-    "Kipp's apparatus or conical flask with delivery tube",
-    "Beaker",
-    "Water trough",
-    "Gas jars",
-    "Cork with hole",
-    "Burning splint",
-    "Glass plate"
-  ],
-  "theory": "Hydrogen is a colorless, odorless, and highly flammable gas. In the laboratory, it is commonly prepared by the reaction of a metal such as zinc with dilute hydrochloric acid:\n\nZn(s) + 2HCl(aq) → ZnCl2(aq) + H2(g).\n\nThe hydrogen gas evolved can be collected over water. When a burning splint is brought near the mouth of a test tube containing hydrogen, the gas burns with a characteristic 'pop' sound, indicating its presence and flammability.\n\nBecause hydrogen is lighter than air and extremely flammable, it must be handled carefully, and ignition tests should be performed only after displacing air from the apparatus.",
-  "procedure": [
-    { "stepNo": 1, "instruction": "Set up a Kipp's apparatus or a conical flask fitted with a cork and delivery tube for the preparation of hydrogen gas." },
-    { "stepNo": 2, "instruction": "Place some granulated zinc in the flask." },
-    { "stepNo": 3, "instruction": "Carefully add dilute hydrochloric acid to the flask so that it contacts the zinc, and quickly close the flask with the cork." },
-    { "stepNo": 4, "instruction": "Allow the initial gas to escape for some time to ensure that the air inside the apparatus is displaced and the gas flowing is mostly hydrogen." },
-    { "stepNo": 5, "instruction": "Collect hydrogen gas by downward displacement of water in inverted gas jars placed in a water trough if required." },
-    { "stepNo": 6, "instruction": "After a steady flow of hydrogen is established, bring a burning splint carefully near the mouth of the delivery tube or a gas jar containing hydrogen and observe the reaction." },
-    { "stepNo": 7, "instruction": "Note the characteristic 'pop' sound which indicates the presence of hydrogen gas." }
-  ],
-  "precautions": [
-    { "stepNo": 1, "instruction": "Allow the first portion of gas to escape before testing because it may contain a mixture of air and hydrogen." },
-    { "stepNo": 2, "instruction": "Do not test hydrogen with a large flame; use a small burning splint to avoid explosive ignition." },
-    { "stepNo": 3, "instruction": "Handle dilute hydrochloric acid carefully and avoid contact with skin and eyes." },
-    { "stepNo": 4, "instruction": "Use granulated zinc instead of powdered zinc to control the reaction rate." },
-    { "stepNo": 5, "instruction": "Ensure that the apparatus connections are tight to prevent leakage of hydrogen." },
-    { "stepNo": 6, "instruction": "Keep all flammable materials away from the working area when hydrogen is being generated." },
-    { "stepNo": 7, "instruction": "Wear goggles and gloves throughout the experiment to protect against splashes and burns." }
-  ],
-  "defaultResult": {
-    "summary": "Hydrogen gas is evolved when zinc reacts with dilute hydrochloric acid and can be collected over water. When tested with a burning splint, hydrogen burns with a 'pop' sound, confirming its presence and highly flammable nature.",
-    "calculation": "No detailed numerical calculation is required for basic property study. Stoichiometrically, 1 mole of Zn produces 1 mole of H2. For example, 0.10 mol of Zn would theoretically produce 0.10 mol of H2 gas under ideal conditions."
-  },
-  "discussion": {
-    "analysis": "",
-    "sourcesOfError": "",
-    "improvements": ""
-  },
-  "conclusion": "",
-  "safetyNotes": "Hydrogen is highly flammable; avoid open flames near leaks or concentrated streams of gas. Handle acids with care and wear appropriate eye and hand protection."
-}
-
-
-
-
-
-
+  {
+    "id": 6,
+    "title": "Hooke's Law",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the spring constant of a helical spring by plotting a graph between load and extension.",
+    "hypothesis": "",
+    "materials": [
+      "Helical spring",
+      "Rigid support",
+      "Weight hanger and slotted weights",
+      "Meter scale",
+      "Pointer"
+    ],
+    "theory": "Hooke's Law states that within the elastic limit, the extension (x) produced in a spring is directly proportional to the applied load (F).\n\nF = kx\n\nWhere k is the spring constant (force constant). The slope of the Load (F) vs Extension (x) graph gives k.",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Suspend the spring from a rigid support and attach a pointer and weight hanger."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Note the initial reading of the pointer on the scale with the dead load (hanger)."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Add weights in steps (e.g., 50g) and note the reading for each weight."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Remove weights one by one and note the readings again (unloading)."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Calculate the extension x for each load."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Plot a graph of Load (mg) vs Extension (x)."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Do not load the spring beyond its elastic limit."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Wait for the spring to stop oscillating before taking readings."
+      }
+    ],
+    "defaultResult": {
+      "summary": "The graph is a straight line, verifying Hooke's Law.",
+      "calculation": "Spring constant k = Slope of F-x graph = ΔF / Δx (N/m)."
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": ""
+    },
+    "conclusion": "",
+    "safetyNotes": "Keep feet away from below the weights in case they fall.",
+    "observationConfig": {
+      "columns": [
+        {
+          "name": "Sno"
+        },
+        {
+          "name": "Load (M) [g]",
+          "type": "number"
+        },
+        {
+          "name": "Reading Loading [cm]",
+          "type": "number"
+        },
+        {
+          "name": "Reading Unloading [cm]",
+          "type": "number"
+        },
+        {
+          "name": "Mean Reading [cm]",
+          "type": "number"
+        },
+        {
+          "name": "Extension (x) [cm]",
+          "type": "number"
+        }
+      ]
+    },
+    "graphConfig": {
+      "type": "line",
+      "xAxisKey": "Extension (x) [cm]",
+      "yAxisKey": "Load (M) [g]",
+      "title": "Load vs Extension Graph",
+      "xLabel": "Extension (x) [cm]",
+      "yLabel": "Load (M) [g]"
+    }
+  }
 ]

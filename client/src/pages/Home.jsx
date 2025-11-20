@@ -38,8 +38,8 @@ export default function Home() {
   return (
     <div className="home-container">
       <header className="hero-section">
-        <h1 className="hero-title">🧪 ChemAI Lab</h1>
-        <p className="hero-subtitle">Your Smart Virtual Chemistry Mentor</p>
+        <h1 className="hero-title">⚛️ Physics Lab Assistant</h1>
+        <p className="hero-subtitle">Your Smart Virtual Physics Mentor</p>
       </header>
 
       <main className="content-section">
