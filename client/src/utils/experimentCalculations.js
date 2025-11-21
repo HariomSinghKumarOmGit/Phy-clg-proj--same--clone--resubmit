@@ -154,6 +154,14 @@ export const calculateRow = (experimentId, row, index, allRows, sampleData) => {
     if (!isNaN(t20)) {
       newRow[3] = (t20 / 20).toFixed(3);
     }
+  } else if (experimentId === 8) {
+    // Planck's Constant
+    // Cols: SNo[0], Wavelength[1], V0[2], 1/lambda[3]
+    const lambda_nm = parseFloat(newRow[1]);
+    if (!isNaN(lambda_nm) && lambda_nm > 0) {
+      const lambda_m = lambda_nm * 1e-9;
+      newRow[3] = (1 / lambda_m).toExponential(4);
+    }
   } else if (experimentId === 9) {
     // Fresnel Biprism
     // Cols: SNo[0], N[1], MSR[2], VSR[3], Total[4], Diff10[5], Beta[6]
@@ -380,11 +388,55 @@ export const calculateSummary = (experimentId, rows, sampleData) => {
     const meanBeta = sumBeta / count;
 
     const D = sampleData?.D_cm || 100;
-    const two_d = sampleData?.computed_2d_cm || 1;
-    const lambda_cm = (D * meanBeta) / two_d;
+    const two_d = sampleData?.computed_2d_cm || 0.1; // Default to something reasonable if missing
+    const lambda_cm = (meanBeta * two_d) / D;
     const lambda_A = lambda_cm * 1e8;
 
-    return `Mean β = ${meanBeta.toFixed(4)} cm\nD = ${D} cm\n2d (factor) = ${two_d}\n\nλ = (D × β) / 2d\nλ = (${D} × ${meanBeta.toFixed(4)}) / ${two_d}\nλ = ${lambda_cm.toExponential(4)} cm\nλ = ${lambda_A.toFixed(1)} Å`;
+    return `Mean β = ${meanBeta.toFixed(4)} cm\nD = ${D} cm\n2d = ${two_d} cm\n\nλ = (β × 2d) / D\nλ = (${meanBeta.toFixed(4)} × ${two_d}) / ${D}\nλ = ${lambda_cm.toExponential(4)} cm\nλ = ${lambda_A.toFixed(1)} Å`;
+
+  } else if (experimentId === 8) {
+    // Planck's Constant Summary
+    // Linear regression of V0 (y) vs 1/λ (x)
+    // Slope m = (NΣxy - ΣxΣy) / (NΣx² - (Σx)²)
+    // h = slope * e / c
+
+    let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+    let count = 0;
+
+    rows.forEach(row => {
+      const lambda_nm = parseFloat(row[1]);
+      const V0 = parseFloat(row[2]);
+
+      if (!isNaN(lambda_nm) && !isNaN(V0) && lambda_nm > 0) {
+        const x = 1 / (lambda_nm * 1e-9); // 1/λ in m⁻¹
+        const y = V0; // Volts
+
+        sumX += x;
+        sumY += y;
+        sumXY += x * y;
+        sumX2 += x * x;
+        count++;
+      }
+    });
+
+    if (count < 2) return "Enter at least 2 readings to calculate slope.";
+
+    const slope = (count * sumXY - sumX * sumY) / (count * sumX2 - sumX * sumX);
+
+    // Constants
+    const e = 1.60217663e-19;
+    const c = 2.99792458e8;
+
+    const h = (slope * e) / c;
+    const standard = 6.626e-34;
+    const error = Math.abs((standard - h) / standard) * 100;
+
+    return `Linear Regression (V₀ vs 1/λ):\nSlope = ${slope.toExponential(4)} V·m\n\nPlanck's Constant h = (Slope × e) / c\nh = (${slope.toExponential(4)} × ${e.toExponential(4)}) / ${c.toExponential(4)}\nh = ${h.toExponential(4)} J·s\n\nStandard Value: ${standard.toExponential(4)} J·s\nPercentage Error: ${error.toFixed(2)} %`;
+
+  } else if (experimentId === 7) {
+    // Compound Pendulum Summary
+    // Cannot auto-calc g without L1, L2 from graph.
+    return "Note: Acceleration due to gravity (g) and Radius of Gyration (K) must be calculated from the graph of T vs Distance.\n\ng = 4π²L / T²\nK = √(L₁L₂)";
 
   } else if (experimentId === 10) {
     // Numerical Aperture

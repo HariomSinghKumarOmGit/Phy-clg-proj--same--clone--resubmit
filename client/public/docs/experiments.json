@@ -1738,68 +1738,58 @@
     "observationTable": {
       "columns": [
         {
-          "name": "S.No.",
-          "type": "string"
+          "name": "S.No",
+          "type": "number"
         },
         {
-          "name": "Voltage (V)",
-          "type": "string"
+          "name": "Wavelength (nm)",
+          "type": "number"
         },
         {
-          "name": "Current (mA)",
-          "type": "string"
+          "name": "Turn-on Voltage (V0)",
+          "type": "number"
+        },
+        {
+          "name": "1/λ (m⁻¹)",
+          "type": "number"
         }
       ],
       "rows": [
         [
           "1",
-          "0.80",
-          "0.00"
+          "470",
+          "",
+          ""
         ],
         [
           "2",
-          "1.00",
-          "0.02"
+          "505",
+          "",
+          ""
         ],
         [
           "3",
-          "1.20",
-          "0.10"
+          "570",
+          "",
+          ""
         ],
         [
           "4",
-          "1.40",
-          "0.20"
+          "590",
+          "",
+          ""
         ],
         [
           "5",
-          "1.60",
-          "0.40"
+          "650",
+          "",
+          ""
         ],
         [
           "6",
-          "1.80",
-          "0.90"
-        ],
-        [
-          "7",
-          "2.00",
-          "1.50"
-        ],
-        [
-          "8",
-          "2.20",
-          "2.30"
-        ],
-        [
-          "9",
-          "2.40",
-          "3.20"
-        ],
-        [
-          "10",
-          "2.60",
-          "4.10"
+          "980",
+          "",
+          ""
         ]
       ]
     },
@@ -1814,27 +1804,75 @@
       "vivaVoce": [
         {
           "question": "What is LED?",
-          "answer": "A Light Emitting Diode that emits light on forward bias."
+          "answer": "Light Emitting Diode, a semiconductor light source."
         },
         {
-          "question": "Why do LEDs emit light?",
-          "answer": "Due to electron-hole recombination releasing photons."
+          "question": "How does LED emit the light?",
+          "answer": "During the forward bias of PN junction, the barrier potential effect is reduced and majority carriers cross the junction. Then the free electrons from n region crosses the barrier causes an electron-hole pair recombination. Each recombination radiates energy in the form of light."
         },
         {
-          "question": "Define turn-on voltage.",
-          "answer": "Minimum forward voltage at which LED begins emitting light."
+          "question": "Why does LED emit the light in forward bias only?",
+          "answer": "During the reverse bias of PN junction there is no recombination of majority carriers and causes no radiation of light."
         },
         {
-          "question": "What is the relation between V0 and wavelength?",
-          "answer": "eV0 = hc/λ; hence V0 is inversely proportional to λ."
+          "question": "What is knee voltage?",
+          "answer": "The forward voltage at which the current through the junction starts increasing rapidly, is called the knee voltage or cut-in voltage."
         },
         {
-          "question": "How is Planck’s constant related to the slope?",
-          "answer": "Slope = hc/e; so h = slope × (e/c)."
+          "question": "What is turn-on Voltage? Describe its use in determining the energy of the radiation emitted by the LED?",
+          "answer": "Minimum voltage required to emit the light radiation. Energy of emitted light is proportional to the turn–on voltage."
         },
         {
-          "question": "Why is LED used instead of normal diode?",
-          "answer": "LED emits light due to bandgap energy, normal diode does not."
+          "question": "Why does knee voltage different for different color LED?",
+          "answer": "Depends on amount of impurity added."
+        },
+        {
+          "question": "How does Knee voltage vary with wavelength?",
+          "answer": "A wavelength of the emitted light is inversely proportional to the turn – on voltage."
+        },
+        {
+          "question": "Explain Planck’s radiation law.",
+          "answer": "(Refer Lecture notes)."
+        },
+        {
+          "question": "Explain the principle of the experiment.",
+          "answer": "Energy of the emitted radiation is proportional to the frequency of the radiation emitted. E∝ν."
+        },
+        {
+          "question": "How it is different from Si/Ge diode?",
+          "answer": "LED is made of GaAs (Gallium Arsenide) semiconductor material which shows the optical properties when electron-hole recombination takes place. While Si/Ge-made diode or semiconductor shows thermal properties, they start to heat up when current flows. On the other hand LED glow."
+        },
+        {
+          "question": "How LED works?",
+          "answer": "When forward bias gives to the light emitting diode (LED), immediately LED doesn’t glow and takes some time. The minimum potential at which LED starts to glow is known as the stopping potential. The light from LED is the result of electron and hole recombination in the depletion region."
+        },
+        {
+          "question": "Why Minimum potential is required to glow the LED?",
+          "answer": "There is a potential barrier for the charge carrier to cross the junction, to overcome it they required this amount of potential energy. And then after with small change in potential, they cross the junction, and current flows through the LED."
+        },
+        {
+          "question": "In the photoelectric effect, a suitable frequency of photon falls on an electron in an atom and ejects the electron. In LED when electron-hole recombination takes place a photon emits. How do you see these two phenomena?",
+          "answer": "Both phenomena are different, in the case of the “photoelectric effect” to emit the electron, from the surface of a material, a minimum energy of threshold frequency is required. While on the other hand, in a light-emitting diode (LED) photon emits when electron-hole recombination takes place above the threshold value of the voltage; known as stopping potential."
+        },
+        {
+          "question": "Why do you put two different energies eV and hv equal, what is the condition that they satisfy in the LED?",
+          "answer": "The potential energy eV is responsible to recombine the electron-hole recombination, by which a photon of the energy hv emits. Because of this reason, one can put eV=hν."
+        },
+        {
+          "question": "Which material do we use in the LED?",
+          "answer": "Gallium Arsenide which is of a semiconductor nature."
+        },
+        {
+          "question": "How are photons emitted from the LED and from which section of the LED?",
+          "answer": "When electron-hole recombine photons emit, these emit from the depletion region."
+        },
+        {
+          "question": "What happens when you provide the forward bias to the LED in terms of the conduction band & valence band in the depletion region?",
+          "answer": "Conduction band and valence band drift in the depletion region."
+        },
+        {
+          "question": "Why does not LED start to glow immediately when you provide the forwarding bias to that?",
+          "answer": "Because of the potential barrier at the junction for the charge carriers."
         }
       ]
     },
@@ -2026,12 +2064,12 @@
     "sampleData": {
       "leastCount_micrometer_divisions": 0.01,
       "D_cm": 100,
-      "computed_2d_cm": 100000,
-      "notes": "2d (virtual source separation) may be computed from biprism geometry (2d = 2a(μ − 1)α) or measured by displacement method. For this sample dataset we use 2d = 100000 cm to produce λ ≈ 5893 Å."
+      "computed_2d_cm": 0.1,
+      "notes": "2d (virtual source separation) is typically small (e.g., 0.1 cm). Formula: λ = (β × 2d) / D."
     },
     "defaultResult": {
       "summary": "Using the sample data the calculated mean wavelength ≈ 5893 Å which matches standard sodium doublet (5893–5896 Å).",
-      "calculation": "Steps:\n1. Compute β for each trial: β = (Difference for 10 fringes) / 10. (Example trial 1: β = 0.592 / 10 = 0.0592 cm).\n2. Use λ = (D × β) / (2d). Using D = 100 cm and 2d = 100000 cm:\n   Trial 1: λ = (100 × 0.0592) / 100000 = 5.92e-05 cm = 5.92e-07 m = 5920 Å\n   Trial 2: λ = (100 × 0.0588) / 100000 = 5.88e-05 cm = 5.88e-07 m = 5880 Å\n   Trial 3: λ = 5.90e-05 cm = 5900 Å\n   Trial 4: λ = 5.85e-05 cm = 5850 Å\n   Trial 5: λ = 5.89e-05 cm = 5890 Å\n3. Mean λ (cm) = (5.92e-05 + 5.88e-05 + 5.90e-05 + 5.85e-05 + 5.89e-05) / 5 = 5.893e-05 cm\n   Mean λ (m) = 5.893e-07 m\n   Mean λ (Å) = 5893 Å"
+      "calculation": "Steps:\n1. Compute β for each trial: β = (Difference for 10 fringes) / 10. (Example trial 1: β = 0.592 / 10 = 0.0592 cm).\n2. Use λ = (β × 2d) / D. Using D = 100 cm and 2d = 0.1 cm:\n   Trial 1: λ = (0.0592 × 0.1) / 100 = 5.92e-05 cm = 5.92e-07 m = 5920 Å\n   Trial 2: λ = (0.0588 × 0.1) / 100 = 5.88e-05 cm = 5.88e-07 m = 5880 Å\n   Trial 3: λ = 5.90e-05 cm = 5900 Å\n   Trial 4: λ = 5.85e-05 cm = 5850 Å\n   Trial 5: λ = 5.89e-05 cm = 5890 Å\n3. Mean λ (cm) = (5.92e-05 + 5.88e-05 + 5.90e-05 + 5.85e-05 + 5.89e-05) / 5 = 5.893e-05 cm\n   Mean λ (m) = 5.893e-07 m\n   Mean λ (Å) = 5893 Å"
     },
     "calculation": {
       "workedValues": {
@@ -2267,7 +2305,57 @@
     "discussion": {
       "analysis": "Sample values give a mean NA ~0.0793. The measured NA is lower than typical multimode NA values because sample fiber or setup may be single-mode or coupling was inefficient; this highlights the importance of careful alignment and endface quality.",
       "sourcesOfError": "Imperfect endface cut, misalignment (non-perpendicular screen), measurement error in D, low coupling efficiency, bending losses.",
-      "improvements": "Use calibrated screen, increase number of repeats, use microscope/micrometer for spot diameter measurement, ensure fiber endface polish and precise perpendicular mounting."
+      "improvements": "Use calibrated screen, increase number of repeats, use microscope/micrometer for spot diameter measurement, ensure fiber endface polish and precise perpendicular mounting.",
+      "vivaVoce": [
+        {
+          "question": "What is the basic structure of a modern optical fiber?",
+          "answer": "The modern optical fiber consists of an optical rod core coated with a cladding. The core and the cladding have different optical characteristics."
+        },
+        {
+          "question": "What are the two principal photo detectors used in a fiber optic line?",
+          "answer": "PIN photo diode & Avalanche photo diode (APD)."
+        },
+        {
+          "question": "What do you mean by numerical aperture of an optical fiber?",
+          "answer": "It is a measure of light collecting (gathering) capacity of the fiber. It is a dimensionless quantity and is less than unity, typical values ranging from 0.14 to 0.5."
+        },
+        {
+          "question": "What is a graded index fiber?",
+          "answer": "If the refractive index of the core in a fiber is made to vary as a function of the radial distance from the centre of the fiber, it is called graded index fiber. i.e., refractive index decreases as distance increases."
+        },
+        {
+          "question": "What is meant by modes?",
+          "answer": "The propagation of light energy in an optical fiber takes place at distinct angles of propagation called the modes of propagation or modes."
+        },
+        {
+          "question": "What is the difference between photovoltaic mode and photoconductive mode of operation of photo diode?",
+          "answer": "PIN photodiode is operated with zero reverse bias called photovoltaic mode of operation."
+        },
+        {
+          "question": "What type of material is used in the detector for regions 800-900 nm and 1100-1600 nm?",
+          "answer": "800-900 nm : Silicon. 1100-1600 nm : InGaAs alloy."
+        },
+        {
+          "question": "Define quantum efficiency of a detector.",
+          "answer": "Quantum efficiency (η) is defined as the number of electron-hole pairs generated per incident photon energy and is given by = No. of electron-hole pairs generated / No. of incident photons."
+        },
+        {
+          "question": "Define V-number.",
+          "answer": "V-number is defined by : V=2πa/λ×N.A.. It is a dimensionless number gives a measure of the number of modes a fiber can support."
+        },
+        {
+          "question": "What are the advantages of plastic fiber?",
+          "answer": "The toughness and durability of plastic allow these fibers to be handled without special care. High NA (0.6), large acceptance angle (70∘) and large core diameter (110-1400 µm) permit the use of inexpensive LED and make it economically attractive."
+        },
+        {
+          "question": "Define Dispersion.",
+          "answer": "Dispersion is defined as the pulse spread as function of wavelength. The effect, that causes the output pulse to be wider than the input pulse."
+        },
+        {
+          "question": "What are single mode lasers?",
+          "answer": "Single mode lasers contain only a single longitudinal mode and a single transverse mode. Consequently, the spectral width of the optical emission is very narrow."
+        }
+      ]
     },
     "conclusion": "Using the spot method and the sample dataset, the mean NA ≈ 0.0793. Report this with method details and uncertainty estimates for lab records.",
     "safetyNotes": "Avoid looking into the fiber output if a high-power source is used. Handle fiber carefully to avoid sharp bends and cuts.",
