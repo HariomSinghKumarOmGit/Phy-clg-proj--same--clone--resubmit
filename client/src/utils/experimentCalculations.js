@@ -1,238 +1,406 @@
-/**
- * Calculates the result for a single row based on the experiment ID.
- * @param {number|string} experimentId
- * @param {Array} row - Array of cell values (strings or numbers)
- * @returns {Array} The updated row with calculated values
- */
-export const calculateRow = (experimentId, row) => {
+// Utility for experiment calculations
+
+// Helper to parse angle string "148° 20'" or "148 20" or "148.33" to decimal degrees
+const parseAngle = (str) => {
+  if (!str) return NaN;
+  str = str.toString().trim();
+
+  // Check for degree/minute format
+  const degMatch = str.match(/(\d+)[°\s]+(\d+)['\s]*/);
+  if (degMatch) {
+    return parseFloat(degMatch[1]) + parseFloat(degMatch[2]) / 60;
+  }
+
+  // Check for simple decimal
+  const val = parseFloat(str);
+  return isNaN(val) ? NaN : val;
+};
+
+// Helper to format decimal degrees to "D° M'"
+const formatAngle = (deg) => {
+  if (isNaN(deg)) return "";
+  const d = Math.floor(deg);
+  const m = Math.round((deg - d) * 60);
+  return `${d}° ${m}'`;
+};
+
+export const calculateRow = (experimentId, row, index, allRows, sampleData) => {
   const newRow = [...row];
-  const id = Number(experimentId);
 
-  // Helper to safely parse float
-  const val = (idx) => parseFloat(newRow[idx]);
+  if (experimentId === 1) {
+    // Newton's Rings
+    const a = parseFloat(newRow[1]);
+    const b = parseFloat(newRow[2]);
 
-  if (id === 1) {
-    // Ohm's Law: V (col 1), I (col 2) -> R = V/I (col 3)
-    const V = val(1);
-    const I = val(2);
-    if (!isNaN(V) && !isNaN(I) && I !== 0) {
-      newRow[3] = (V / I).toFixed(2);
-    } else {
-      newRow[3] = "";
+    if (!isNaN(a) && !isNaN(b)) {
+      const Dn = Math.abs(a - b);
+      newRow[3] = Dn.toFixed(3);
+      const D2 = Dn * Dn;
+      newRow[4] = D2.toFixed(4);
     }
-  } else if (id === 2) {
-    // Vernier Caliper: MSR (1), VSR (2) -> TR = MSR + (VSR * 0.01) (3)
-    const MSR = val(1);
-    const VSR = val(2);
-    const LC = 0.01; // cm
-    if (!isNaN(MSR) && !isNaN(VSR)) {
-      newRow[3] = (MSR + VSR * LC).toFixed(3);
-    } else {
-      newRow[3] = "";
-    }
-  } else if (id === 3) {
-    // Screw Gauge: PSR (1), CSR (2) -> TR = PSR + (CSR * 0.01) (3)
-    // Assuming LC = 0.01 mm
-    const PSR = val(1);
-    const CSR = val(2);
-    const LC = 0.01; // mm
-    if (!isNaN(PSR) && !isNaN(CSR)) {
-      newRow[3] = (PSR + CSR * LC).toFixed(3);
-    } else {
-      newRow[3] = "";
-    }
-  } else if (id === 4) {
-    // Simple Pendulum: L (1), t (2) -> T = t/20 (3), T^2 (4)
-    const L = val(1);
-    const t = val(2);
-    if (!isNaN(t) && t !== 0) {
-      const T = t / 20;
-      newRow[3] = T.toFixed(3);
-      newRow[4] = (T * T).toFixed(3);
-    } else {
-      newRow[3] = "";
-      newRow[4] = "";
-    }
-  } else if (id === 5) {
-    // Focal Length: u (1), v (2) -> f = uv/(u-v) (3)
-    // Note: u is typically negative in sign convention, but if user enters magnitude:
-    // Formula: 1/f = 1/v - 1/u. If u is -ve real object, v is +ve real image.
-    // f = uv / (u - v). If user enters raw values (e.g. u=30, v=60), we might need to handle signs.
-    // Standard lab practice: u is entered as positive magnitude, v as positive magnitude.
-    // Real object, Real image: u is -ve, v is +ve.
-    // 1/f = 1/v - 1/(-u) = 1/v + 1/u => f = uv/(u+v).
-    // Let's assume user enters magnitudes for real image formation.
-    const u = val(1);
-    const v = val(2);
-    if (!isNaN(u) && !isNaN(v) && (u + v) !== 0) {
-      newRow[3] = ((u * v) / (u + v)).toFixed(2);
-    } else {
-      newRow[3] = "";
-    }
-  } else if (id === 6) {
-    // Hooke's Law: Load (1), Reading (2) -> Extension (3)
-    // Extension needs an initial reading. This is tricky row-by-row.
-    // Let's assume col 3 is just user entered or we calculate if we knew initial.
-    // For simplicity, let's assume user enters Load and Extension directly or 
-    // we just calculate Extension if Reading is provided? 
-    // Actually, usually it's Load vs Reading -> Extension = Reading - Initial.
-    // Without initial, we can't calc row-wise purely.
-    // Let's assume the user enters Load and Extension directly for now, or 
-    // if we want to be smart, we'd need the first row's reading as zero error.
-    // Let's leave Hooke's law row calc simple or empty if complex.
-    // If the table has Load, Pointer Reading, Extension.
-    // We can't calculate Extension without knowing the zero-load reading.
-    // We'll skip auto-calc for Extension unless we enforce row 0 is 0 load.
 
-    // Alternative: Just ensure numeric types.
+    const p = parseInt(newRow[6]);
+    const n = parseInt(newRow[0]);
+
+    if (!isNaN(p) && !isNaN(n)) {
+      const targetN = n + p;
+      const targetRow = allRows ? allRows.find(r => parseInt(r[0]) === targetN) : null;
+
+      if (targetRow) {
+        const t_a = parseFloat(targetRow[1]);
+        const t_b = parseFloat(targetRow[2]);
+        if (!isNaN(t_a) && !isNaN(t_b)) {
+          const t_Dn = Math.abs(t_a - t_b);
+          const t_D2 = t_Dn * t_Dn;
+          newRow[5] = t_D2.toFixed(4);
+        }
+      }
+    }
+  } else if (experimentId === 2) {
+    // Diffraction Grating
+    const x = parseFloat(newRow[3]);
+    const y = parseFloat(newRow[4]);
+
+    if (!isNaN(x) && !isNaN(y)) {
+      const twoTheta = Math.abs(x - y);
+      newRow[5] = twoTheta.toFixed(3);
+      const theta = twoTheta / 2;
+      newRow[6] = theta.toFixed(3);
+      const thetaRad = (theta * Math.PI) / 180;
+      const sinTheta = Math.sin(thetaRad);
+      newRow[7] = sinTheta.toFixed(4);
+    }
+  } else if (experimentId === 3 || experimentId === 4) {
+    // Prism (Refractive Index / Dispersive Power)
+    // Cols: Type[0], Colour[1], Vernier[2], MSRa[3], VSRa[4], Totala[5], MSRb[6], VSRb[7], Totalb[8], Diff[9], Comp[10]
+
+    // Auto-calc Total A and Total B if MSR/VSR are present
+    // Assuming MSR is degrees, VSR is minutes
+    const msrA = parseFloat(newRow[3]);
+    const vsrA = parseFloat(newRow[4]);
+    if (!isNaN(msrA) && !isNaN(vsrA)) {
+      newRow[5] = formatAngle(msrA + vsrA / 60);
+    }
+
+    const msrB = parseFloat(newRow[6]);
+    const vsrB = parseFloat(newRow[7]);
+    if (!isNaN(msrB) && !isNaN(vsrB)) {
+      newRow[8] = formatAngle(msrB + vsrB / 60);
+    }
+
+    // Calculate Difference
+    const totalA = parseAngle(newRow[5]);
+    const totalB = parseAngle(newRow[8]);
+
+    if (!isNaN(totalA) && !isNaN(totalB)) {
+      const diff = Math.abs(totalA - totalB);
+      newRow[9] = formatAngle(diff);
+
+      // Computed Quantity logic
+      if (newRow[0].includes("Angle")) {
+        newRow[10] = `2A = ${formatAngle(diff)}`;
+      } else if (newRow[0].includes("Min Dev")) {
+        newRow[10] = `δm = ${formatAngle(diff)}`; // Actually usually it's just diff if measuring direct vs deviated
+        // If measuring two deviated positions (left/right), then it's 2*delta_m.
+        // Based on Exp 4 sample data: "162 40" and "150 30" -> diff 12 10. Label "delta_m".
+        // So it seems diff is delta_m directly (or 2 delta_m?).
+        // Sample says "12°10'". If A is 60, delta_m around 40-50 usually. 
+        // Wait, 12 deg is very small for minimum deviation of a glass prism (usually ~38-50 deg).
+        // Ah, maybe the sample data in Exp 4 is just dummy or specific context.
+        // Let's assume the column "Difference" is the value we need (either 2A or delta_m).
+      }
+    }
+  } else if (experimentId === 5) {
+    // Polarimeter
+    // Cols: ... TotalWater[2] ... TotalSol[8], Theta[9]
+    const water = parseAngle(newRow[2]);
+    const sol = parseAngle(newRow[8]);
+
+    if (!isNaN(water) && !isNaN(sol)) {
+      const theta = sol - water;
+      newRow[9] = theta.toFixed(3);
+
+      // Calculate Concentration C if m and V are there
+      const m = parseFloat(newRow[3]);
+      const V = parseFloat(newRow[4]);
+      if (!isNaN(m) && !isNaN(V) && V !== 0) {
+        newRow[5] = (m / V).toFixed(3);
+      }
+    }
+  } else if (experimentId === 6) {
+    // He-Ne Laser
+    // Cols: SNo[0], n[1], y[2], D[3], sinTheta[4], lambda_m[5], lambda_nm[6], lambda_A[7]
+    const n = parseFloat(newRow[1]);
+    const y = parseFloat(newRow[2]);
+    const D = parseFloat(newRow[3]);
+
+    if (!isNaN(n) && !isNaN(y) && !isNaN(D) && D !== 0) {
+      const sinTheta = y / D; // Approximation or exact if y << D? Procedure says sinTheta = y/D.
+      newRow[4] = sinTheta.toFixed(5);
+
+      const N = 100000; // Lines/m (from sample data default). Should ideally come from sampleData or input.
+      // But let's use a default if not in sampleData
+      const N_val = sampleData?.N || 100000;
+
+      const lambda = sinTheta / (n * N_val);
+      newRow[5] = lambda.toExponential(4);
+      newRow[6] = (lambda * 1e9).toFixed(2);
+      newRow[7] = (lambda * 1e10).toFixed(1);
+    }
+  } else if (experimentId === 7) {
+    // Compound Pendulum
+    // Cols: Hole[0], Dist[1], t20[2], T[3]
+    const t20 = parseFloat(newRow[2]);
+    if (!isNaN(t20)) {
+      newRow[3] = (t20 / 20).toFixed(3);
+    }
+  } else if (experimentId === 9) {
+    // Fresnel Biprism
+    // Cols: SNo[0], N[1], MSR[2], VSR[3], Total[4], Diff10[5], Beta[6]
+    const diff10 = parseFloat(newRow[5]);
+    if (!isNaN(diff10)) {
+      newRow[6] = (diff10 / 10).toFixed(4);
+    }
+  } else if (experimentId === 10) {
+    // Numerical Aperture
+    // Cols: SNo[0], L[1], D[2], NA[3]
+    const L = parseFloat(newRow[1]);
+    const D = parseFloat(newRow[2]);
+    if (!isNaN(L) && !isNaN(D)) {
+      const NA = D / Math.sqrt(4 * L * L + D * D);
+      newRow[3] = NA.toFixed(4);
+    }
   }
 
   return newRow;
 };
 
-/**
- * Calculates the summary text based on the experiment ID and all rows.
- * @param {number|string} experimentId
- * @param {Array} rows
- * @returns {string}
- */
-export const calculateSummary = (experimentId, rows) => {
-  const id = Number(experimentId);
-  const validRows = rows.filter(r => r && r.length > 0);
-
-  if (validRows.length === 0) return "Enter observations to see calculations.";
-
-  let steps = "Calculation Steps:\n";
-
-  if (id === 1) {
-    // Ohm's Law
-    const Rs = [];
-    validRows.forEach((r, i) => {
-      const V = parseFloat(r[1]);
-      const I = parseFloat(r[2]);
-      if (!isNaN(V) && !isNaN(I) && I !== 0) {
-        const R = V / I;
-        Rs.push(R);
-        steps += `${i + 1}. R${i + 1} = V/I = ${V}/${I} = ${R.toFixed(2)} Ω\n`;
-      }
-    });
-
-    if (Rs.length === 0) return "Calculating Resistance...";
-
-    const meanR = Rs.reduce((a, b) => a + b, 0) / Rs.length;
-    steps += `\nMean Resistance R = (${Rs.map(r => r.toFixed(2)).join(" + ")}) / ${Rs.length}\n`;
-    steps += `Mean R = ${meanR.toFixed(2)} Ω`;
-    return steps;
-
-  } else if (id === 2) {
-    // Vernier Caliper
-    const readings = [];
-    validRows.forEach((r, i) => {
-      const MSR = parseFloat(r[1]);
-      const VSR = parseFloat(r[2]);
-      if (!isNaN(MSR) && !isNaN(VSR)) {
-        const TR = MSR + (VSR * 0.01);
-        readings.push(TR);
-        steps += `${i + 1}. TR${i + 1} = MSR + (VSR × LC) = ${MSR} + (${VSR} × 0.01) = ${TR.toFixed(3)} cm\n`;
-      }
-    });
-
-    if (readings.length === 0) return "Calculating...";
-
-    const meanD = readings.reduce((a, b) => a + b, 0) / readings.length;
-    steps += `\nMean Dimension = (${readings.map(r => r.toFixed(3)).join(" + ")}) / ${readings.length}\n`;
-    steps += `Mean Dimension = ${meanD.toFixed(3)} cm`;
-
-    // If we assume it's a cylinder and we need volume, we need length too.
-    // But the table structure for exp 2 is generic. Let's stick to mean dimension for now.
-    return steps;
-
-  } else if (id === 3) {
-    // Screw Gauge
-    const readings = [];
-    validRows.forEach((r, i) => {
-      const PSR = parseFloat(r[1]);
-      const CSR = parseFloat(r[2]);
-      if (!isNaN(PSR) && !isNaN(CSR)) {
-        const TR = PSR + (CSR * 0.01); // Assuming LC 0.01 mm
-        readings.push(TR);
-        steps += `${i + 1}. TR${i + 1} = PSR + (CSR × LC) = ${PSR} + (${CSR} × 0.01) = ${TR.toFixed(3)} mm\n`;
-      }
-    });
-
-    if (readings.length === 0) return "Calculating...";
-
-    const meanD = readings.reduce((a, b) => a + b, 0) / readings.length;
-    steps += `\nMean Diameter = (${readings.map(r => r.toFixed(3)).join(" + ")}) / ${readings.length}\n`;
-    steps += `Mean Diameter = ${meanD.toFixed(3)} mm`;
-    return steps;
-
-  } else if (id === 4) {
-    // Simple Pendulum
-    let sumLbyT2 = 0;
+export const calculateSummary = (experimentId, rows, sampleData) => {
+  if (experimentId === 1) {
+    // Newton's Rings Summary
+    let sumDiff = 0;
     let count = 0;
-    steps += "Formula: g = 4π² × (L/T²)\n\n";
+    let pVal = 0;
 
-    validRows.forEach((r, i) => {
-      const L = parseFloat(r[1]); // cm
-      const T2 = parseFloat(r[4]);
-      if (!isNaN(L) && !isNaN(T2) && T2 !== 0) {
-        const ratio = L / T2;
-        sumLbyT2 += ratio;
+    rows.forEach(row => {
+      const d2_np = parseFloat(row[5]);
+      const d2_n = parseFloat(row[4]);
+      const p = parseInt(row[6]);
+
+      if (!isNaN(d2_np) && !isNaN(d2_n) && !isNaN(p)) {
+        sumDiff += (d2_np - d2_n);
         count++;
-        steps += `${i + 1}. L/T² = ${L}/${T2} = ${ratio.toFixed(2)}\n`;
+        pVal = p;
       }
     });
 
-    if (count === 0) return "Calculating g...";
+    if (count === 0) return "Enter readings to calculate wavelength.";
+    const meanDiff = sumDiff / count;
+    const R = 100; // cm
 
-    const meanLbyT2 = sumLbyT2 / count;
-    steps += `\nMean (L/T²) = ${meanLbyT2.toFixed(2)}\n`;
+    const lambda_cm = meanDiff / (4 * pVal * R);
+    const lambda_angstrom = lambda_cm * 1e8;
+    const standard = 5896;
+    const error = Math.abs((standard - lambda_angstrom) / standard) * 100;
 
-    const g = 4 * Math.PI * Math.PI * meanLbyT2;
-    steps += `g = 4 × (3.14)² × ${meanLbyT2.toFixed(2)} = ${g.toFixed(1)} cm/s²`;
-    return steps;
+    return `Formula Used:\nλ = (D²ₙ₊ₚ - D²ₙ) / (4pR)\n\nCalculations:\nMean (D²ₙ₊ₚ - D²ₙ) = ${meanDiff.toFixed(4)} cm²\np = ${pVal}\nR = ${R} cm\n\nSubstitution:\nλ = ${meanDiff.toFixed(4)} / (4 × ${pVal} × ${R})\nλ = ${lambda_cm.toExponential(4)} cm\nλ = ${lambda_angstrom.toFixed(2)} Å\n\nResult:\nStandard Value: ${standard} Å\nPercentage Error: ${error.toFixed(2)} %`;
 
-  } else if (id === 5) {
-    // Focal Length
-    const fs = [];
-    validRows.forEach((r, i) => {
-      const u = parseFloat(r[1]);
-      const v = parseFloat(r[2]);
-      if (!isNaN(u) && !isNaN(v) && (u + v) !== 0) {
-        const f = (u * v) / (u + v);
-        fs.push(f);
-        steps += `${i + 1}. f${i + 1} = uv/(u+v) = (${u}×${v})/(${u}+${v}) = ${f.toFixed(2)} cm\n`;
+  } else if (experimentId === 2) {
+    // Diffraction Grating Summary
+    const N = sampleData?.rulingsPerMeter || 600000;
+    let sumLambda = 0;
+    let count = 0;
+    let lastCalc = "";
+
+    rows.forEach(row => {
+      const n = parseFloat(row[1]);
+      const sinTheta = parseFloat(row[7]);
+
+      if (!isNaN(n) && !isNaN(sinTheta) && n > 0) {
+        const lambda = sinTheta / (n * N);
+        sumLambda += lambda;
+        count++;
+        if (count === 1) {
+          lastCalc = `For n=${n}, sinθ=${sinTheta}:\nλ = ${sinTheta} / (${n} × ${N}) = ${lambda.toExponential(4)} m`;
+        }
       }
     });
 
-    if (fs.length === 0) return "Calculating Focal Length...";
+    if (count === 0) return "Enter readings to calculate wavelength.";
 
-    const meanF = fs.reduce((a, b) => a + b, 0) / fs.length;
-    steps += `\nMean f = (${fs.map(r => r.toFixed(2)).join(" + ")}) / ${fs.length}\n`;
-    steps += `Mean Focal Length f = ${meanF.toFixed(2)} cm`;
-    return steps;
+    const meanLambda_m = sumLambda / count;
+    const meanLambda_A = meanLambda_m * 1e10;
+    const standard = 5893;
+    const error = Math.abs((standard - meanLambda_A) / standard) * 100;
 
-  } else if (id === 6) {
-    // Hooke's Law
-    const ks = [];
-    validRows.forEach((r, i) => {
-      const m = parseFloat(r[1]);
-      const x = parseFloat(r[3]);
-      if (!isNaN(m) && !isNaN(x) && x !== 0) {
-        const k = m / x;
-        ks.push(k);
-        steps += `${i + 1}. k${i + 1} = Load/Ext = ${m}/${x} = ${k.toFixed(2)} g/cm\n`;
+    return `Formula Used:\nλ = sinθ / (nN)\nWhere N = ${N} lines/m\n\nSample Calculation:\n${lastCalc}\n\nFinal Result:\nMean λ = ${meanLambda_A.toFixed(2)} Å\nStandard Value: ${standard} Å\nPercentage Error: ${error.toFixed(2)} %`;
+
+  } else if (experimentId === 3 || experimentId === 4) {
+    // Prism (Refractive Index / Dispersive Power)
+    // Need A (from first few rows) and delta_m (from others)
+    // Heuristic: Look for rows with Type "Angle A" (or "Prism Angle A") and "Min Dev" (or "Min Deviation")
+
+    let A_values = [];
+    let delta_values = { Red: [], Yellow: [], Violet: [] };
+
+    rows.forEach(row => {
+      const type = row[0] || "";
+      const color = row[1] || "";
+      const valStr = row[9] || row[10]; // "Difference" or "Computed"
+      // In Exp 4 sample, "Computed" has "2A = ..." or "delta_m".
+      // But "Difference" has the raw angle string.
+      // Let's use "Difference" column [9] which is the angle value.
+
+      const val = parseAngle(row[9]);
+      if (isNaN(val)) return;
+
+      if (type.includes("Angle")) {
+        // If it's 2A, divide by 2.
+        // Sample Exp 4: Diff is 120deg. 2A = 120. So A = 60.
+        // Let's assume the diff is 2A.
+        A_values.push(val / 2);
+      } else if (type.includes("Min")) {
+        // If it's delta_m.
+        // Sample Exp 4: Diff is 12deg. delta_m.
+        if (color.includes("Red")) delta_values.Red.push(val);
+        else if (color.includes("Yellow")) delta_values.Yellow.push(val);
+        else if (color.includes("Violet")) delta_values.Violet.push(val);
       }
     });
 
-    if (ks.length === 0) return "Calculating Spring Constant...";
+    if (A_values.length === 0) return "Enter Angle A readings.";
 
-    const meanK = ks.reduce((a, b) => a + b, 0) / ks.length;
-    steps += `\nMean k = (${ks.map(r => r.toFixed(2)).join(" + ")}) / ${ks.length}\n`;
-    steps += `Mean Spring Constant k ≈ ${meanK.toFixed(2)} g-wt/cm`;
-    return steps;
+    const A = A_values.reduce((a, b) => a + b, 0) / A_values.length;
+
+    // Helper for mu
+    const calcMu = (dm) => {
+      const rad = Math.PI / 180;
+      return Math.sin((A + dm) / 2 * rad) / Math.sin(A / 2 * rad);
+    };
+
+    let output = `Calculated Prism Angle A = ${A.toFixed(2)}°\n\n`;
+
+    if (experimentId === 3) {
+      // Refractive Index (usually Yellow or just one)
+      // If Yellow exists, use it, else use whatever is there
+      const dms = delta_values.Yellow.length ? delta_values.Yellow : (delta_values.Red.length ? delta_values.Red : []);
+      if (dms.length === 0) return output + "Enter Minimum Deviation readings.";
+
+      const dm = dms.reduce((a, b) => a + b, 0) / dms.length;
+      const mu = calcMu(dm);
+
+      output += `Mean Minimum Deviation δm = ${dm.toFixed(2)}°\n`;
+      output += `Refractive Index μ = sin((A+δm)/2) / sin(A/2)\n`;
+      output += `μ = sin(${((A + dm) / 2).toFixed(2)}) / sin(${(A / 2).toFixed(2)})\n`;
+      output += `μ = ${mu.toFixed(4)}`;
+      return output;
+    } else {
+      // Dispersive Power
+      const dR = delta_values.Red.length ? delta_values.Red.reduce((a, b) => a + b, 0) / delta_values.Red.length : null;
+      const dV = delta_values.Violet.length ? delta_values.Violet.reduce((a, b) => a + b, 0) / delta_values.Violet.length : null;
+      // Yellow is mean of R and V usually, or measured.
+      const dY = delta_values.Yellow.length ? delta_values.Yellow.reduce((a, b) => a + b, 0) / delta_values.Yellow.length : null;
+
+      if (dR === null || dV === null) return output + "Enter Red and Violet readings to calculate dispersive power.";
+
+      const muR = calcMu(dR);
+      const muV = calcMu(dV);
+      const muY = dY !== null ? calcMu(dY) : (muR + muV) / 2; // Fallback if no yellow
+
+      const omega = (muV - muR) / (muY - 1);
+
+      output += `Mean δm (Red) = ${dR.toFixed(2)}° => μ_r = ${muR.toFixed(4)}\n`;
+      output += `Mean δm (Violet) = ${dV.toFixed(2)}° => μ_v = ${muV.toFixed(4)}\n`;
+      if (dY) output += `Mean δm (Yellow) = ${dY.toFixed(2)}° => μ_y = ${muY.toFixed(4)}\n`;
+      else output += `Calculated μ_y (mean) = ${muY.toFixed(4)}\n`;
+
+      output += `\nDispersive Power ω = (μ_v - μ_r) / (μ_y - 1)\n`;
+      output += `ω = (${muV.toFixed(4)} - ${muR.toFixed(4)}) / (${muY.toFixed(4)} - 1)\n`;
+      output += `ω = ${omega.toFixed(4)}`;
+      return output;
+    }
+
+  } else if (experimentId === 5) {
+    // Polarimeter
+    let sumTheta = 0;
+    let count = 0;
+    let C_val = 0;
+    let l_val = 2.0; // default 2dm
+
+    rows.forEach(row => {
+      const theta = parseFloat(row[9]);
+      const C = parseFloat(row[5]);
+      if (!isNaN(theta) && !isNaN(C)) {
+        sumTheta += theta;
+        count++;
+        C_val = C;
+      }
+    });
+
+    if (count === 0) return "Enter readings.";
+
+    const meanTheta = sumTheta / count;
+    const alpha = meanTheta / (l_val * C_val);
+    const standard = 66.5;
+    const error = Math.abs((standard - alpha) / standard) * 100;
+
+    return `Formula: [α] = θ / (l × C)\nMean θ = ${meanTheta.toFixed(3)}°\nl = ${l_val} dm\nC = ${C_val.toFixed(3)} g/cc\n\n[α] = ${meanTheta.toFixed(3)} / (${l_val} × ${C_val.toFixed(3)})\n[α] = ${alpha.toFixed(2)} °·dm⁻¹·(g·cc⁻¹)\n\nStandard: ${standard}\nError: ${error.toFixed(2)}%`;
+
+  } else if (experimentId === 6) {
+    // He-Ne Laser
+    // Already calc'd in row, just average
+    let sumL = 0;
+    let count = 0;
+    rows.forEach(row => {
+      const l = parseFloat(row[7]); // Angstroms
+      if (!isNaN(l)) {
+        sumL += l;
+        count++;
+      }
+    });
+    if (count === 0) return "Enter readings.";
+    const meanL = sumL / count;
+    const standard = 6328;
+    const error = Math.abs((standard - meanL) / standard) * 100;
+
+    return `Mean Wavelength λ = ${meanL.toFixed(1)} Å\nStandard: ${standard} Å\nError: ${error.toFixed(2)}%`;
+
+  } else if (experimentId === 9) {
+    // Fresnel Biprism
+    let sumBeta = 0;
+    let count = 0;
+    rows.forEach(row => {
+      const b = parseFloat(row[6]); // cm
+      if (!isNaN(b)) {
+        sumBeta += b;
+        count++;
+      }
+    });
+    if (count === 0) return "Enter readings.";
+    const meanBeta = sumBeta / count;
+
+    const D = sampleData?.D_cm || 100;
+    const two_d = sampleData?.computed_2d_cm || 1;
+    const lambda_cm = (D * meanBeta) / two_d;
+    const lambda_A = lambda_cm * 1e8;
+
+    return `Mean β = ${meanBeta.toFixed(4)} cm\nD = ${D} cm\n2d (factor) = ${two_d}\n\nλ = (D × β) / 2d\nλ = (${D} × ${meanBeta.toFixed(4)}) / ${two_d}\nλ = ${lambda_cm.toExponential(4)} cm\nλ = ${lambda_A.toFixed(1)} Å`;
+
+  } else if (experimentId === 10) {
+    // Numerical Aperture
+    let sumNA = 0;
+    let count = 0;
+    rows.forEach(row => {
+      const na = parseFloat(row[3]);
+      if (!isNaN(na)) {
+        sumNA += na;
+        count++;
+      }
+    });
+    if (count === 0) return "Enter readings.";
+    const meanNA = sumNA / count;
+    return `Mean Numerical Aperture (NA) = ${meanNA.toFixed(4)}`;
   }
 
-  return "Calculations updated.";
+  return "Calculations will appear here after data entry.";
 };

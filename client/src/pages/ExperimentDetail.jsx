@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { loadExperimentById } from '../utils/loadExperiments';
 import ChatBot from '../components/ChatBot';
 import '../styles/ExperimentDetail.css';
-import ObservationTable from './ObservatinTable';
+import ObservationTable from './ObservationTable';
 import { calculateRow, calculateSummary } from '../utils/experimentCalculations';
 import TypewriterText from '../components/TypewriterText';
 
@@ -34,13 +34,13 @@ export default function ExperimentDetail() {
     if (!exp) return;
 
     // Auto-calculate rows
-    const updatedRows = (newTable.rows || []).map(row => calculateRow(exp.id, row));
+    const updatedRows = (newTable.rows || []).map((row, index, array) => calculateRow(exp.id, row, index, array, exp.sampleData));
 
     const updatedTable = { ...newTable, rows: updatedRows };
     setObservationTable(updatedTable);
 
     // Auto-calculate summary
-    const summary = calculateSummary(exp.id, updatedRows);
+    const summary = calculateSummary(exp.id, updatedRows, exp.sampleData);
     setCalculationResult(summary);
   };
 
@@ -155,6 +155,11 @@ export default function ExperimentDetail() {
             <StepViewer steps={exp.precautions} title="Precautions" experimentId={exp.id} />
           </section>
 
+          {/* Viva Voce */}
+          {exp.discussion?.vivaVoce && exp.discussion.vivaVoce.length > 0 && (
+            <VivaVoceSection vivaVoce={exp.discussion.vivaVoce} />
+          )}
+
           {/* Safety Notes */}
           {exp.safetyNotes && (
             <section className="experiment-section safety-notes">
@@ -168,4 +173,83 @@ export default function ExperimentDetail() {
       </div>
     </div>
   );
-};
+}
+
+function VivaVoceSection({ vivaVoce }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % vivaVoce.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + vivaVoce.length) % vivaVoce.length);
+  };
+
+  if (showAll) {
+    return (
+      <section className="experiment-section">
+        <div className="flex justify-between items-center mb-4">
+          <h2>Viva Voce</h2>
+          <button
+            onClick={() => setShowAll(false)}
+            className="text-blue-600 hover:text-blue-800 text-sm font-semibold"
+          >
+            Show Carousel
+          </button>
+        </div>
+        <div className="space-y-4">
+          {vivaVoce.map((item, index) => (
+            <div key={index} className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <p className="font-semibold text-gray-800 mb-2">Q{index + 1}. {item.question}</p>
+              <p className="text-gray-600">Ans: {item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  const currentItem = vivaVoce[currentIndex];
+
+  return (
+    <section className="experiment-section">
+      <div className="flex justify-between items-center mb-4">
+        <h2>Viva Voce</h2>
+        <button
+          onClick={() => setShowAll(true)}
+          className="text-blue-600 hover:text-blue-800 text-sm font-semibold"
+        >
+          View All Questions
+        </button>
+      </div>
+
+      <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200 relative min-h-[150px] flex flex-col justify-center items-center text-center transition-all duration-300">
+
+        <button
+          onClick={handlePrev}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full p-2 transition-colors"
+          aria-label="Previous Question"
+        >
+          &#8592; {/* Left Arrow */}
+        </button>
+
+        <div className="px-8">
+          <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Question {currentIndex + 1} of {vivaVoce.length}</p>
+          <h3 className="text-lg font-bold text-gray-800 mb-3">{currentItem.question}</h3>
+          <p className="text-gray-600 italic">"{currentItem.answer}"</p>
+        </div>
+
+        <button
+          onClick={handleNext}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full p-2 transition-colors"
+          aria-label="Next Question"
+        >
+          &#8594; {/* Right Arrow */}
+        </button>
+
+      </div>
+    </section>
+  );
+}

@@ -1,718 +1,2276 @@
 [
   {
     "id": 1,
-    "title": "Verification of Ohm's Law",
+    "title": "Determination of Wavelength of Sodium Light by Newton's Rings",
     "date": "",
     "studentName": "",
     "class": "",
-    "objective": "To verify Ohm's Law and determine the resistance of a given wire.",
+    "objective": "To determine the wavelength of sodium light using Newton's Rings.",
     "hypothesis": "",
     "materials": [
-      "Battery eliminator",
-      "Ammeter",
-      "Voltmeter",
-      "Rheostat",
-      "Resistance wire",
-      "Connecting wires",
-      "Key"
+      "Newton's Rings setup",
+      "Plano-convex lens (large radius of curvature)",
+      "Plane glass plate",
+      "Travelling microscope",
+      "Sodium lamp (monochromatic source)"
+    ],
+    "asciiDiagrams": [
+      {
+        "label": "Experimental Setup",
+        "art": "M\nMICROSCOPE\n  ||\n  ||\n \\  /\n  \\/\n  ||\n  ||\n  VV\n  ^\n  | Reflected Light\n  |\n / / (G1)\n/ / Glass Plate (45 deg)\n/ /\n/ / <-----------------------( Light )--------------------|\n/ /                               |                     |\n                                 (L1)              [SODIUM]\n                              Convex Lens             LAMP (Slit)\n  |\n  | Incident Light\n  V\n __________\n(          ) Plano Convex Lens\n \\        /\n  \\______/\n================== (G2) Glass Plate\n__________________ Base"
+      },
+      {
+        "label": "Graph",
+        "art": "^ Y-axis (D^2_n)\n|\n|                       /\n|                      /\n|                     /\n|---------------------/\n|                   /|\n|                  / |\n|                 /  | (Slope)\n|                /   |\n|---------------/    |\n|              /|    |\n|             / |    |\n|            /  |    |\n|           /   |    |\n|__________/____|____|____> X-axis (Ring number)\n           A    B\n\nPlot graph of D^2(n) vs n. It should be a straight line. Slope = CD/AB where AB = p and CD = D^2(n+p) - D^2(n)."
+      }
+    ],
+    "theory": "The wavelength of monochromatic source is given by:\n\nλ = (D²ₙ₊ₚ - D²ₙ) / (4pR)\n\nWhere:\nDₙ₊ₚ = Diameter of (n+p)ᵗʰ ring\nDₙ = Diameter of nᵗʰ ring\np = Difference between two ring orders\nR = Radius of curvature of plano-convex lens\n\nMean Difference Formula: [D²ₙ₊ₚ - D²ₙ] (mean)",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Clean the glass plate and plano-convex lens using a soft cloth."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Place cross-wire in the eyepiece for ring reading."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Place the plano-convex lens with curved surface in contact with the plane plate. Adjust G1 at 45°, align microscope for clear rings."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "If rings are not circular, clean surfaces or adjust alignment."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Ensure air gap between plate and lens is very small."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Move microscope and align cross-wire through ring center."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Note the least count."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Move microscope to left side, focus at a certain ring (e.g., 20th)."
+      },
+      {
+        "stepNo": 9,
+        "instruction": "Record micrometer reading when cross-wire is tangential to ring edge."
+      },
+      {
+        "stepNo": 10,
+        "instruction": "Move towards center and record alternate ring readings (20th, 18th, 16th...)."
+      },
+      {
+        "stepNo": 11,
+        "instruction": "Cross center, continue on right side (4th, 6th… till 20th)."
+      },
+      {
+        "stepNo": 12,
+        "instruction": "Diameter = Left reading – Right reading."
+      },
+      {
+        "stepNo": 13,
+        "instruction": "Radius of curvature R = 100 cm."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Glass surfaces must be dust-free."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Adjust 45° plate until rings appear sharply."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Avoid backlash error by moving microscope in one direction."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Take even number of readings for accurate mean."
+      }
+    ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "Ring Number (n)",
+          "type": "string"
+        },
+        {
+          "name": "Left Reading (a)",
+          "type": "string"
+        },
+        {
+          "name": "Right Reading (b)",
+          "type": "string"
+        },
+        {
+          "name": "Diameter Dₙ = |a - b|",
+          "type": "string"
+        },
+        {
+          "name": "Dₙ²",
+          "type": "string"
+        },
+        {
+          "name": "Dₙ₊ₚ²",
+          "type": "string"
+        },
+        {
+          "name": "p",
+          "type": "string"
+        }
+      ],
+      "rows": [
+        [
+          "20",
+          "6.843",
+          "6.157",
+          "0.686",
+          "0.4706",
+          "-",
+          "-"
+        ],
+        [
+          "18",
+          "6.824",
+          "6.176",
+          "0.648",
+          "0.4199",
+          "-",
+          "-"
+        ],
+        [
+          "16",
+          "6.804",
+          "6.196",
+          "0.608",
+          "0.3697",
+          "-",
+          "-"
+        ],
+        [
+          "14",
+          "6.787",
+          "6.213",
+          "0.574",
+          "0.3295",
+          "-",
+          "-"
+        ],
+        [
+          "12",
+          "6.765",
+          "6.236",
+          "0.529",
+          "0.2798",
+          "0.4706",
+          "8"
+        ],
+        [
+          "10",
+          "6.740",
+          "6.260",
+          "0.480",
+          "0.2304",
+          "0.4199",
+          "8"
+        ],
+        [
+          "8",
+          "6.718",
+          "6.282",
+          "0.436",
+          "0.1901",
+          "0.3697",
+          "8"
+        ],
+        [
+          "6",
+          "6.687",
+          "6.313",
+          "0.374",
+          "0.1399",
+          "0.3295",
+          "8"
+        ]
+      ]
+    },
+    "defaultResult": {
+      "summary": "Calculated Wavelength: ................ × 10^-8 cm (................ Å)\nStandard Value: 5896 Å\n\nPercentage Error: ((standard - calculated) / standard) × 100 = ........ %",
+      "calculation": "Steps:\n1. Take CD = D^2(n+p) - D^2(n) from graph.\n2. Take AB = p from graph.\n3. λ = (1/(4R)) * (CD / AB)."
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": "",
+      "vivaVoce": [
+        {
+          "question": "What are Newton's Rings?",
+          "answer": "Newton’s rings are concentric, circular, dark and bright interference fringes."
+        },
+        {
+          "question": "If the film is illuminated by white light instead of yellow (sodium) light then what will happen?",
+          "answer": "A series of concentric colored rings with a dark centre will be observed around the point of contact."
+        },
+        {
+          "question": "What are the two nearby wavelengths produced by the sodium light?",
+          "answer": "5890Å and 5896Å."
+        },
+        {
+          "question": "What do you mean by monochromatic light?",
+          "answer": "The light which has only single wavelength is called monochromatic light. Practically sodium light is taken as monochromatic light."
+        },
+        {
+          "question": "What are coherent sources?",
+          "answer": "The two sources of light which emit waves with a zero or constant phase difference between them are called coherent sources."
+        },
+        {
+          "question": "How can you determine the radius of curvature ‘R’?",
+          "answer": "The radius of curvature may be found out by using spherometer method or by Boy’s method."
+        },
+        {
+          "question": "Do you get Newton’s rings in transmitted light?",
+          "answer": "Yes, we get a just opposite ring pattern in the transmitted light to that in reflected light."
+        },
+        {
+          "question": "How are Newton’s rings formed?",
+          "answer": "Due to the interference of light reflected from the upper and lower surfaces of the wedge-shaped film formed between the convex surface of the plano-convex lens and optically plane glass plate."
+        },
+        {
+          "question": "Why are these rings circular?",
+          "answer": "Newton’s rings are the focus of the points having constant thickness of air film which are concentric circles. Therefore, the rings are circular."
+        },
+        {
+          "question": "Why is the centre of these concentric rings dark?",
+          "answer": "Because, at the centre, the path difference between two interfering rays is λ/2 which corresponds to a dark fringe."
+        },
+        {
+          "question": "Sometimes the centre of Newton’s rings is bright, why?",
+          "answer": "It is because of the presence of dust particles at the point of contact."
+        },
+        {
+          "question": "Why do the rings become closer as their order increases?",
+          "answer": "Because the fringe width decreases with increasing order."
+        },
+        {
+          "question": "Is it necessary that the lens used in the formation of fringes should be plano-convex?",
+          "answer": "Yes, for accurate measurement, a plano-convex lens should be used."
+        },
+        {
+          "question": "On what factors does the diameter of the ring depend?",
+          "answer": "The diameter of the ring depends on: (i) proportional to the wavelength of the light used, (ii) inversely proportional to the refractive index of the enclosed film, (iii) proportional to the radius of curvature of the convex side of the plano-convex lens."
+        },
+        {
+          "question": "What are the uses of Newton’s rings?",
+          "answer": "The Newton’s rings are used: (i) to determine the wavelength of monochromatic light, (ii) to determine the refractive index of a liquid, (iii) to measure the radius of spherical surface, and (iv) to determine the expansion co-efficient of crystals."
+        }
+      ]
+    },
+    "conclusion": "",
+    "safetyNotes": ""
+  },
+  {
+    "id": 2,
+    "title": "Determination of Wavelength of Sodium Light Using Diffraction Grating",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the wavelength of sodium light using a plane transmission diffraction grating.",
+    "materials": [
+      "Sodium lamp",
+      "Spectrometer",
+      "Transmission diffraction grating",
+      "Spirit level",
+      "Telescope",
+      "Reading lens"
+    ],
+    "asciiDiagrams": [
+      {
+        "label": "Experimental Setup",
+        "art": "        [ Sodium Lamp ]\n             |\n             V\n      +--------------+\n      |  Collimator  |\n      +------+-------+\n             |\n             |\n      _______V_______\n     /               \\\n    |    Grating      |\n    |     |||||       |\n     \\_______|_______/\n             |  \\\n             |   \\ (Diffracted Ray)\n             |    \\\n             |     \\\n             |    +---------------+\n             |    |   Telescope   | ---> (Eye)\n             |    +---------------+\n             |\n        (Direct Ray)"
+      }
+    ],
+    "theory": "For normal incidence on a diffraction grating with N lines per meter, the diffracted light satisfies: nλ = (a + b) sin(θ). Since (a+b) = 1/N, wavelength becomes: λ = sin(θ) / (nN). Measuring θ for each order n allows calculation of λ.",
+    "formulasUsed": [
+      "nλ = (a + b) sinθ",
+      "λ = (sinθ) / (nN)"
+    ],
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Level the spectrometer using the spirit level."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Focus the slit image clearly using the telescope."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Mount the grating with ruled face toward the telescope."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Ensure normal incidence by aligning grating correctly."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Note the least count of the spectrometer."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Rotate telescope left for first-order spectrum and note MSR+VSR."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Rotate telescope right for the same spectral line and note MSR+VSR."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Compute 2θ = Left − Right and θ = (2θ)/2."
+      },
+      {
+        "stepNo": 9,
+        "instruction": "Calculate λ using λ = sinθ / (nN)."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "The spectrometer must be properly leveled using the spirit level before beginning the experiment."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Ensure that the slit is narrow and sharply focused for obtaining clear and sharp spectral lines."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "The diffraction grating should be handled carefully and should not be touched on the ruled surface."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Make all mechanical and optical adjustments slowly and carefully to avoid misalignment."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "When moving the telescope, always rotate in a single direction to avoid backlash error."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "While setting the cross-wire on the spectral lines, use the fine adjustment screw for precision."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Ensure the grating is set exactly normal to the incident light to obtain accurate diffraction angles."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Take readings on both left and right sides of the direct image and take their mean to minimize error."
+      }
+    ],
+    "sampleData": {
+      "leastCount_arcmin": 0.5,
+      "rulingsPerMillimeter": 600,
+      "rulingsPerMeter": 600000
+    },
+    "observationTable": {
+      "columns": [
+        "S.No",
+        "Order (n)",
+        "Vernier",
+        "Left Reading x (deg)",
+        "Right Reading y (deg)",
+        "2θ = x - y (deg)",
+        "θ (deg)",
+        "sinθ"
+      ],
+      "rows": [
+        [
+          "1",
+          "1",
+          "V1",
+          "221.200",
+          "179.800",
+          "41.400",
+          "20.700",
+          "0.3540002138557993"
+        ],
+        [
+          "2",
+          "1",
+          "V2",
+          "221.1967",
+          "179.8033",
+          "41.3934",
+          "20.6967",
+          "0.3539008799579667"
+        ]
+      ]
+    },
+    "calculation": {
+      "steps": [
+        "Step 1: Convert MSR + VSR to decimal degrees.",
+        "Step 2: Compute 2θ = x − y for each side.",
+        "Step 3: θ = (2θ)/2.",
+        "Step 4: Compute sinθ using scientific calculator.",
+        "Step 5: Use λ = sinθ / (nN)."
+      ],
+      "numericSubstitution": {
+        "n": 1,
+        "N_lines_per_m": 600000,
+        "two_theta_deg": 41.400,
+        "theta_deg": 20.700,
+        "sin_theta": 0.3540002138557993,
+        "lambda_m": 5.900003564263322e-07,
+        "lambda_nm": 590.0003564263322,
+        "lambda_A": 5900.003564263322
+      },
+      "computedValues": {
+        "mean_lambda_nm": 590.06,
+        "mean_lambda_A": 5900.6
+      }
+    },
+    "result": {
+      "experimental_lambda_A": 5900.6,
+      "standard_lambda_A": [
+        5890,
+        5896
+      ],
+      "percent_error": 0.214
+    },
+    "discussion": {
+      "analysis": "The calculated wavelength is close to the standard sodium doublet values (5890–5896 Å). Small deviations occur due to alignment, reading error and grating imperfections.",
+      "sourcesOfError": [
+        "Backlash in telescope movement",
+        "Imperfect normal incidence",
+        "Inaccurate grating ruling count",
+        "Human eye alignment error on spectral line"
+      ],
+      "improvements": [
+        "Use higher-order spectra for more accuracy.",
+        "Take multiple readings and average them.",
+        "Use a verified precision grating."
+      ],
+      "vivaVoce": [
+        {
+          "question": "What is a diffraction grating?",
+          "answer": "An optical element with large number of equally spaced parallel slits that diffract light."
+        },
+        {
+          "question": "What is the grating equation?",
+          "answer": "nλ = (a + b) sinθ, where (a + b) is grating element."
+        },
+        {
+          "question": "Why take readings on both sides?",
+          "answer": "To eliminate zero error and instrument asymmetry."
+        },
+        {
+          "question": "What increases resolution of grating?",
+          "answer": "Higher number of lines and higher order (n)."
+        }
+      ]
+    },
+    "conclusion": "The wavelength of sodium light determined using diffraction grating is approximately 5900 Å.",
+    "safetyNotes": "Handle grating cautiously; keep optical surfaces dust-free."
+  },
+  {
+    "id": 3,
+    "title": "Determination of Refractive Index of a Prism Using Spectrometer",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the refractive index of a prism using a spectrometer.",
+    "hypothesis": "",
+    "materials": [
+      "Spectrometer",
+      "Glass Prism",
+      "Mercury (Hg) Lamp",
+      "Reading lens",
+      "Spirit level"
+    ],
+    "asciiDiagrams": [
+      {
+        "label": "Experimental Setup",
+        "art": "      [ Mercury Lamp ]\n             |\n             V\n      +-------------+\n      |  Collimator |\n      +------+------+\n             |\n             V\n      ______/ \\______\n     /       A       \\\n    /                 \\\n   /       PRISM       \\\n  /_____________________\\\n             |\n             V\n      +-------------+\n      |  Telescope  |\n      +------+------+\n             |\n             V\n           (Eye)"
+      },
+      {
+        "label": "Measurement of Angle A",
+        "art": "             (Collimator)\n                    |\n                    V\n             _______________\n             \\      A      /\n              \\    / \\    /\n               \\  /   \\  /\n                \\/     \\/\n Reflection <--- \\ PRISM/ ---> Reflection\n from Face 1      \\____/       from Face 2\n      /                             \\\n     /                               \\\n    V                                 V\n[Telescope]                       [Telescope]\n(Reading T1)                      (Reading T2)\n\nAngle of Prism A = (T1 - T2) / 2"
+      }
+    ],
+    "theory": "The refractive index μ of the prism material is given by:\n\nμ = sin((A + δm)/2) / sin(A/2)\n\nWhere:\nA = Angle of prism\nδm = Angle of minimum deviation\n\nAt minimum deviation, the refracted path becomes symmetric inside the prism.",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Adjust telescope and collimator so their axes intersect the spectrometer's rotation axis."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Level the prism table using a spirit level."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Make the slit narrow, vertical and symmetric."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Record the least count of the vernier scales."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Focus telescope on a distant object for parallel rays."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Focus slit in collimator using mercury lamp."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Place prism so that collimator light falls on one refracting surface."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Use Schuster's method to get minimum deviation."
+      },
+      {
+        "stepNo": 9,
+        "instruction": "Record spectral line readings for minimum deviation (red, yellow, violet)."
+      },
+      {
+        "stepNo": 10,
+        "instruction": "Remove prism and take direct slit reading."
+      },
+      {
+        "stepNo": 11,
+        "instruction": "Compute δm = difference between readings."
+      },
+      {
+        "stepNo": 12,
+        "instruction": "Measure reflections from two prism faces to calculate A."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Slit should be narrow but not touching."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Set collimator and telescope separately for parallel rays."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Ensure maximum light falls on prism surface."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Clamp prism table and telescope before noting readings."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Use reading lens for accurate vernier scale reading."
+      }
+    ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "Type",
+          "type": "string"
+        },
+        {
+          "name": "Colour",
+          "type": "string"
+        },
+        {
+          "name": "Vernier",
+          "type": "string"
+        },
+        {
+          "name": "MSR (a)",
+          "type": "string"
+        },
+        {
+          "name": "VSR (a)",
+          "type": "string"
+        },
+        {
+          "name": "Total (a)",
+          "type": "string"
+        },
+        {
+          "name": "MSR (b)",
+          "type": "string"
+        },
+        {
+          "name": "VSR (b)",
+          "type": "string"
+        },
+        {
+          "name": "Total (b)",
+          "type": "string"
+        },
+        {
+          "name": "Difference (a - b)",
+          "type": "string"
+        },
+        {
+          "name": "Computed Quantity",
+          "type": "string"
+        }
+      ],
+      "rows": [
+        [
+          "Angle A",
+          "-",
+          "V1",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Angle A",
+          "-",
+          "V2",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Min Dev",
+          "Red",
+          "V1",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Min Dev",
+          "Red",
+          "V2",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Min Dev",
+          "Yellow",
+          "V1",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Min Dev",
+          "Yellow",
+          "V2",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Min Dev",
+          "Violet",
+          "V1",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Min Dev",
+          "Violet",
+          "V2",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    "defaultResult": {
+      "summary": "Refractive index μ = ..................\nStandard value for flint glass = .............\nPercentage Error = ............ %",
+      "calculation": "Steps:\n1. Calculate prism angle A from rows labeled 'Angle A'.\n2. Calculate δm for each colour from 'Min Dev' rows.\n3. μ = sin((A + δm)/2) / sin(A/2).\n4. For mean yellow: μ_y = (μ_r + μ_v) / 2."
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": "",
+      "vivaVoce": [
+        {
+          "question": "Define angle of deviation.",
+          "answer": "Angle between incident and emergent rays."
+        },
+        {
+          "question": "Which colour deviates most?",
+          "answer": "Violet."
+        },
+        {
+          "question": "Which colour deviates least?",
+          "answer": "Red."
+        },
+        {
+          "question": "What is dispersion?",
+          "answer": "Separation of white light into constituent colours."
+        },
+        {
+          "question": "What is critical angle?",
+          "answer": "Angle of incidence giving 90° refraction."
+        },
+        {
+          "question": "Why do diamonds sparkle?",
+          "answer": "High refractive index causes repeated total internal reflections."
+        }
+      ]
+    },
+    "conclusion": "",
+    "safetyNotes": ""
+  },
+  {
+    "id": 4,
+    "title": "Determination of Dispersive Power of a Prism Using Spectrometer",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the dispersive power of a prism using a spectrometer and a mercury source.",
+    "hypothesis": "",
+    "materials": [
+      "Spectrometer",
+      "Prism",
+      "Mercury (Hg) Lamp",
+      "Reading Lens",
+      "Spirit Level"
+    ],
+    "asciiDiagrams": [
+      {
+        "label": "Experimental Setup",
+        "art": "       [ Hg Source ]\n             |\n             V\n      +--------------+\n      |  Collimator  |\n      +--------------+\n             |\n             V\n        ______/ \\______\n       /       A       \\\n      /     PRISM       \\\n     /                   \\\n    /_____________________\\\n             |\n             | (Dispersed Rays)\n             V\n      . . . .|. . . . . .  (Violet)\n       .     |         .\n        .    |        .    (Red)\n         .   |       .\n          .  |      .\n           . V     .\n      +--------------+\n      |  Telescope   |\n      +--------------+"
+      },
+      {
+        "label": "Measurement of Prism Angle A",
+        "art": "                 (Collimator)\n                      |\n                      V\n               _______________\n               \\      A      /\n                \\    / \\    /\n                 \\  /   \\  /\n                  \\/     \\/\n   Reflection <--- \\ PRISM/ ---> Reflection\n   from Face 1      \\____/       from Face 2\n        /                             \\\n       /                               \\\n      V                                 V\n[Telescope Pos 1]                 [Telescope Pos 2]\n\nAngle A = (T1 - T2)/2"
+      }
+    ],
+    "theory": "The dispersive power ω of a prism material is defined as:\n\nω = (μ_v - μ_r) / (μ_y - 1)\n\nwhere:\nμ_v = refractive index for violet\nμ_r = refractive index for red\nμ_y = refractive index for yellow (mean)\n\nRefractive index μ is given by:\nμ = sin((A + δ_m)/2) / sin(A/2)\n\nA = angle of prism\nδ_m = angle of minimum deviation.",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Adjust telescope–collimator so their axes intersect rotation axis."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Level prism table using spirit level."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Make slit narrow, vertical and symmetric."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Note least count of spectrometer."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Adjust telescope using white wall, then distant object."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Place Hg lamp and adjust collimator for parallel rays."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Place prism and adjust height for maximum illumination."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Use Schuster’s method to reach minimum deviation."
+      },
+      {
+        "stepNo": 9,
+        "instruction": "Take readings for red, yellow, violet lines (min deviation)."
+      },
+      {
+        "stepNo": 10,
+        "instruction": "Remove prism and take direct slit reading."
+      },
+      {
+        "stepNo": 11,
+        "instruction": "Calculate δm for each colour."
+      },
+      {
+        "stepNo": 12,
+        "instruction": "Take reflections from both faces to compute A = (T1−T2)/2."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Slit should be narrow but knife edges must not touch."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Set telescope and collimator independently for parallel rays."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Adjust prism height so full surface is illuminated."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Clamp telescope and table before taking readings."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Use reading lens for accurate vernier readings."
+      }
+    ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "Type",
+          "type": "string"
+        },
+        {
+          "name": "Colour",
+          "type": "string"
+        },
+        {
+          "name": "Vernier",
+          "type": "string"
+        },
+        {
+          "name": "MSR (a)",
+          "type": "string"
+        },
+        {
+          "name": "VSR (a)",
+          "type": "string"
+        },
+        {
+          "name": "Total (a)",
+          "type": "string"
+        },
+        {
+          "name": "MSR (b)",
+          "type": "string"
+        },
+        {
+          "name": "VSR (b)",
+          "type": "string"
+        },
+        {
+          "name": "Total (b)",
+          "type": "string"
+        },
+        {
+          "name": "Difference (a - b)",
+          "type": "string"
+        },
+        {
+          "name": "Computed Quantity",
+          "type": "string"
+        }
+      ],
+      "rows": [
+        [
+          "Prism Angle A",
+          "-",
+          "V1",
+          "148°",
+          "20'",
+          "148°20'",
+          "28°",
+          "15'",
+          "28°15'",
+          "120°05'",
+          "2A = 120°05'"
+        ],
+        [
+          "Prism Angle A",
+          "-",
+          "V2",
+          "148°",
+          "18'",
+          "148°18'",
+          "28°",
+          "16'",
+          "28°16'",
+          "120°02'",
+          "2A = 120°02'"
+        ],
+        [
+          "Min Deviation",
+          "Red",
+          "V1",
+          "162°",
+          "40'",
+          "162°40'",
+          "150°",
+          "30'",
+          "150°30'",
+          "12°10'",
+          "δm_R"
+        ],
+        [
+          "Min Deviation",
+          "Red",
+          "V2",
+          "162°",
+          "38'",
+          "162°38'",
+          "150°",
+          "32'",
+          "150°32'",
+          "12°06'",
+          "δm_R"
+        ],
+        [
+          "Min Deviation",
+          "Yellow",
+          "V1",
+          "163°",
+          "50'",
+          "163°50'",
+          "150°",
+          "30'",
+          "150°30'",
+          "13°20'",
+          "δm_Y"
+        ],
+        [
+          "Min Deviation",
+          "Yellow",
+          "V2",
+          "163°",
+          "48'",
+          "163°48'",
+          "150°",
+          "32'",
+          "150°32'",
+          "13°16'",
+          "δm_Y"
+        ],
+        [
+          "Min Deviation",
+          "Violet",
+          "V1",
+          "165°",
+          "10'",
+          "165°10'",
+          "150°",
+          "30'",
+          "150°30'",
+          "14°40'",
+          "δm_V"
+        ],
+        [
+          "Min Deviation",
+          "Violet",
+          "V2",
+          "165°",
+          "08'",
+          "165°08'",
+          "150°",
+          "32'",
+          "150°32'",
+          "14°36'",
+          "δm_V"
+        ]
+      ]
+    },
+    "defaultResult": {
+      "summary": "Dispersive Power ω = ..............\nStandard value for flint glass = ..............\nPercentage Error = .............. %",
+      "calculation": "Steps:\n1. Compute A from rows labeled 'Prism Angle A'.\n2. Compute δm for red, yellow, violet.\n3. μ = sin((A + δm)/2) / sin(A/2).\n4. Compute μ_r, μ_y, μ_v.\n5. ω = (μ_v - μ_r) / (μ_y - 1)."
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": "",
+      "vivaVoce": [
+        {
+          "question": "Define angle of deviation.",
+          "answer": "Angle between incident and emergent ray."
+        },
+        {
+          "question": "Which colour deviates most?",
+          "answer": "Violet."
+        },
+        {
+          "question": "Which colour deviates least?",
+          "answer": "Red."
+        },
+        {
+          "question": "Define dispersion.",
+          "answer": "Splitting of light into constituent colours."
+        },
+        {
+          "question": "What is critical angle?",
+          "answer": "Angle of incidence giving 90° refraction."
+        },
+        {
+          "question": "Why do diamonds sparkle?",
+          "answer": "High μ → repeated total internal reflections."
+        }
+      ]
+    },
+    "conclusion": "",
+    "safetyNotes": ""
+  },
+  {
+    "id": 5,
+    "title": "Determination of Specific Rotation of Cane Sugar Solution Using Half-Shade Polarimeter",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the specific rotation of cane sugar (sucrose) solution using a half-shade polarimeter.",
+    "hypothesis": "",
+    "materials": [
+      "Half-shade polarimeter",
+      "Balance (accurate to 0.01 g)",
+      "Measuring cylinder (ml)",
+      "Beaker",
+      "Light source (monochromatic / sodium or suitable)",
+      "Polarimeter tube (2 decimeter length)"
+    ],
+    "asciiDiagrams": [
+      {
+        "label": "Half-Shade Polarimeter Setup",
+        "art": "      [Light Source]\n           |\n           V\n    (Collimating Lens)\n           |\n           V\n    +-------------+\n    |  Polarizer  |\n    +-------------+\n           |\n           V\n   [Half Shade Plate]\n           |\n           V\n  +------------------+\n  |  Polarimeter     |\n  |      Tube        |\n  +------------------+\n           |\n           V\n    +-------------+\n    |  Analyzer   |\n    +-------------+\n           |\n           V\n     [Telescope]\n           |\n           V\n         (Eye)"
+      }
+    ],
+    "theory": "Specific rotation [α] of an optically active substance is defined as the rotation produced per unit path length (in decimeters) per unit concentration (in g/cc). For a solution:\n\n[α] = θ / (l × C)\n\nWhere:\nθ = observed rotation in degrees (difference between solution and reference/pure water readings)\nl = length of polarimeter tube in decimeters (dm)\nC = concentration in g/cc (C = m / V, with m in grams and V in ml; convert ml to cc by 1 ml = 1 cc)\n\nUsing measured θ, l and C gives the specific rotation in degrees·dm⁻¹·(g·cc⁻¹).",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "If using half-shade device, use a monochromatic source; if using bi-quartz, white light can be used."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Clean the polarimeter tube thoroughly and ensure no dust or fingerprints remain."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Fill the tube with pure distilled water, avoiding air bubbles; place the tube in the instrument."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Switch on the light source and look through the eyepiece; rotate the analyzer until both halves appear equally bright and record the main scale and vernier readings for pure water."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Prepare the sugar solution of known mass and volume; dissolve sugar fully and make up to the required volume."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Empty the tube, fill it with the prepared sugar solution and place it in the polarimeter without trapping air bubbles."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Rotate the analyzer to obtain equal intensity position first clockwise then anticlockwise; note both readings and take their mean as the solution reading."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Subtract the pure-water reading from the solution reading to get θ (rotation due to sugar solution)."
+      },
+      {
+        "stepNo": 9,
+        "instruction": "Measure tube length in centimeters and convert to decimeters (l in dm = length_cm / 10)."
+      },
+      {
+        "stepNo": 10,
+        "instruction": "Compute concentration C = m / V (mass in g divided by volume in ml (cc))."
+      },
+      {
+        "stepNo": 11,
+        "instruction": "Calculate specific rotation [α] = θ / (l × C). Repeat for replicates and take mean."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Polarimeter tube must be cleaned thoroughly before use."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Use distilled water for preparation of sugar solution to avoid impurities."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Ensure there are no air bubbles inside the tube when filling it."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Set the analyzer position accurately; use fine adjustment for equal brightness."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Tighten the tube lid whenever the solution is changed to avoid spillage or air entry."
+      }
+    ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "Analyzer Reading (Pure Water) M.S.",
+          "type": "string"
+        },
+        {
+          "name": "Analyzer Reading (Pure Water) V.S.",
+          "type": "string"
+        },
+        {
+          "name": "Total (Pure Water) (deg)",
+          "type": "string"
+        },
+        {
+          "name": "Mass of Sugar (m) (g)",
+          "type": "string"
+        },
+        {
+          "name": "Volume of Solution (V) (ml)",
+          "type": "string"
+        },
+        {
+          "name": "Concentration C = m/V (g/cc)",
+          "type": "string"
+        },
+        {
+          "name": "Analyzer Reading (Solution) M.S.",
+          "type": "string"
+        },
+        {
+          "name": "Analyzer Reading (Solution) V.S.",
+          "type": "string"
+        },
+        {
+          "name": "Total (Solution) (deg)",
+          "type": "string"
+        },
+        {
+          "name": "θ = (Solution Total − Pure Water Total) (deg)",
+          "type": "string"
+        }
+      ],
+      "rows": [
+        [
+          "12",
+          "0",
+          "12°00' (12.000)",
+          "10.00",
+          "100",
+          "0.100",
+          "25",
+          "21'",
+          "25°21' (25.350)",
+          "13.350"
+        ],
+        [
+          "12",
+          "0",
+          "12°00' (12.000)",
+          "10.00",
+          "100",
+          "0.100",
+          "25",
+          "24'",
+          "25°24' (25.400)",
+          "13.400"
+        ],
+        [
+          "12",
+          "0",
+          "12°00' (12.000)",
+          "10.00",
+          "100",
+          "0.100",
+          "25",
+          "20'",
+          "25°20' (25.333)",
+          "13.333"
+        ]
+      ]
+    },
+    "defaultResult": {
+      "summary": "Mean specific rotation [α] calculated from three replicates ≈ 66.81°·dm⁻¹·(g·cc⁻¹). Standard value for sucrose (cane sugar) at 20°C ≈ 66.5°·dm⁻¹·(g·cc⁻¹). Percentage error ≈ 0.46%.",
+      "calculation": "Worked calculations (using l = 2.0 dm and C = 0.100 g/cc):\n\nReplicate 1:\nθ1 = 25.350 − 12.000 = 13.350°\n[α]1 = θ1 / (l × C) = 13.350 / (2.0 × 0.100) = 13.350 / 0.200 = 66.75°·dm⁻¹·(g·cc⁻¹)\n\nReplicate 2:\nθ2 = 25.400 − 12.000 = 13.400°\n[α]2 = 13.400 / 0.200 = 67.00°·dm⁻¹·(g·cc⁻¹)\n\nReplicate 3:\nθ3 = 25.333 − 12.000 = 13.333°\n[α]3 = 13.333 / 0.200 = 66.6665°·dm⁻¹·(g·cc⁻¹)\n\nMean specific rotation:\n[α]_mean = (66.75 + 67.00 + 66.6665) / 3 = 66.8055 ≈ 66.81°·dm⁻¹·(g·cc⁻¹)\n\nPercentage error (vs standard 66.5):\n% error = |66.5 − 66.8055| / 66.5 × 100 ≈ 0.46%."
+    },
+    "discussion": {
+      "analysis": "The experimentally determined mean specific rotation (≈66.81°) is very close to the standard sucrose value (≈66.5°), indicating correct procedure and accurate readings. Slight differences arise from temperature variation, concentration measurement error, or instrument reading uncertainty.",
+      "sourcesOfError": "Imprecise mass/volume measurement, air bubbles in the tube, imperfect cleaning of tube, parallax or vernier reading error, temperature not exactly 20°C.",
+      "improvements": "Use a thermostatted bath to maintain temperature at 20°C, make more replicates, use a more accurate balance and volumetric flask for solution preparation, ensure no trapped air bubbles.",
+      "vivaVoce": [
+        {
+          "question": "What is specific rotation?",
+          "answer": "Angle of rotation produced by an optically active substance per decimeter path length per unit concentration."
+        },
+        {
+          "question": "What unit does specific rotation have?",
+          "answer": "Degrees per decimeter per (g/cc); often written as °·dm⁻¹·(g·cc⁻¹)."
+        },
+        {
+          "question": "Why is distilled water used?",
+          "answer": "To avoid impurities that may introduce additional optical activity or scattering."
+        },
+        {
+          "question": "How does temperature affect specific rotation?",
+          "answer": "Specific rotation can change with temperature; many substances decrease in rotation as temperature increases."
+        },
+        {
+          "question": "What precautions prevent error in polarimetry?",
+          "answer": "Clean tube, avoid bubbles, accurate concentration measurement, proper analyzer adjustment and averaging clockwise/anticlockwise readings."
+        },
+        {
+          "question": "Why take readings in both directions (CW and CCW)?",
+          "answer": "To minimize systematic errors (backlash) and obtain a true mean position."
+        }
+      ]
+    },
+    "conclusion": "Using a 2.0 dm polarimeter tube and solution concentration 0.100 g/cc, the mean specific rotation for the prepared cane sugar solution was found to be ≈66.81°·dm⁻¹·(g·cc⁻¹), which closely matches the standard value for sucrose.",
+    "safetyNotes": "Handle glassware carefully to avoid breakage. Use caution with hot solutions. Clean spills immediately."
+  },
+  {
+    "id": 6,
+    "title": "Determination of Wavelength of He-Ne Laser Using Transmission Diffraction Grating",
+    "date": "",
+    "studentName": "",
+    "class": "",
+    "objective": "To determine the wavelength of a He–Ne laser using a transmission diffraction grating.",
+    "hypothesis": "",
+    "materials": [
+      "He–Ne laser (or red diode laser) with holder",
+      "Transmission diffraction grating",
+      "Millimeter graph sheet (screen)",
+      "Optical bench",
+      "Ruler / Vernier"
+    ],
+    "asciiDiagrams": [
+      {
+        "label": "Experimental Setup",
+        "art": "      [ Laser Source ]\n             |\n             V\n      +-------------+\n      | Diffraction |\n      |   Grating   |\n      +-------------+\n             |\n             |\n             |\n             | Distance (D)\n             |\n             |\n             V\n      ----------------- (Screen / Graph Sheet)\n      |       .       |  (n = 2)\n      |       .       |\n      |       .       |  (n = 1)\n      |               |\n      |       +       |  (Central Maxima, n = 0)\n      |               |\n      |       .       |  (n = 1)\n      |       .       |\n      |       .       |  (n = 2)\n      -----------------"
+      }
+    ],
+    "theory": "For a transmission grating with grating element (a + b), the grating equation for constructive maxima is:\n\nn λ = (a + b) sinθ\n\nIf N is the number of rulings per metre, (a + b) = 1 / N, so the lab form used here is:\n\nλ = sinθ / (n N)\n\nwhere θ is the diffraction angle for the nth order. For small angles sinθ ≈ y / D, but we use sinθ = y/D exactly here because y and D are measured directly on the screen.",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Mount the laser, grating and screen on the optical bench so that the beam, grating and screen are aligned."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Switch on the laser and observe diffraction spots on the screen: central maximum (n = 0) and symmetric orders (n = ±1, ±2 ...)."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Measure the distance D between the grating and the screen (in mm)."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Measure y, the distance from the central maximum to the nth order maximum on the screen (in mm)."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Compute sinθ = y / D for each order n."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Calculate λ (in metres) using λ = sinθ / (n N) where N is rulings per metre."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Convert λ to nm and Å (1 m = 1e9 nm = 1e10 Å)."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Repeat measurements for several orders and take the mean λ for the final result."
+      }
+    ],
+    "precautions": [
+      {
+        "stepNo": 1,
+        "instruction": "Never look directly into the laser beam; use safety goggles if available."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Ensure the grating is clean and handled by edges only; do not scratch the ruled surface."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Mount all components rigidly so vibrations do not blur the diffraction spots."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Use the millimeter graph sheet or a fixed scale to accurately measure y and D."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Keep ambient light low to view spots clearly and avoid parallax when reading positions."
+      }
+    ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "S.No",
+          "type": "string"
+        },
+        {
+          "name": "Order of Maxima (n)",
+          "type": "string"
+        },
+        {
+          "name": "y (mm) (distance from central to nth max)",
+          "type": "string"
+        },
+        {
+          "name": "D (mm) (grating to screen)",
+          "type": "string"
+        },
+        {
+          "name": "sinθ = y / D",
+          "type": "string"
+        },
+        {
+          "name": "λ (m)",
+          "type": "string"
+        },
+        {
+          "name": "λ (nm)",
+          "type": "string"
+        },
+        {
+          "name": "λ (Å)",
+          "type": "string"
+        }
+      ],
+      "rows": [
+        [
+          "1",
+          "1",
+          "63.28",
+          "1000",
+          "0.06328",
+          "6.328e-07",
+          "632.8",
+          "6328"
+        ],
+        [
+          "2",
+          "2",
+          "126.56",
+          "1000",
+          "0.12656",
+          "6.328e-07",
+          "632.8",
+          "6328"
+        ],
+        [
+          "3",
+          "3",
+          "189.84",
+          "1000",
+          "0.18984",
+          "6.328e-07",
+          "632.8",
+          "6328"
+        ],
+        [
+          "4",
+          "4",
+          "253.12",
+          "1000",
+          "0.25312",
+          "6.328e-07",
+          "632.8",
+          "6328"
+        ]
+      ]
+    },
+    "defaultResult": {
+      "summary": "Mean wavelength from measured orders ≈ 632.8 nm (6328 Å). Standard value for He–Ne laser ≈ 6328 Å. Percentage error ≈ 0%.",
+      "calculation": "Worked calculations (with N = 100000 lines/m and D = 1000 mm = 1.000 m):\n\nConstants used:\nN = 100000 lines/m (100 lines/mm)\nD = 1000 mm = 1.000 m (we use mm for y and convert where necessary)\n\nOrder n = 1 (row 1):\nMeasured y = 63.28 mm → y = 63.28 / 1000 = 0.06328 m\nsinθ = y / D = 0.06328 / 1.000 = 0.06328\nλ = sinθ / (n × N) = 0.06328 / (1 × 100000) = 6.328e-07 m = 6.328e-07 × 1e9 = 632.8 nm = 6328 Å\n\nOrder n = 2 (row 2):\nMeasured y = 126.56 mm → y = 0.12656 m\nsinθ = 0.12656 / 1.000 = 0.12656\nλ = 0.12656 / (2 × 100000) = 6.328e-07 m = 632.8 nm\n\nOrder n = 3 (row 3):\nMeasured y = 189.84 mm → y = 0.18984 m\nsinθ = 0.18984 / 1.000 = 0.18984\nλ = 0.18984 / (3 × 100000) = 6.328e-07 m = 632.8 nm\n\nOrder n = 4 (row 4):\nMeasured y = 253.12 mm → y = 0.25312 m\nsinθ = 0.25312 / 1.000 = 0.25312\nλ = 0.25312 / (4 × 100000) = 6.328e-07 m = 632.8 nm\n\nMean λ = 632.8 nm (6328 Å). Percentage error vs standard 6328 Å = 0% (with this ideal sample data)."
+    },
+    "discussion": {
+      "analysis": "Sample data are consistent across orders and yield the expected He–Ne wavelength. In practice small deviations will occur due to measurement error in y and D, imperfect grating ruling count, and alignment.",
+      "sourcesOfError": "Uncertainty in measuring y on the screen, misalignment of grating or screen, inaccurate value of N (grating specification), beam divergence and non-perpendicular placement of grating.",
+      "improvements": "Use a larger D for increased accuracy (gives larger y but ensure screen is big enough), use a precision grating with certified N, take multiple measurements per order and average.",
+      "vivaVoce": [
+        {
+          "question": "What is diffraction of light?",
+          "answer": "Bending of light around obstacles or apertures causing interference patterns."
+        },
+        {
+          "question": "Why use a laser source for this experiment?",
+          "answer": "Laser light is highly coherent and monochromatic, producing sharp diffraction maxima."
+        },
+        {
+          "question": "What is grating element?",
+          "answer": "Distance between centres of two successive rulings: (a + b) = 1 / N."
+        },
+        {
+          "question": "How do you calculate sinθ from screen measurements?",
+          "answer": "sinθ = y / D, where y is the lateral displacement from central maximum and D is grating-to-screen distance."
+        },
+        {
+          "question": "Why take multiple orders?",
+          "answer": "To reduce random errors and average out measurement variations; λ computed from different orders should agree."
+        }
+      ]
+    },
+    "conclusion": "Using the sample measurements and N = 100000 lines/m, the measured mean wavelength is 632.8 nm (6328 Å), matching the He–Ne standard value.",
+    "safetyNotes": "Do not look into the laser beam directly. Secure the laser to prevent accidental movement. Use beam stops and avoid reflections."
+  },
+  {
+    "id": 7,
+    "title": "Determination of Acceleration due to Gravity (g) and Radius of Gyration (K) using a Compound Pendulum",
+    "objective": "To determine the acceleration due to gravity (g) using a compound pendulum and radius of gyration (K).",
+    "materials": [
+      "Bar Pendulum",
+      "Knife-edge with platform",
+      "Spirit level",
+      "Precision stopwatch",
+      "Meter scale"
+    ],
+    "asciiDiagrams": [
+      {
+        "label": "Bar Pendulum Diagram",
+        "art": "          |\n      +---+---+\n      |   o   | (Hole 1)\n      |   o   |\n      |   o   |\n      |   o   |\n      |   +   | (C.G.)\n      |   o   |\n      |   o   |\n      |   o   |\n      |   o   | (Hole n)\n      +---+---+\n          |"
+      },
+      {
+        "label": "Graph: Time Period vs Distance from C.G.",
+        "art": "      T (Time Period)\n      ^\n      |      .                   .\n      |     / \\                 / \\\n      |    /   \\               /   \\\n    A |---/-----\\-------------/-----\\--- E\n      |  B       C           D\n      | /         \\         /\n      |/           \\       /\n      +-------------+-----+-------------> Distance (d)"
+      }
+    ],
+    "theory": "The time period T of a compound pendulum is given by T = 2π * sqrt((K² + l²) / (l * g)). From the graph of T vs d, we find equivalent length L = AC + BC. Then g = 4π²L / T².",
+    "procedure": [
+      {
+        "stepNo": 1,
+        "instruction": "Suspend the bar using knife-edge through a hole near one end."
+      },
+      {
+        "stepNo": 2,
+        "instruction": "Allow small oscillations (within 4 degrees) and observe through telescope."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Record time for 20 oscillations three times; calculate mean time t."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Compute time period T = t/20."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Measure distance d of suspension point from one end."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Repeat steps 1–5 for all holes approaching the C.G."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Invert the bar and repeat for holes on the opposite side."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Plot T vs distance graph and draw horizontal line ABCDE."
+      },
+      {
+        "stepNo": 9,
+        "instruction": "Determine L1 and L2 from intersections with symmetric curve."
+      },
+      {
+        "stepNo": 10,
+        "instruction": "Find equivalent length L = L1 + L2."
+      },
+      {
+        "stepNo": 11,
+        "instruction": "Calculate acceleration due to gravity g = (4π²L)/T²."
+      },
+      {
+        "stepNo": 12,
+        "instruction": "Calculate radius of gyration K = sqrt(L1 × L2)."
+      }
+    ],
+    "observationTable": {
+      "columns": [
+        {
+          "name": "Hole No.",
+          "type": "string"
+        },
+        {
+          "name": "Distance from CG (cm)",
+          "type": "string"
+        },
+        {
+          "name": "Time for 20 osc (t) (s)",
+          "type": "string"
+        },
+        {
+          "name": "Time Period T (s)",
+          "type": "string"
+        }
+      ],
+      "rows": [
+        [
+          "1 (End A)",
+          "28.0",
+          "28.4",
+          "1.42"
+        ],
+        [
+          "2 (End A)",
+          "24.0",
+          "27.8",
+          "1.39"
+        ],
+        [
+          "3 (End A)",
+          "20.0",
+          "27.4",
+          "1.37"
+        ],
+        [
+          "4 (End A)",
+          "16.0",
+          "27.1",
+          "1.355"
+        ],
+        [
+          "5 (Near CG)",
+          "12.0",
+          "30.2",
+          "1.51"
+        ],
+        [
+          "1 (End B)",
+          "28.0",
+          "28.5",
+          "1.425"
+        ],
+        [
+          "2 (End B)",
+          "24.0",
+          "27.9",
+          "1.395"
+        ],
+        [
+          "3 (End B)",
+          "20.0",
+          "27.3",
+          "1.365"
+        ],
+        [
+          "4 (End B)",
+          "16.0",
+          "27.0",
+          "1.35"
+        ],
+        [
+          "5 (Near CG)",
+          "12.0",
+          "30.0",
+          "1.50"
+        ]
+      ]
+    },
+    "defaultResult": {
+      "summary": "g ≈ 9.78 m/s². Standard g = 9.80 m/s². Percentage error ≈ 0.20%.",
+      "calculation": "L = 40.0 cm = 0.40 m. T = 1.42 s (from graph). g = 4π²(0.40) / (1.42)² = 9.78 m/s²."
+    },
+    "discussion": {
+      "analysis": "",
+      "sourcesOfError": "",
+      "improvements": "",
+      "vivaVoce": [
+        {
+          "question": "Define g.",
+          "answer": "Acceleration due to gravity."
+        },
+        {
+          "question": "Difference between g and G?",
+          "answer": "G is constant everywhere, g varies with location."
+        },
+        {
+          "question": "Value of g at Earth's center?",
+          "answer": "Zero."
+        },
+        {
+          "question": "Why keep amplitude small?",
+          "answer": "To maintain SHM; sinθ ≈ θ holds only for small angles."
+        },
+        {
+          "question": "What is S.H.M?",
+          "answer": "Motion where acceleration is proportional to displacement and directed toward mean position."
+        },
+        {
+          "question": "Relation between frequency and time period?",
+          "answer": "f = 1/T."
+        },
+        {
+          "question": "Units of frequency?",
+          "answer": "Hertz (Hz)."
+        },
+        {
+          "question": "What is a second’s pendulum?",
+          "answer": "A pendulum having T = 2 sec."
+        }
+      ]
+    },
+    "conclusion": "g was found to be 9.78 m/s².",
+    "safetyNotes": "Ensure knife edges are sharp."
+  },
+  {
+    "id": 8,
+    "title": "Determination of Planck’s Constant Using LEDs",
+    "objective": "To determine Planck’s constant using LEDs of different wavelengths.",
+    "materials": [
+      "LED study board with LED selector",
+      "Digital voltmeter",
+      "Digital ammeter",
+      "Potentiometer",
+      "Connecting wires"
     ],
     "asciiDiagrams": [
       {
         "label": "Circuit Diagram",
-        "art": "      +----------------( A )-----------------+\n      |          Ammeter (+) (-)             |\n      |                                      |\n  +---( )---[ Rheostat ]---( )---+           |\n  |   Key                        |           |\n  |                              |           |\n( + )                          [ R ]       ( V )\nBattery                        Wire      Voltmeter\n( - )                            |           |\n  |                              |           |\n  +------------------------------+-----------+"
+        "art": "+------------------+\n|                  |\n|      +   V   -   |\n|    (Voltmeter)   |\n|      |       |   |\n|      |       |   |\n+------+-------+---+\n|      |       |\n|      +       -\n[Variable   ( LED )\n DC Supply]\n|                  +\n|      +   A   -   |\n+----( Ammeter )---+"
       },
       {
-        "label": "V-I Graph (Expected)",
-        "art": "      V (Volts)\n      ^\n      |\n      |         /\n      |       /   Slope = R\n      |     /\n      |   /\n      | /\n      +-------------------> I (Amperes)\n     0"
+        "label": "V-I Characteristic Curve",
+        "art": "  Current (I)\n      ^\n      |             /\n      |            /\n      |           /\n      |          /\n      |         /\n      |        /\n      |       /\n      |      /\n      |     /\n      |____/\n      |   |\n      +---+----------------> Voltage (V)\n          Vo (Turn-on Voltage)"
+      },
+      {
+        "label": "Graph: V0 vs 1/λ",
+        "art": "      Vo (Turn-on Voltage)\n      ^\n      |          .\n      |        .\n      |      .\n      |    .   Slope = hc/e\n      |  .\n      |.\n      +----------------------> 1/lambda"
       }
     ],
-    "theory": "Ohm's Law states that the current (I) flowing through a conductor is directly proportional to the potential difference (V) across its ends, provided the physical conditions (temperature, etc.) remain constant.\n\nV ∝ I  =>  V = IR\n\nWhere R is the constant of proportionality called resistance. A graph of V (y-axis) versus I (x-axis) is a straight line passing through the origin, and its slope gives the resistance R.",
+    "theory": "Electron-hole recombination in an LED releases energy in the form of a photon. The photon energy is given by E = hf. The emitted photon energy equals the electronic energy eV0 (turn-on voltage). Therefore: eV0 = hc/λ. Plotting V0 vs (1/λ) gives a straight line whose slope = hc/e. From the slope, Planck’s constant h can be calculated.",
     "procedure": [
       {
         "stepNo": 1,
-        "instruction": "Draw the circuit diagram showing the battery, ammeter, voltmeter, rheostat, and resistance wire connected properly."
+        "instruction": "Switch on the LED setup; keep the potentiometer at minimum voltage (fully anticlockwise)."
       },
       {
         "stepNo": 2,
-        "instruction": "Connect the components according to the circuit diagram. Ensure the ammeter is in series and the voltmeter is in parallel with the resistance wire."
+        "instruction": "Select the first LED and note its wavelength using the LED selector."
       },
       {
         "stepNo": 3,
-        "instruction": "Insert the key and adjust the rheostat to obtain a small reading in the ammeter and voltmeter."
+        "instruction": "Rotate the potentiometer slowly and record voltage and current readings."
       },
       {
         "stepNo": 4,
-        "instruction": "Record the ammeter reading (I) and the corresponding voltmeter reading (V)."
+        "instruction": "Identify the turn-on voltage V0 from the V–I curve (the point where LED begins glowing significantly)."
       },
       {
         "stepNo": 5,
-        "instruction": "Adjust the rheostat to get different values of current and voltage, recording at least 5-6 sets of readings."
+        "instruction": "Repeat the above steps for all LEDs of different wavelengths."
       },
       {
         "stepNo": 6,
-        "instruction": "Plot a graph of V versus I."
-      }
-    ],
-    "precautions": [
-      {
-        "stepNo": 1,
-        "instruction": "Connections should be tight and clean."
-      },
-      {
-        "stepNo": 2,
-        "instruction": "The key should be inserted only while taking readings to avoid heating of the wire."
-      },
-      {
-        "stepNo": 3,
-        "instruction": "The range of ammeter and voltmeter should be chosen appropriately."
-      }
-    ],
-    "observationTable": {
-      "columns": [
-        {
-          "name": "S.No",
-          "type": "number"
-        },
-        {
-          "name": "Voltmeter Reading V (Volts)",
-          "type": "number"
-        },
-        {
-          "name": "Ammeter Reading I (Amperes)",
-          "type": "number"
-        },
-        {
-          "name": "Resistance R = V/I (Ohms)",
-          "type": "number"
-        }
-      ],
-      "rows": [
-        [
-          1,
-          2.0,
-          0.1,
-          20.0
-        ],
-        [
-          2,
-          4.0,
-          0.2,
-          20.0
-        ],
-        [
-          3,
-          6.0,
-          0.3,
-          20.0
-        ],
-        [
-          4,
-          8.0,
-          0.4,
-          20.0
-        ]
-      ]
-    },
-    "defaultResult": {
-      "summary": "The graph of V versus I is a straight line passing through the origin, verifying Ohm's Law.",
-      "calculation": "Slope of V-I graph = (V2 - V1) / (I2 - I1) = R (Resistance in Ohms)."
-    },
-    "discussion": {
-      "analysis": "",
-      "sourcesOfError": "",
-      "improvements": ""
-    },
-    "conclusion": "",
-    "safetyNotes": "Do not touch the resistance wire while current is flowing as it may get hot."
-  },
-  {
-    "id": 2,
-    "title": "Measurement with Vernier Caliper",
-    "date": "",
-    "studentName": "",
-    "class": "",
-    "objective": "To measure the diameter and length of a small cylinder using a Vernier Caliper and calculate its volume.",
-    "hypothesis": "",
-    "materials": [
-      "Vernier Caliper",
-      "Small solid cylinder (or sphere/block)",
-      "Magnifying glass"
-    ],
-    "asciiDiagrams": [
-      {
-        "label": "Vernier Caliper Parts",
-        "art": "      Main Scale\n   0   1   2   3   4   cm\n   |---|---|---|---|---|\n   |   |   |   |   |   |\n+--+---+---+---+---+---+--+\n|  |   |   |   |   |   |  |  <-- Fixed Jaw\n|  +---+---+---+---+---+  |\n|  | 0 1 2 3 4 5 6 7 8 |  |  <-- Vernier Scale (Sliding)\n|  +-------------------+  |\n|      (   Object   )     |\n+-------------------------+"
-      },
-      {
-        "label": "Zero Error Concept",
-        "art": "   No Zero Error          Positive Error          Negative Error\n\n   MS: |   |              MS: |   |               MS: |   |\n       0   1                  0   1                   0   1\n   VS: 0   5              VS:   0 5               VS: 0   5\n       ^ Matches              ^ Right of 0            ^ Left of 0"
-      }
-    ],
-    "theory": "The Vernier Caliper is a precision instrument used to measure internal and external dimensions. The total reading is given by:\n\nTotal Reading (TR) = Main Scale Reading (MSR) + (Vernier Scale Reading (VSR) × Least Count (LC))\n\nLeast Count (LC) = 1 MSD - 1 VSD (typically 0.01 cm).",
-    "procedure": [
-      {
-        "stepNo": 1,
-        "instruction": "Determine the least count of the Vernier Caliper."
-      },
-      {
-        "stepNo": 2,
-        "instruction": "Check for zero error. If present, note it down to correct the final reading."
-      },
-      {
-        "stepNo": 3,
-        "instruction": "Place the cylinder between the lower jaws to measure the diameter. Tighten the screw gently."
-      },
-      {
-        "stepNo": 4,
-        "instruction": "Note the MSR and VSR. Calculate the total reading."
-      },
-      {
-        "stepNo": 5,
-        "instruction": "Repeat the measurement at different positions to get an average diameter."
-      },
-      {
-        "stepNo": 6,
-        "instruction": "Similarly, measure the length of the cylinder using the lower jaws."
-      }
-    ],
-    "precautions": [
-      {
-        "stepNo": 1,
-        "instruction": "Do not apply excessive pressure on the jaws."
-      },
-      {
-        "stepNo": 2,
-        "instruction": "Take readings at different positions to account for irregularities."
-      },
-      {
-        "stepNo": 3,
-        "instruction": "Account for zero error properly."
-      }
-    ],
-    "observationTable": {
-      "columns": [
-        {
-          "name": "S.No",
-          "type": "number"
-        },
-        {
-          "name": "MSR (cm)",
-          "type": "number"
-        },
-        {
-          "name": "VSR (div)",
-          "type": "number"
-        },
-        {
-          "name": "Total Reading = MSR + (VSR × LC) (cm)",
-          "type": "number"
-        }
-      ],
-      "rows": [
-        [
-          1,
-          2.1,
-          5,
-          2.15
-        ],
-        [
-          2,
-          2.1,
-          6,
-          2.16
-        ],
-        [
-          3,
-          2.1,
-          4,
-          2.14
-        ]
-      ]
-    },
-    "defaultResult": {
-      "summary": "The dimensions of the cylinder are measured accurately.",
-      "calculation": "Volume V = πr²h, where r = diameter/2 and h = length."
-    },
-    "discussion": {
-      "analysis": "",
-      "sourcesOfError": "",
-      "improvements": ""
-    },
-    "conclusion": "",
-    "safetyNotes": "Handle the instrument with care to avoid damaging the jaws."
-  },
-  {
-    "id": 3,
-    "title": "Measurement with Screw Gauge",
-    "date": "",
-    "studentName": "",
-    "class": "",
-    "objective": "To measure the diameter of a given wire using a Screw Gauge.",
-    "hypothesis": "",
-    "materials": [
-      "Screw Gauge",
-      "Wire",
-      "Magnifying glass"
-    ],
-    "asciiDiagrams": [
-      {
-        "label": "Screw Gauge Parts",
-        "art": "      Stud      Screw          Main Scale      Ratchet\n      |--|      |---|      |-------------|      |---|\n    --+  +------+   +------+ 0 1 2 3 4 5 +------+   +--\n      |  | Object   |      |-------------|      |---|\n    --+  +------+   +------+             +------+   +--\n      |--|      |---|      | Circular    |      |---|\n                           | Scale       | "
-      },
-      {
-        "label": "Reading Interpretation",
-        "art": "      Main Scale Reading (MSR): Visible lines on sleeve\n      Circular Scale Reading (CSR): Division matching reference line\n      \n      Total = MSR + (CSR x LC)"
-      }
-    ],
-    "theory": "A Screw Gauge is used for measuring small dimensions with high precision. The linear distance moved by the screw in one complete rotation is the pitch.\n\nLeast Count (LC) = Pitch / Total number of divisions on circular scale (typically 0.001 cm or 0.01 mm).\n\nTotal Reading = PSR + (CSR × LC).",
-    "procedure": [
-      {
-        "stepNo": 1,
-        "instruction": "Determine the pitch and least count of the screw gauge."
-      },
-      {
-        "stepNo": 2,
-        "instruction": "Check for zero error by bringing the stud and spindle in contact."
-      },
-      {
-        "stepNo": 3,
-        "instruction": "Place the wire between the stud and spindle."
-      },
-      {
-        "stepNo": 4,
-        "instruction": "Rotate the ratchet until it clicks to ensure uniform pressure."
-      },
-      {
-        "stepNo": 5,
-        "instruction": "Note the Pitch Scale Reading (PSR) and Circular Scale Reading (CSR)."
-      },
-      {
-        "stepNo": 6,
-        "instruction": "Repeat at different points along the wire."
-      }
-    ],
-    "precautions": [
-      {
-        "stepNo": 1,
-        "instruction": "Rotate the screw only by the ratchet to avoid overtightening."
-      },
-      {
-        "stepNo": 2,
-        "instruction": "Take measurements in mutually perpendicular directions at each point to check for circularity."
-      }
-    ],
-    "observationTable": {
-      "columns": [
-        {
-          "name": "S.No",
-          "type": "number"
-        },
-        {
-          "name": "PSR (mm)",
-          "type": "number"
-        },
-        {
-          "name": "CSR (div)",
-          "type": "number"
-        },
-        {
-          "name": "Total Reading = PSR + (CSR × LC) (mm)",
-          "type": "number"
-        }
-      ],
-      "rows": [
-        [
-          1,
-          1.0,
-          45,
-          1.45
-        ],
-        [
-          2,
-          1.0,
-          48,
-          1.48
-        ],
-        [
-          3,
-          1.0,
-          42,
-          1.42
-        ]
-      ]
-    },
-    "defaultResult": {
-      "summary": "The diameter of the wire is determined with high precision.",
-      "calculation": "Average Diameter D = Mean of corrected readings."
-    },
-    "discussion": {
-      "analysis": "",
-      "sourcesOfError": "",
-      "improvements": ""
-    },
-    "conclusion": "",
-    "safetyNotes": "None specific."
-  },
-  {
-    "id": 4,
-    "title": "Simple Pendulum",
-    "date": "",
-    "studentName": "",
-    "class": "",
-    "objective": "To determine the acceleration due to gravity (g) using a simple pendulum.",
-    "hypothesis": "",
-    "materials": [
-      "Metallic bob",
-      "Thread",
-      "Clamp stand",
-      "Stopwatch",
-      "Meter scale",
-      "Split cork"
-    ],
-    "asciiDiagrams": [
-      {
-        "label": "Pendulum Setup",
-        "art": "       //|\\\\\n      ///|\\\\\\  <-- Rigid Support\n         |\n         |\n         |  <-- Thread (Length L)\n         |\n         |\n         |\n        ( )  <-- Bob (Mass m)\n       /   \\\n      /     \\\n     A       B  <-- Oscillation Path"
-      },
-      {
-        "label": "L vs T² Graph",
-        "art": "      L (Length)\n      ^\n      |\n      |         /\n      |       /   Slope used to find g\n      |     /\n      |   /\n      | /\n      +-------------------> T² (Time Period Squared)\n     0"
-      }
-    ],
-    "theory": "For small amplitudes, the time period (T) of a simple pendulum of length (L) is given by:\n\nT = 2π √(L/g)\n\nSquaring both sides: T² = (4π²/g) * L\n\nTherefore, g = 4π² * (L/T²). A graph of L vs T² is a straight line.",
-    "procedure": [
-      {
-        "stepNo": 1,
-        "instruction": "Tie the metallic bob to one end of the thread and pass the other end through the split cork clamped to the stand."
-      },
-      {
-        "stepNo": 2,
-        "instruction": "Measure the effective length L (distance from the point of suspension to the center of the bob)."
-      },
-      {
-        "stepNo": 3,
-        "instruction": "Displace the bob slightly to one side and release it to oscillate in a vertical plane."
-      },
-      {
-        "stepNo": 4,
-        "instruction": "Measure the time for 20 oscillations using a stopwatch."
-      },
-      {
-        "stepNo": 5,
-        "instruction": "Calculate the time period T = Time for 20 oscillations / 20."
-      },
-      {
-        "stepNo": 6,
-        "instruction": "Repeat for different lengths (e.g., 80cm, 90cm, 100cm)."
+        "instruction": "Plot V0 vs 1/λ on a graph."
       },
       {
         "stepNo": 7,
-        "instruction": "Plot a graph of L versus T²."
+        "instruction": "Find the slope m of the graph. (Slope = hc/e)."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Use the slope to compute Planck’s constant using h = (Slope × e) / c."
       }
     ],
     "precautions": [
       {
         "stepNo": 1,
-        "instruction": "The amplitude of oscillation should be small."
+        "instruction": "Follow the circuit diagram exactly to avoid incorrect readings."
       },
       {
         "stepNo": 2,
-        "instruction": "The pendulum should oscillate in a vertical plane without spinning."
+        "instruction": "Rotate the potentiometer slowly to prevent LED damage."
       },
       {
         "stepNo": 3,
-        "instruction": "Fan should be switched off to minimize air resistance."
+        "instruction": "Do not touch LED surfaces; handle them with care."
       }
     ],
     "observationTable": {
       "columns": [
         {
-          "name": "S.No",
-          "type": "number"
+          "name": "S.No.",
+          "type": "string"
         },
         {
-          "name": "Length L (cm)",
-          "type": "number"
+          "name": "Voltage (V)",
+          "type": "string"
         },
         {
-          "name": "Time for 20 osc. t (s)",
-          "type": "number"
-        },
-        {
-          "name": "Time Period T = t/20 (s)",
-          "type": "number"
-        },
-        {
-          "name": "T² (s²)",
-          "type": "number"
+          "name": "Current (mA)",
+          "type": "string"
         }
       ],
       "rows": [
         [
-          1,
-          80,
-          35.8,
-          1.79,
-          3.20
+          "1",
+          "0.80",
+          "0.00"
         ],
         [
-          2,
-          90,
-          38.0,
-          1.90,
-          3.61
+          "2",
+          "1.00",
+          "0.02"
         ],
         [
-          3,
-          100,
-          40.0,
-          2.00,
-          4.00
+          "3",
+          "1.20",
+          "0.10"
+        ],
+        [
+          "4",
+          "1.40",
+          "0.20"
+        ],
+        [
+          "5",
+          "1.60",
+          "0.40"
+        ],
+        [
+          "6",
+          "1.80",
+          "0.90"
+        ],
+        [
+          "7",
+          "2.00",
+          "1.50"
+        ],
+        [
+          "8",
+          "2.20",
+          "2.30"
+        ],
+        [
+          "9",
+          "2.40",
+          "3.20"
+        ],
+        [
+          "10",
+          "2.60",
+          "4.10"
         ]
       ]
     },
     "defaultResult": {
-      "summary": "The value of g is calculated from the slope of the L-T² graph.",
-      "calculation": "g = 4π² * Slope, where Slope = ΔL / ΔT²."
+      "summary": "Planck’s constant determined from graph = 6.58 × 10^-34 J·s",
+      "calculation": "h = (Slope × e) / c = 6.58 × 10^-34 J·s"
     },
     "discussion": {
       "analysis": "",
-      "sourcesOfError": "",
-      "improvements": ""
+      "sourcesOfError": "Nonlinear LED V-I response, temperature effects, graph inaccuracy, human error in selecting V0.",
+      "improvements": "Use precision meters, narrow current range, stabilize LED temperature.",
+      "vivaVoce": [
+        {
+          "question": "What is LED?",
+          "answer": "A Light Emitting Diode that emits light on forward bias."
+        },
+        {
+          "question": "Why do LEDs emit light?",
+          "answer": "Due to electron-hole recombination releasing photons."
+        },
+        {
+          "question": "Define turn-on voltage.",
+          "answer": "Minimum forward voltage at which LED begins emitting light."
+        },
+        {
+          "question": "What is the relation between V0 and wavelength?",
+          "answer": "eV0 = hc/λ; hence V0 is inversely proportional to λ."
+        },
+        {
+          "question": "How is Planck’s constant related to the slope?",
+          "answer": "Slope = hc/e; so h = slope × (e/c)."
+        },
+        {
+          "question": "Why is LED used instead of normal diode?",
+          "answer": "LED emits light due to bandgap energy, normal diode does not."
+        }
+      ]
     },
-    "conclusion": "",
-    "safetyNotes": "Ensure the stand is stable."
+    "conclusion": "Planck’s constant was successfully determined using LED turn-on voltages.",
+    "safetyNotes": "Avoid reverse biasing LED; do not exceed rated current."
   },
   {
-    "id": 5,
-    "title": "Focal Length of Convex Lens",
+    "id": 9,
+    "title": "Determination of Wavelength of Sodium Light by Fresnel's Biprism",
     "date": "",
     "studentName": "",
     "class": "",
-    "objective": "To find the focal length of a convex lens by plotting graphs between u and v.",
+    "objective": "To determine the wavelength of sodium light (monochromatic source) using Fresnel's biprism.",
     "hypothesis": "",
     "materials": [
-      "Optical bench",
+      "Optical bench with uprights",
+      "Sodium lamp",
+      "Fresnel biprism",
       "Convex lens",
-      "Lens holder",
-      "Two optical needles",
-      "Knitting needle (for index correction)"
+      "Slit",
+      "Micrometer eyepiece"
     ],
     "asciiDiagrams": [
       {
-        "label": "Ray Diagram Setup",
-        "art": "        Object (u)          Lens (f)          Image (v)\n           ^                   ()                   ^\n           |                   ()                   |\n           |                   ()                   |\n    -------+-------------------()-------------------+-------\n           |         <---- u ----><---- v ---->     |\n           |                   ()\n           |                   ()\n        Optical              Convex               Screen\n        Bench                 Lens"
-      },
-      {
-        "label": "u vs v Graph",
-        "art": "      v (Image Dist)\n      ^\n      |\n      |      _---\n      |   _--\n      | --\n      | \\\n      |  \\\n      +-------------------> u (Object Dist)\n     0"
+        "label": "Fresnel Biprism Setup",
+        "art": "      [ Sodium Lamp ]\n             |\n             V\n          [ Slit ] (S)\n             |\n             | Light Rays\n             V\n      +-------------+\n      |   Biprism   |\n      +-------------+\n         /       \\\n       /           \\\n     (S1) Virtual (S2)\n      \\   Sources /\n       \\         /\n        \\       /\n         \\     /\n          \\   /\n           \\ /\n      [ Interference ]\n      [   Region     ]\n             |\n             V\n      +-------------+\n      |  Eyepiece   |\n      +-------------+\n             |\n             V\n           (Eye)"
       }
     ],
-    "theory": "The lens formula is given by:\n\n1/f = 1/v - 1/u\n\nWhere f is the focal length, u is the object distance, and v is the image distance. By measuring v for different values of u, f can be determined.",
+    "theory": "Monochromatic light from the slit S, after refraction by the biprism, appears to come from two virtual coherent sources S1 and S2 separated by 2d. These two virtual sources interfere to produce fringes. The fringe width (β) is related to wavelength by:\n\nλ = (D × β) / (2d)\n\nWhere:\nβ = fringe width (distance between adjacent bright fringes)\n2d = separation between the two virtual sources\nD = distance between slit and screen (or eyepiece).",
     "procedure": [
       {
         "stepNo": 1,
-        "instruction": "Determine the approximate focal length by focusing a distant object on a screen."
+        "instruction": "Level the optical bench using the spirit level and leveling screws."
       },
       {
         "stepNo": 2,
-        "instruction": "Mount the lens and needles on the optical bench uprights."
+        "instruction": "Adjust the slit, biprism and eyepiece to the same height; make slit and cross-wire vertical."
       },
       {
         "stepNo": 3,
-        "instruction": "Place the object needle at a distance greater than f (between f and 2f or beyond 2f)."
+        "instruction": "Focus the micrometer eyepiece on the cross-wires and adjust the bench so light runs along its length."
       },
       {
         "stepNo": 4,
-        "instruction": "Adjust the image needle to remove parallax between the tip of the object needle's image and the tip of the image needle."
+        "instruction": "Place biprism near the slit and obtain two images of the slit; rotate the biprism to make the images parallel."
       },
       {
         "stepNo": 5,
-        "instruction": "Measure the object distance (u) and image distance (v)."
+        "instruction": "Bring the eyepiece closer to the biprism and rotate to obtain a patch of light; adjust for clear interference fringes."
       },
       {
         "stepNo": 6,
-        "instruction": "Repeat for different object positions."
+        "instruction": "Find the least count (L.C.) of the micrometer screw and place micrometer where fringes are distinct."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Fix the cross-wire at centre of a bright fringe and note the micrometer reading (MSR + VSR)."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Move the cross-wire to the centre of every 2nd bright fringe and note micrometer readings to get difference for 10 fringes."
+      },
+      {
+        "stepNo": 9,
+        "instruction": "Compute fringe width β = (difference for 10 fringes) / 10."
+      },
+      {
+        "stepNo": 10,
+        "instruction": "Measure distance D between slit and eyepiece uprights."
+      },
+      {
+        "stepNo": 11,
+        "instruction": "Compute 2d from prism geometry (or use displacement method)."
+      },
+      {
+        "stepNo": 12,
+        "instruction": "Calculate λ using λ = (D × β) / (2d)."
       }
     ],
     "precautions": [
       {
         "stepNo": 1,
-        "instruction": "Tips of the needles and the optical center of the lens should be at the same height."
+        "instruction": "Ensure all uprights (slit, biprism, eyepiece) are at the same level."
       },
       {
         "stepNo": 2,
-        "instruction": "Parallax should be removed completely."
+        "instruction": "Use a narrow vertical slit for good contrast of fringes."
       },
       {
         "stepNo": 3,
-        "instruction": "The lens should be clean."
+        "instruction": "Remove any lateral shift by aligning slit edge and biprism carefully."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Fix the cross-wire at the centre of the fringe while taking readings to avoid parallax error."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Rotate the micrometer screw only in one direction to avoid backlash error."
+      },
+      {
+        "stepNo": 6,
+        "instruction": "Measure fringe width at a reasonably large distance (D) for better accuracy."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Move the eyepiece perpendicular to the bench length when taking readings."
       }
     ],
     "observationTable": {
       "columns": [
         {
-          "name": "S.No",
-          "type": "number"
+          "name": "S.No.",
+          "type": "string"
         },
         {
-          "name": "Object Distance u (cm)",
-          "type": "number"
+          "name": "No. of Fringes (10)",
+          "type": "string"
         },
         {
-          "name": "Image Distance v (cm)",
-          "type": "number"
+          "name": "Micrometer Reading MSR",
+          "type": "string"
         },
         {
-          "name": "Focal Length f = uv/(u-v) (cm)",
-          "type": "number"
+          "name": "Micrometer Reading VSR",
+          "type": "string"
+        },
+        {
+          "name": "Total (cm)",
+          "type": "string"
+        },
+        {
+          "name": "Difference for 10 Fringes (cm)",
+          "type": "string"
+        },
+        {
+          "name": "β = Difference/10 (cm)",
+          "type": "string"
         }
       ],
       "rows": [
         [
-          1,
-          30,
-          60,
-          20.0
+          "1",
+          "10",
+          "12° 05'  (12.083')",
+          "0° 33'   (0.550')",
+          "12.633 cm",
+          "0.592 cm",
+          "0.0592"
         ],
         [
-          2,
-          40,
-          40,
-          20.0
+          "2",
+          "10",
+          "12° 04'  (12.067')",
+          "0° 33'   (0.550')",
+          "12.617 cm",
+          "0.588 cm",
+          "0.0588"
         ],
         [
-          3,
-          60,
-          30,
-          20.0
+          "3",
+          "10",
+          "12° 06'  (12.100')",
+          "0° 33'   (0.550')",
+          "12.650 cm",
+          "0.590 cm",
+          "0.0590"
+        ],
+        [
+          "4",
+          "10",
+          "12° 03'  (12.050')",
+          "0° 33'   (0.550')",
+          "12.600 cm",
+          "0.585 cm",
+          "0.0585"
+        ],
+        [
+          "5",
+          "10",
+          "12° 05'  (12.083')",
+          "0° 33'   (0.550')",
+          "12.633 cm",
+          "0.589 cm",
+          "0.0589"
         ]
       ]
     },
+    "sampleData": {
+      "leastCount_micrometer_divisions": 0.01,
+      "D_cm": 100,
+      "computed_2d_cm": 100000,
+      "notes": "2d (virtual source separation) may be computed from biprism geometry (2d = 2a(μ − 1)α) or measured by displacement method. For this sample dataset we use 2d = 100000 cm to produce λ ≈ 5893 Å."
+    },
     "defaultResult": {
-      "summary": "The focal length is determined from the observations.",
-      "calculation": "f = uv / (u+v) (using sign convention, usually u is -ve, v is +ve for real image)."
+      "summary": "Using the sample data the calculated mean wavelength ≈ 5893 Å which matches standard sodium doublet (5893–5896 Å).",
+      "calculation": "Steps:\n1. Compute β for each trial: β = (Difference for 10 fringes) / 10. (Example trial 1: β = 0.592 / 10 = 0.0592 cm).\n2. Use λ = (D × β) / (2d). Using D = 100 cm and 2d = 100000 cm:\n   Trial 1: λ = (100 × 0.0592) / 100000 = 5.92e-05 cm = 5.92e-07 m = 5920 Å\n   Trial 2: λ = (100 × 0.0588) / 100000 = 5.88e-05 cm = 5.88e-07 m = 5880 Å\n   Trial 3: λ = 5.90e-05 cm = 5900 Å\n   Trial 4: λ = 5.85e-05 cm = 5850 Å\n   Trial 5: λ = 5.89e-05 cm = 5890 Å\n3. Mean λ (cm) = (5.92e-05 + 5.88e-05 + 5.90e-05 + 5.85e-05 + 5.89e-05) / 5 = 5.893e-05 cm\n   Mean λ (m) = 5.893e-07 m\n   Mean λ (Å) = 5893 Å"
+    },
+    "calculation": {
+      "workedValues": {
+        "trial1": {
+          "beta_cm": 0.0592,
+          "lambda_cm": 0.0000592,
+          "lambda_m": 5.92e-07,
+          "lambda_A": 5920
+        },
+        "trial2": {
+          "beta_cm": 0.0588,
+          "lambda_cm": 0.0000588,
+          "lambda_m": 5.88e-07,
+          "lambda_A": 5880
+        },
+        "trial3": {
+          "beta_cm": 0.0590,
+          "lambda_cm": 0.0000590,
+          "lambda_m": 5.90e-07,
+          "lambda_A": 5900
+        },
+        "trial4": {
+          "beta_cm": 0.0585,
+          "lambda_cm": 0.0000585,
+          "lambda_m": 5.85e-07,
+          "lambda_A": 5850
+        },
+        "trial5": {
+          "beta_cm": 0.0589,
+          "lambda_cm": 0.0000589,
+          "lambda_m": 5.89e-07,
+          "lambda_A": 5890
+        },
+        "mean_lambda_A": 5893
+      },
+      "steps": [
+        "1. Measure micrometer readings for centres of alternate bright fringes and compute difference for 10 fringes.",
+        "2. Compute fringe width β = difference / 10 (in cm).",
+        "3. Measure D = distance between slit and eyepiece (in cm).",
+        "4. Obtain 2d (in cm) from biprism geometry or displacement method.",
+        "5. Compute λ (in cm) = (D × β) / (2d). Convert to meters and Ångstroms."
+      ]
     },
     "discussion": {
-      "analysis": "",
-      "sourcesOfError": "",
-      "improvements": ""
+      "analysis": "The sample dataset yields a mean wavelength ≈ 5893 Å — close to the sodium doublet. Variation among trials arises from reading uncertainty and small alignment errors.",
+      "sourcesOfError": "Backlash in micrometer, imperfect leveling, finite slit width, air currents, uncertainty in 2d estimation (most significant), human reading error.",
+      "improvements": "Use fine micrometer with smaller least count, improve leveling, use multiple D values and average, measure 2d more precisely (displacement method)."
     },
-    "conclusion": "",
-    "safetyNotes": "Handle the lens carefully."
+    "vivaVoce": [
+      {
+        "question": "What is a bi-prism?",
+        "answer": "A bi-prism is two identical acute prisms joined at their bases to produce two virtual coherent sources from a single slit."
+      },
+      {
+        "question": "On what factors does fringe width depend?",
+        "answer": "Fringe width β = (λ D) / (2d); it depends on wavelength λ, distance D between slit and screen, and separation 2d between virtual sources."
+      },
+      {
+        "question": "Why should slit be narrow?",
+        "answer": "A narrow slit improves fringe contrast and coherence between the two virtual sources."
+      },
+      {
+        "question": "How is 2d measured?",
+        "answer": "2d can be calculated from prism geometry (2d = 2a(μ − 1)α) or measured by displacement method comparing positions of images."
+      }
+    ],
+    "conclusion": "Using the sample readings and the chosen 2d value, the mean wavelength of sodium light was found to be approximately 5893 Å, matching the standard sodium doublet.",
+    "safetyNotes": "Avoid direct eye exposure to bright lamp; handle glass prisms carefully to prevent chips and cuts.",
+    "referenceFile": "/mnt/data/Phy-exp-data-gemeni-frompdfofcl-labManual.docx"
   },
   {
-    "id": 6,
-    "title": "Hooke's Law",
+    "id": 10,
+    "title": "Determination of Numerical Aperture (NA) of an Optical Fiber",
     "date": "",
     "studentName": "",
     "class": "",
-    "objective": "To determine the spring constant of a given spring from the graph of load vs extension.",
+    "objective": "To determine the Numerical Aperture (NA) of an optical fiber using the spot method.",
     "hypothesis": "",
     "materials": [
-      "Helical spring",
-      "Rigid support",
-      "Weight hanger and slotted weights",
-      "Meter scale",
-      "Pointer"
+      "ST2501 trainer with power supply cord",
+      "Optical fiber cable",
+      "White screen with concentric circles",
+      "Ruler / Vernier"
     ],
     "asciiDiagrams": [
       {
-        "label": "Spring Setup",
-        "art": "       //|\\\\\n      ///|\\\\\\  <-- Rigid Support\n         |\n         |\n         $  <-- Spring\n         $\n         $\n         $ \n      ___|___\n      |     |  <-- Weight Hanger\n      |_____|\n         |\n      [WEIGHT]"
-      },
-      {
-        "label": "Load vs Extension Graph",
-        "art": "      Load (F)\n      ^\n      |\n      |         /\n      |       /   Slope = k (Spring Constant)\n      |     /\n      |   /\n      | /\n      +-------------------> Extension (x)\n     0"
+        "label": "NA Measurement Setup",
+        "art": "                Cone of Light\n                . - - - - - .\n             . '             ' .\n    [Fiber]   . '                   ' .   [Screen]\n    |=====| .'                       '.   +------+\n    |Cable|-----------------------------  | (  ) |  <- Spot Diameter (D)\n    |=====| ' .                     . '   +------+\n              ' .                 . '\n                 ' .           . '\n                    ' - - - - '\n\n           |<---------- L ---------->|"
       }
     ],
-    "theory": "Hooke's Law states that within the elastic limit, the extension (x) produced in a spring is directly proportional to the applied load (F).\n\nF = kx\n\nWhere k is the spring constant (force constant). The slope of the Load (F) vs Extension (x) graph gives k.",
+    "theory": "Optical fibers guide light by total internal reflection. Using the spot method, the Numerical Aperture (NA) is calculated from the spot diameter D on a screen placed at distance L from the fiber end. The correct relation used here is:\n\nNA = D / sqrt(4 L^2 + D^2)\n\nWhere D and L must be in the same units (cm or mm). NA is dimensionless and represents sin(theta_max).",
     "procedure": [
       {
         "stepNo": 1,
-        "instruction": "Suspend the spring from a rigid support and attach a pointer and weight hanger."
+        "instruction": "Connect ST2501 trainer to mains and set up emitter circuit (1 kHz sine, 5 Vp-p) if required by trainer."
       },
       {
         "stepNo": 2,
-        "instruction": "Note the initial reading of the pointer on the scale with the dead load (hanger)."
+        "instruction": "Connect one end of the fiber to emitter output and the other end toward the white screen."
       },
       {
         "stepNo": 3,
-        "instruction": "Add weights in steps (e.g., 50g) and note the reading for each weight."
+        "instruction": "Place the white screen perpendicular to the fiber end and align the fiber axis to the centre of the screen."
       },
       {
         "stepNo": 4,
-        "instruction": "Remove weights one by one and note the readings again (unloading)."
+        "instruction": "Adjust the screen distance L so that the output spot coincides with a concentric circle (known diameter)."
       },
       {
         "stepNo": 5,
-        "instruction": "Calculate the extension x for each load."
+        "instruction": "Measure and record L (distance fiber end to screen) and D (spot diameter) for that circle."
       },
       {
         "stepNo": 6,
-        "instruction": "Plot a graph of Load (mg) vs Extension (x)."
+        "instruction": "Repeat for several values of L (and corresponding D) to get multiple readings."
+      },
+      {
+        "stepNo": 7,
+        "instruction": "Compute NA for each reading using NA = D / sqrt(4 L^2 + D^2) with L and D in same units."
+      },
+      {
+        "stepNo": 8,
+        "instruction": "Compute mean NA and report result."
       }
     ],
     "precautions": [
       {
         "stepNo": 1,
-        "instruction": "Do not load the spring beyond its elastic limit."
+        "instruction": "Do not bend the optical fiber sharply during the experiment."
       },
       {
         "stepNo": 2,
-        "instruction": "Wait for the spring to stop oscillating before taking readings."
+        "instruction": "Ensure the fiber axis is perpendicular to the screen to avoid elliptical spots."
+      },
+      {
+        "stepNo": 3,
+        "instruction": "Measure spot diameter D accurately using a ruler or vernier; average multiple reads if needed."
+      },
+      {
+        "stepNo": 4,
+        "instruction": "Keep ambient light low so the spot edges are clearly visible."
+      },
+      {
+        "stepNo": 5,
+        "instruction": "Handle fiber endfaces carefully; ensure clean, smooth cut for circular spot."
       }
     ],
     "observationTable": {
       "columns": [
         {
-          "name": "S.No",
-          "type": "number"
+          "name": "S. No.",
+          "type": "string"
         },
         {
-          "name": "Load Applied (g)",
-          "type": "number"
+          "name": "L (cm)",
+          "type": "string"
         },
         {
-          "name": "Pointer Reading (cm)",
-          "type": "number"
+          "name": "D (cm)",
+          "type": "string"
         },
         {
-          "name": "Extension x (cm)",
-          "type": "number"
+          "name": "NA = D / sqrt(4L^2 + D^2)",
+          "type": "string"
         }
       ],
       "rows": [
         [
-          1,
-          50,
-          12.0,
-          2.0
+          "1",
+          "12.0",
+          "1.00",
+          "0.0416"
         ],
         [
-          2,
-          100,
-          14.0,
-          4.0
+          "2",
+          "10.0",
+          "1.20",
+          "0.0599"
         ],
         [
-          3,
-          150,
-          16.0,
-          6.0
+          "3",
+          "8.5",
+          "1.50",
+          "0.0879"
+        ],
+        [
+          "4",
+          "7.0",
+          "1.80",
+          "0.1276"
         ]
       ]
     },
     "defaultResult": {
-      "summary": "The graph is a straight line, verifying Hooke's Law.",
-      "calculation": "Spring constant k = Slope of F-x graph = ΔF / Δx (N/m)."
+      "summary": "Mean Numerical Aperture (NA) from sample readings ≈ 0.0793 (dimensionless). Typical NA for multimode fibers ranges from ~0.14 to 0.5 depending on fiber type.",
+      "calculation": "Steps:\n1) Convert L and D to same units (cm). 2) For each row compute denom = sqrt(4*L^2 + D^2). 3) NA = D / denom. Example (row 1): denom = sqrt(4*(12.0)^2 + 1.00^2) = sqrt(576 + 1) = 24.0208; NA = 1.00 / 24.0208 = 0.0416. 4) Mean NA = (0.0416 + 0.0599 + 0.0879 + 0.1276) / 4 = 0.0793."
+    },
+    "calculation": {
+      "workedValues": {
+        "row1": {
+          "L_cm": 12.0,
+          "D_cm": 1.00,
+          "denom": 24.0208,
+          "NA": 0.0416
+        },
+        "row2": {
+          "L_cm": 10.0,
+          "D_cm": 1.20,
+          "denom": 20.0360,
+          "NA": 0.0599
+        },
+        "row3": {
+          "L_cm": 8.5,
+          "D_cm": 1.50,
+          "denom": 17.0660,
+          "NA": 0.0879
+        },
+        "row4": {
+          "L_cm": 7.0,
+          "D_cm": 1.80,
+          "denom": 14.1150,
+          "NA": 0.1276
+        },
+        "mean_NA": 0.0793
+      },
+      "calculationSteps": [
+        "1. For each measurement compute denom = sqrt(4 * L^2 + D^2).",
+        "2. Compute NA = D / denom.",
+        "3. Convert NA to dimensionless (no units).",
+        "4. Average NA values to get mean NA."
+      ]
     },
     "discussion": {
-      "analysis": "",
-      "sourcesOfError": "",
-      "improvements": ""
+      "analysis": "Sample values give a mean NA ~0.0793. The measured NA is lower than typical multimode NA values because sample fiber or setup may be single-mode or coupling was inefficient; this highlights the importance of careful alignment and endface quality.",
+      "sourcesOfError": "Imperfect endface cut, misalignment (non-perpendicular screen), measurement error in D, low coupling efficiency, bending losses.",
+      "improvements": "Use calibrated screen, increase number of repeats, use microscope/micrometer for spot diameter measurement, ensure fiber endface polish and precise perpendicular mounting."
     },
-    "conclusion": "",
-    "safetyNotes": "Keep feet away from below the weights in case they fall."
+    "conclusion": "Using the spot method and the sample dataset, the mean NA ≈ 0.0793. Report this with method details and uncertainty estimates for lab records.",
+    "safetyNotes": "Avoid looking into the fiber output if a high-power source is used. Handle fiber carefully to avoid sharp bends and cuts.",
+    "referenceFile": "/mnt/data/Phy-exp-data-gemeni-frompdfofcl-labManual.docx"
   }
 ]

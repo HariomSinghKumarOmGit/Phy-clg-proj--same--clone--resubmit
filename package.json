@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
+    "pdf-parse": "^2.4.5",
     "tailwindcss": "^4.1.17"
   }
 }
