@@ -2116,26 +2116,50 @@
     "discussion": {
       "analysis": "The sample dataset yields a mean wavelength ≈ 5893 Å — close to the sodium doublet. Variation among trials arises from reading uncertainty and small alignment errors.",
       "sourcesOfError": "Backlash in micrometer, imperfect leveling, finite slit width, air currents, uncertainty in 2d estimation (most significant), human reading error.",
-      "improvements": "Use fine micrometer with smaller least count, improve leveling, use multiple D values and average, measure 2d more precisely (displacement method)."
+      "improvements": "Use fine micrometer with smaller least count, improve leveling, use multiple D values and average, measure 2d more precisely (displacement method).",
+      "vivaVoce": [
+        {
+          "question": "What is a bi-prism?",
+          "answer": "It is a combination of two acute angled prisms placed base to base."
+        },
+        {
+          "question": "What is the purpose of the bi-prism?",
+          "answer": "The purpose of the bi-prism is to produce two coherent images of a given slit which are separated by a certain distance and behave as two coherent sources."
+        },
+        {
+          "question": "On what factors does the fringe width depend?",
+          "answer": "The fringe width β is given by β = (λD) / 2d. D is the distance between slit and eye-piece and 2d is distance between two virtual sources."
+        },
+        {
+          "question": "How do you measure 2d?",
+          "answer": "2d is measured with the help of displacement method."
+        },
+        {
+          "question": "How does fringe width depend upon the angle of bi-prism?",
+          "answer": "Where, a = distance between slit and bi-prism, A = Angle of bi-prism. i.e. β ∝ 1/A."
+        },
+        {
+          "question": "What is the effect of changing the distance between the slit and bi-prism on the fringe width?",
+          "answer": "When 'a' is increased 2d is decreased, i.e. fringe width is increased."
+        },
+        {
+          "question": "Why should the slit be narrow?",
+          "answer": "For good contrast of the interference fringes the slit should be narrow."
+        },
+        {
+          "question": "What are coherent sources?",
+          "answer": "Two sources are said to be coherent, if they emit light waves of the same wavelength and frequency and there is constant phase between them."
+        },
+        {
+          "question": "What are the different types of interference?",
+          "answer": "Two types: (i) Constructive interference, (ii) Destructive interference."
+        },
+        {
+          "question": "Is there any loss of energy in interference?",
+          "answer": "There is no loss of energy but only it is redistributed."
+        }
+      ]
     },
-    "vivaVoce": [
-      {
-        "question": "What is a bi-prism?",
-        "answer": "A bi-prism is two identical acute prisms joined at their bases to produce two virtual coherent sources from a single slit."
-      },
-      {
-        "question": "On what factors does fringe width depend?",
-        "answer": "Fringe width β = (λ D) / (2d); it depends on wavelength λ, distance D between slit and screen, and separation 2d between virtual sources."
-      },
-      {
-        "question": "Why should slit be narrow?",
-        "answer": "A narrow slit improves fringe contrast and coherence between the two virtual sources."
-      },
-      {
-        "question": "How is 2d measured?",
-        "answer": "2d can be calculated from prism geometry (2d = 2a(μ − 1)α) or measured by displacement method comparing positions of images."
-      }
-    ],
     "conclusion": "Using the sample readings and the chosen 2d value, the mean wavelength of sodium light was found to be approximately 5893 Å, matching the standard sodium doublet.",
     "safetyNotes": "Avoid direct eye exposure to bright lamp; handle glass prisms carefully to prevent chips and cuts.",
     "referenceFile": "/mnt/data/Phy-exp-data-gemeni-frompdfofcl-labManual.docx"
