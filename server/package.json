@@ -1,0 +1,31 @@
+{
+  "name": "chemai-lab-server",
+  "version": "0.1.0",
+  "description": "Backend API for ChemAI Lab chemistry education platform",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "server": "nodemon src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "chemistry",
+    "education",
+    "ai",
+    "simulator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "openai": "^6.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
