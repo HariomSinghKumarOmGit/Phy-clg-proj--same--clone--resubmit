@@ -2,7 +2,9 @@
 
 **The Smart Virtual Chemistry Mentor**
 
-https://lab-ass-phy-dtvn.vercel.app/
+https://phy-clg-proj-lab-ass.vercel.app/
+
+/br
 this project is desined for second sem now ipu 
 
 ---
