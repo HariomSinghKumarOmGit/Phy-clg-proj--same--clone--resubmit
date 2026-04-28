@@ -27,7 +27,7 @@ export default function Navbar() {
       </Link>
       <div className="navbar-links">
         <Link to="/">Home</Link>
-        <a href="https://github.com/HariomSinghKumarOmGit/Chem-Clg-Proj" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/HariomSinghKumarOmGit/Phy-clg-proj--same--clone--resubmit" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
         <a href="https://i.ytimg.com/vi/t7ImwL84BcE/maxresdefault.jpg" target='_balnk'>We</a>
